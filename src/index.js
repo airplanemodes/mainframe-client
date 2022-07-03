@@ -9,8 +9,6 @@ import {
 
 import './index.css';
 import App from './App';
-import Posts from './routes/posts';
-import About from './routes/about';
 // import reportWebVitals from './reportWebVitals';
 
 // Rendering root from public/index.html
@@ -21,8 +19,6 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<App />}/>
-        <Route path='posts' element={<Posts />}/>
-        <Route path='about' element={<About />}/>
         <Route path='*' element={
           <p>There's nothing here! 404</p>
         }/>

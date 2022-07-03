@@ -4,39 +4,19 @@
 }
 
 body {
-  background-color: #282c34;
   font-family: JetBrainsMono-Regular;
+  color: green;
+  background-color: black;
 }
 
-.App {
+.headTitle {
+  font-size: 38px;
   text-align: center;
 }
 
-nav {
-  margin: 0 auto;
-  box-sizing: border-box;
-  border: 2px solid black;
-  font-size: 30px;
-  color: grey;
-  width: 600px;
-  height: 400px;
-  text-align: center;
-  align-items: center;
-  background-color: goldenrod;
-}
-
-.navlink {
-  font-size: 40px;
-  color: black;
-  text-decoration: none;
-  font-family: JetBrainsMono-Regular;
-}
-
-.navlink:hover {
-  color:grey;
-}
-
-.welcome {
-  color:goldenrod;
-  font-size: 40px;
+.feedBox {
+  margin: 40px;
+  padding: 40px;
+  width: 800px;
+  background-color: rgb(0, 50, 0);
 }
