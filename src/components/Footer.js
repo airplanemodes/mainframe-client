@@ -1,6 +1,6 @@
 function Footer() {
     return (
-        <p>Mainframe (c) {new Date().getFullYear()}</p>
+        <footer>Mainframe &copy; {new Date().getFullYear()}</footer>
     )
 }
 
