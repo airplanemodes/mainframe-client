@@ -8,8 +8,8 @@ function AddPost() {
     let { register, handleSubmit, formState: { errors } } = useForm();
     // let history = useHistory();
 
-    let nameRef = register('postName', { required: true, minLength: 2 });
-    let textRef = register('postText', { required: true, minLength: 2 });
+    let namePointer = register('postName', { required: true, minLength: 2 });
+    let textPointer = register('postText', { required: true, minLength: 2 });
 
     const onSubForm = async(postForm) => {
         console.log(postForm);
@@ -35,13 +35,13 @@ function AddPost() {
                         <div>
                             <label>Post name</label>
                             <br></br>
-                            <input {...nameRef} type='text' />
+                            <input {...namePointer} type='text' />
                         </div>
                         <br></br>
                         <div>
                             <label>Text</label>
                             <br></br>
-                            <textarea {...textRef} type='text' rows='10' cols='50' />
+                            <textarea {...textPointer} type='text' rows='10' cols='50' />
                         </div>
                         <br></br>
                         <button className='darkButton'>Add</button>

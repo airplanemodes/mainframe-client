@@ -10,6 +10,7 @@ body {
 }
 
 textarea {
+  padding: 5px;
   font-family: 'JetBrainsMono-Regular';
   resize: none;
   background-color: black;
@@ -19,11 +20,12 @@ textarea {
 }
 
 input {
+  padding: 5px;
   border: 2px solid green;
   font-family: 'JetBrainsMono-Regular';
   background-color: black;
   color: green;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 footer {
