@@ -59,3 +59,22 @@ footer {
   border: 2px solid darkgreen;
   font-family: JetBrainsMono-Regular;
 }
+
+.post-single {
+  border: 2px solid black;
+  border-radius: 16px;
+  padding: 20px;
+  margin: 20px;
+  font-family: JetBrainsMono-Regular;
+}
+
+.aboutBox {
+  text-align: center;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1000px 200px;
+  row-gap: 20px;
+}

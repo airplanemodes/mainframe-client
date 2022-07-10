@@ -24,7 +24,7 @@ function Feed(props) {
                 <h2>Posts feed</h2>
                     {arr.map((item, i) => {
                         return (
-                            <div key={item._id}>
+                            <div key={item._id} className="post-single">
                                 <h3>{item.postName}</h3>
                                 <p>{item.postText}</p>
                             </div>

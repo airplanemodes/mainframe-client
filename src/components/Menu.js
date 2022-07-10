@@ -1,14 +1,11 @@
 import React from 'react';
+import Signup from './Signup';
 
 function Menu() {
     return (
         <nav>
             <h2>Main menu</h2>
-            <ul>
-                <li>One</li>
-                <li>Two</li>
-                <li>Three</li>
-            </ul>
+                <Signup />
         </nav>
     )
 }
