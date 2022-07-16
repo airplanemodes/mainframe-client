@@ -19,23 +19,34 @@ textarea {
   font-size: 16px;
 }
 
-input {
-  padding: 5px;
-  border: 2px solid green;
-  font-family: 'JetBrainsMono-Regular';
-  background-color: black;
-  color: green;
-  font-size: 18px;
-}
-
 footer {
   text-align: center;
   align-items: center;
 }
 
 .headTitle {
+  margin: 0 auto;
+  background-color: green;
   font-size: 38px;
   text-align: center;
+  color: black;
+}
+
+.signupForm {
+  width: 400px;
+  border: 2px green solid;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.signupForm > input {
+  align-items: center;
+  padding: 5px;
+  border: 2px solid green;
+  font-family: 'JetBrainsMono-Regular';
+  background-color: black;
+  color: green;
+  font-size: 18px;
 }
 
 .feedBox {
@@ -71,10 +82,4 @@ footer {
 .aboutBox {
   text-align: center;
   align-items: center;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: 1000px 200px;
-  row-gap: 20px;
 }

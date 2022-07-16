@@ -10,14 +10,12 @@ function App() {
 
   return (
     <div className="App">
-      <div className='grid'>
-        <div><Header /></div>
-        <div><Menu /></div>
-        <div><Feed /></div>
-        <div><AddPost /></div>
-        <div><About /></div>
-        <div><Footer /></div>
-      </div>
+        <Header />
+        <Menu />
+        <Feed />
+        <AddPost />
+        <About />
+        <Footer />
     </div>
   );
 }

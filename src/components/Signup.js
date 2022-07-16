@@ -24,14 +24,21 @@ function Signup() {
     }
 
     return (
-        <form onSubmit={handleSubmit(onFormSubmit)}>
-            <label>Username</label>
+        <form onSubmit={handleSubmit(onFormSubmit)} className='signupForm'>
+            <br />
+            <label>Username</label><br />
             <input {...usernameRef} type='text'></input>
             <br />
-            <label>Password</label>
+            <label>Password</label><br />
             <input {...passwordRef} type='password'></input>
             <br />
+            <label>E-mail</label><br />
+            <input {...usernameRef} type='e-mail'></input>
+            <br />
+            <br />
             <button className="darkButton">Submit</button>
+            <br />
+            <br />
         </form>
     )
 }
