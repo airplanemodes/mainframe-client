@@ -1,11 +1,22 @@
 import React from 'react';
-import Signup from './Signup';
+import { Link } from 'react-router-dom';
 
 function Menu() {
     return (
-        <nav>
+        <nav className='loginMenu'>
             <h2>Login menu</h2>
-                <Signup />
+            <form>
+                <label>Username: </label>
+                <input type='text'></input>
+                <br />
+                <label>Password: </label>
+                <input type='text'></input>
+                <br />
+                <button className='darkButton'>Login</button>
+                <button className='darkButton'>
+                    <Link to="/register" className='darkButton'>Register</Link>
+                </button>
+            </form>
         </nav>
     )
 }

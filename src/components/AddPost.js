@@ -35,7 +35,7 @@ function AddPost() {
                         <div>
                             <label>Post name</label>
                             <br></br>
-                            <input {...namePointer} type='text' />
+                            <input {...namePointer} type='text'/>
                         </div>
                         <br></br>
                         <div>

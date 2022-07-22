@@ -49,6 +49,16 @@ footer {
   font-size: 18px;
 }
 
+input {
+  align-items: center;
+  padding: 5px;
+  border: 2px solid green;
+  font-family: 'JetBrainsMono-Regular';
+  background-color: black;
+  color: green;
+  font-size: 18px;
+}
+
 .feedBox {
   margin: 40px;
   padding: 40px;
@@ -57,7 +67,8 @@ footer {
 }
 
 .addPostBox {
-  padding: 20px;
+  margin: 40px;
+  padding: 40px;
   width: 600px;
   background-color: rgb(0, 50, 0);
 }
@@ -82,4 +93,12 @@ footer {
 .aboutBox {
   text-align: center;
   align-items: center;
+}
+
+.menuLink {
+  color: green;
+}
+
+.loginMenu {
+  text-align: right;
 }

@@ -2,7 +2,7 @@ import React from "react";
 import { useForm } from 'react-hook-form';
 import { api_url, api_method } from '../services/api-service';
 
-function Signup() {
+function Register() {
 
     let { register, handleSubmit, formState: { errors } } = useForm();
 
@@ -43,4 +43,4 @@ function Signup() {
     )
 }
 
-export default Signup;
+export default Register;

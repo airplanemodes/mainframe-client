@@ -9,6 +9,7 @@ import {
 
 import './index.css';
 import App from './App';
+import Register from './components/Register';
 // import reportWebVitals from './reportWebVitals';
 
 // Rendering root from public/index.html
@@ -19,6 +20,7 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<App />}/>
+        <Route path='/register' element={<Register />}/>
         <Route path='*' element={
           <p>There's nothing here! 404</p>
         }/>
