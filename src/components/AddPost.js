@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 // import { useHistory } from 'react-router-dom';
 import { api_url, api_method } from '../services/api-service';
@@ -44,6 +45,9 @@ function AddPost() {
                             <textarea {...textPointer} type='text' rows='10' cols='50' />
                         </div>
                         <br></br>
+                        <button className='darkButton'>
+                            <Link to='/'>Back</Link>
+                        </button>
                         <button className='darkButton'>Add</button>
                     </form>
             </div>
@@ -51,4 +55,4 @@ function AddPost() {
     )
 }
 
-export default AddPost
+export default AddPost;

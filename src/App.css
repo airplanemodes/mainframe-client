@@ -3,6 +3,11 @@
   src: local('JetBrainsMono-Regular'), url(./fonts/JetBrainsMono-Regular.ttf);
 }
 
+a {
+  color: black;
+  text-decoration: none;
+}
+
 body {
   font-family: JetBrainsMono-Regular;
   color: green;
@@ -83,6 +88,7 @@ input {
 }
 
 .post-single {
+  color: green;
   border: 2px solid black;
   border-radius: 16px;
   padding: 20px;
@@ -93,10 +99,6 @@ input {
 .aboutBox {
   text-align: center;
   align-items: center;
-}
-
-.menuLink {
-  color: green;
 }
 
 .loginMenu {

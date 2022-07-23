@@ -12,9 +12,11 @@ function Menu() {
                 <label>Password: </label>
                 <input type='text'></input>
                 <br />
+                
                 <button className='darkButton'>Login</button>
+                
                 <button className='darkButton'>
-                    <Link to="/register" className='darkButton'>Register</Link>
+                    <Link to='/register'>Register</Link>
                 </button>
             </form>
         </nav>

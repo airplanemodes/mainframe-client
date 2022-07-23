@@ -9,7 +9,9 @@ import {
 
 import './index.css';
 import App from './App';
+
 import Register from './components/Register';
+import AddPost from './components/AddPost';
 // import reportWebVitals from './reportWebVitals';
 
 // Rendering root from public/index.html
@@ -21,6 +23,7 @@ root.render(
       <Routes>
         <Route path='/' element={<App />}/>
         <Route path='/register' element={<Register />}/>
+        <Route path='/addpost' element={<AddPost />}/>
         <Route path='*' element={
           <p>There's nothing here! 404</p>
         }/>
