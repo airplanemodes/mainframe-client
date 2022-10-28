@@ -1,0 +1,22 @@
+@font-face {
+    font-family: JetBrainsMono Regular;
+    src: url('./fonts/JetBrainsMono-Regular.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: JetBrainsMono Regular;
+}
+
+
+:root {
+    --primary-color: green;
+    --secondary-color: darkgreen;
+    --light-color: white;
+    --bg-color: black;
+}
+
+body {
+    background-color: var(--bg-color);
+}

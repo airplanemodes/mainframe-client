@@ -1,0 +1,41 @@
+#enter {
+    margin: 0 auto;
+    margin-top: 100px;
+    padding-top: 30px;
+    text-align: center;
+    color: var(--primary-color);
+    height: 360px;
+    width: 600px;
+    border: 8px solid var(--primary-color);
+    border-radius: 15px;
+}
+
+h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+label {
+    font-size: 20px;
+}
+
+input {
+    margin-top: 5px;
+    height: 30px;
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    font-size: 16px;
+}
+
+button {
+    margin-top: 20px;
+    height: 30px;
+    width: 80px;
+    background-color: var(--secondary-color);
+    border: 1px solid green;
+    color: var(--light-color);
+}
+
+a {
+    color: var(--primary-color);
+}

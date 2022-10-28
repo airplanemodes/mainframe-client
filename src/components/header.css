@@ -1,0 +1,7 @@
+header {
+    margin-top: 10px;
+    height: 60px;
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    text-align: center;
+}
