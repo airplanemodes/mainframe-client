@@ -13,3 +13,19 @@ export const getRequest = async(url) => {
         return error;
     }
 };
+
+export const axiosRequest = async(url, method, data) => {
+    try {
+        let response = await axios({
+            url: url,
+            method: method,
+            data: data
+        });
+        
+        return response.data;
+
+    } catch (error) {
+        console.log(error);
+        throw error;
+    };
+};

@@ -1,23 +1,47 @@
+import { useForm } from 'react-hook-form';
+import { axiosRequest, serverAddress } from '../services/api';
 import './register.css';
 
 export default function Register() {
+
+    const { register, handleSubmit } = useForm();
+
+    const submit = async(formdata) => {
+        try {
+            console.log(formdata);
+            const url = serverAddress+"/users";
+            let data = await axiosRequest(url, 'POST', formdata);
+            console.log(data);
+            
+        } catch (error) {
+            console.log(error);
+            throw error;
+        }
+    };
+
+    let usernameRef = register('username', { required: true, maxLength: 16 });
+    let emailRef = register('email', { required: true , maxLength: 60 } );
+    let passwdRef = register('passwd', { required: true }); 
+
     return (
-        <div id='register'>
-            <form>
+        <div id='regform'>
+            <form onSubmit={handleSubmit(submit)}>
                 <h2>Create new user</h2>
                 <table id='registerTable'>
+                    <tbody>
                     <tr>
                         <td><label>Username: </label></td>
-                        <td><input type={'text'} /></td>
+                        <td><input type={'text'} {...usernameRef} /></td>
                     </tr>
                     <tr>
                         <td><label>Email: </label></td>
-                        <td><input type={'email'} /></td>
+                        <td><input type={'email'} {...emailRef} /></td>
                     </tr>
                     <tr>
                         <td><label>Password: </label></td>
-                        <td><input type={'password'} /></td>
+                        <td><input type={'passwd'} {...passwdRef} /></td>
                     </tr>
+                    </tbody>
                 </table>
                 <br />
                 <button>Create</button>
