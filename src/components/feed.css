@@ -1,0 +1,26 @@
+.elementArticle {
+    margin: 50px;
+    margin-left: 100px;
+    height: 400px;
+    width: 800px;
+    background-color: var(--secondary-color);
+    border: 5px solid var(--primary-color);
+    border-radius: 2px;
+}
+
+.elementTitle {
+    margin: 20px;
+    font-size: 26px;
+    color: var(--bg-color);
+}
+
+.elementP {
+    padding: 20px;
+    color: var(--bg-color);
+ }
+
+ .elementAuthor {
+    margin: 20px;
+    text-align: right;
+    color: var(--bg-color);
+ }

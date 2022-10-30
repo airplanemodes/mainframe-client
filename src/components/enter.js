@@ -15,6 +15,7 @@ export default function Enter() {
             </form>
             <br />
             <p>continue as <a href="/main">guest</a></p>
+            <p>create new <a href="/register">user</a></p>
         </div>
     )
 };

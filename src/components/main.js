@@ -1,13 +1,14 @@
-import Footer from './footer';
 import Header from './header';
+import Footer from './footer';
 import './main.css';
+import Feed from './feed';
 
 export default function Main() {
     return (
-        <main>
+        <div>
             <Header />
-                <a href='/'>Back to login</a>
+                <Feed />
             <Footer />
-        </main>
+        </div>
     )
 };
