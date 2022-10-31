@@ -8,14 +8,17 @@ export default function Register() {
 
     const submit = async(formdata) => {
         try {
-            console.log(formdata);
+            // console.log(formdata);
             const url = serverAddress+"/users";
-            let data = await axiosRequest(url, 'POST', formdata);
-            console.log(data);
-            
+            await axiosRequest(url, 'POST', formdata);
+        
+        // TODO: client-side validation
         } catch (error) {
-            console.log(error);
-            throw error;
+            if (error.response.data == 'username already taken') {
+                alert("choose new username");
+            } else if (error.response.data == 'email already taken') {
+                alert("choose new email");
+            }
         }
     };
 
@@ -39,7 +42,7 @@ export default function Register() {
                     </tr>
                     <tr>
                         <td><label>Password: </label></td>
-                        <td><input type={'passwd'} {...passwdRef} /></td>
+                        <td><input type={'password'} {...passwdRef} /></td>
                     </tr>
                     </tbody>
                 </table>
