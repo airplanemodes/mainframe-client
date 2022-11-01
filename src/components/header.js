@@ -12,8 +12,9 @@ export default function Header() {
   
     const initializeUser = async() => {
         let userinit = await userdataUpdate();
-        if (userinit.length > 0) {
-            setUser(userinit);
+        console.log(userinit);
+        if (userinit.username) {
+            setUser(userinit.username);
         } else {
             setUser("guest");
         }
@@ -37,6 +38,7 @@ export default function Header() {
                 <div id='user'>
                     <h4>logged as {user}</h4>
                     <a href='/write'><button id='writeButton'>Write</button></a>
+                    <a href='/profile'><button id='profileButton'>Profile</button></a>
                     <button id='logoutButton' onClick={userLogout}>Logout</button>
                 </div>
             </React.Fragment>

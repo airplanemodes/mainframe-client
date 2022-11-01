@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { axiosRequest, serverAddress } from "../services/api";
 import { userdataUpdate } from "../services/userdata";
@@ -14,7 +14,8 @@ export default function Write() {
 
     const initializeUser = async() => {
         let userinit = await userdataUpdate();
-        if (userinit.length > 0) {
+        console.log(userinit);
+        if (userinit.username) {
             setUser(userinit);
         } else {
             window.location = '/main';
@@ -31,7 +32,7 @@ export default function Write() {
         try {
             const dateObj = new Date();
             formdata.created = `${dateObj.getFullYear()}-${dateObj.getMonth()+1}-${dateObj.getDate()}`;
-            formdata.author = user;
+            formdata.author = user.username;
             // console.log(formdata);
             const url = serverAddress+'/entries';
             const response = await axiosRequest(url, 'POST', formdata);

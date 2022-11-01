@@ -17,7 +17,7 @@ export default function Feed() {
     };
 
     return (
-        <div>
+        <div id='entriesPage'>
             {entries.map((element) => {
                 return (
                     <article className='elementArticle' key={element.id}>

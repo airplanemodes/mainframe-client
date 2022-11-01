@@ -10,3 +10,8 @@ header {
     margin-right: 100px;
     text-align: right;
 }
+
+#user > h4 {
+    margin-top: 20px;
+    margin-right: 40px;
+}

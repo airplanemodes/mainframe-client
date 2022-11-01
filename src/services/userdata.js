@@ -7,7 +7,7 @@ export const userdataUpdate = async() => {
         try {
             const url = serverAddress+"/users";
             let data = await axiosRequest(url, 'GET');
-            if (data.length > 0) {
+            if (data) {
                 user = data;
             } else {
                 localStorage.removeItem('localToken');

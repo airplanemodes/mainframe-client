@@ -1,0 +1,21 @@
+#profile {
+    margin: 0 auto;
+    margin-top: 100px;
+    color: var(--primary-color);
+    height: 640px;
+    width: 80vw;
+    border: 8px solid var(--primary-color);
+    border-radius: 15px;
+}
+
+#profileHeader {
+    text-align: center;
+    color: var(--bg-color);
+    background-color: var(--secondary-color);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#userdata {
+    margin: 40px;
+}
