@@ -19,6 +19,13 @@
     color: var(--bg-color);
  }
 
+ .elementNode {
+    margin: 20px;
+    padding: 10px;
+    color: var(--primary-color);
+    background-color: var(--bg-color);
+ }
+
  .elementAuthor {
     margin: 20px;
     text-align: right;

@@ -1,0 +1,52 @@
+#write {
+    margin: 0 auto;
+    margin-top: 100px;
+    color: var(--primary-color);
+    height: 640px;
+    width: 80vw;
+    border: 8px solid var(--primary-color);
+    border-radius: 15px;
+}
+
+#writeHeader {
+    text-align: center;
+    color: var(--bg-color);
+    background-color: var(--secondary-color);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#writeForm {
+    padding: 30px;
+}
+
+#writeForm > label {
+    margin: 5px;
+    padding: 5px
+}
+
+#writeForm > select {
+    background-color: var(--primary-color);
+    width: 180px;
+    height: 30px;
+    margin-left: 30px;
+}
+
+#writeForm > textarea {
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 14px;
+    width: 80%;
+    padding: 10px;
+    color: var(--bg-color);
+    background-color: var(--primary-color);
+    resize: none;
+}
+
+#writeForm > button {
+    margin-left: 30px;
+}
+
+#returnButton {
+    margin-left: 40px;
+}

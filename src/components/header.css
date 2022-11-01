@@ -1,7 +1,12 @@
 header {
     margin-top: 10px;
-    height: 60px;
+    height: 80px;
     background-color: var(--bg-color);
     color: var(--primary-color);
     text-align: center;
+}
+
+#user {
+    margin-right: 100px;
+    text-align: right;
 }

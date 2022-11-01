@@ -4,25 +4,26 @@ import { useEffect, useState } from 'react';
 
 export default function Feed() {
 
-    const [ posts, setPosts ] = useState([]);
+    const [ entries, setEntries ] = useState([]);
 
     useEffect(() => {
-        let url = serverAddress+"/posts";
-        getPosts(url);
+        let url = serverAddress+"/entries";
+        getEntries(url);
     }, []);
-
-    const getPosts = async(url) => {
+    
+    const getEntries = async(url) => {
         let data = await getRequest(url);
-        setPosts(data);
+        setEntries(data.reverse());
     };
 
     return (
         <div>
-            {posts.map((element) => {
+            {entries.map((element) => {
                 return (
                     <article className='elementArticle' key={element.id}>
                         <h2 className='elementTitle'>{element.title}</h2>
-                        <p className='elementP'>{element.post}</p>
+                        <p className='elementNode'>{element.node}</p>
+                        <p className='elementP'>{element.content}</p>
                         <a className='elementAuthor' href={'users/' + element.author}>{element.author}</a>
                     </article>
                 )

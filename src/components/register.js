@@ -9,8 +9,12 @@ export default function Register() {
     const submit = async(formdata) => {
         try {
             // console.log(formdata);
+            const dateObj = new Date();
+            formdata.entered = `${dateObj.getFullYear()}-${dateObj.getMonth()+1}-${dateObj.getDate()}`;
             const url = serverAddress+"/users";
             await axiosRequest(url, 'POST', formdata);
+            alert("user created successfully");
+            window.location = '/';
         
         // TODO: client-side validation
         } catch (error) {
