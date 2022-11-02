@@ -17,6 +17,7 @@ export default function Header() {
             setUser(userinit.username);
         } else {
             setUser("guest");
+            localStorage.removeItem('localToken');
         }
     };
 
@@ -31,11 +32,14 @@ export default function Header() {
             <h1>10101010 Welcome to Mainframe 01010101</h1>
             { !localStorage.localToken ?
             <React.Fragment>
-                <p>logged as {user}</p>
+                <div className='userbar'>
+                    <h4>logged as {user}</h4>
+                    <a href='/'><button id='loginButton'>Login</button></a>
+                </div>
             </React.Fragment>
             :
             <React.Fragment>
-                <div id='user'>
+                <div className='userbar'>
                     <h4>logged as {user}</h4>
                     <a href='/write'><button id='writeButton'>Write</button></a>
                     <a href='/profile'><button id='profileButton'>Profile</button></a>

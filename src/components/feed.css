@@ -35,3 +35,9 @@
     text-align: right;
     color: var(--bg-color);
  }
+
+ .readButton {
+    margin-top: 50px;
+    margin-left: 30px;
+    background-color: var(--bg-color);
+ }

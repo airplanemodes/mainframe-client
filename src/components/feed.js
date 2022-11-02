@@ -13,6 +13,7 @@ export default function Feed() {
     
     const getEntries = async(url) => {
         let data = await getRequest(url);
+        console.log(data);
         setEntries(data.reverse());
     };
 
@@ -24,7 +25,9 @@ export default function Feed() {
                         <h2 className='elementTitle'>{element.title}</h2>
                         <p className='elementNode'>{element.node}</p>
                         <p className='elementP'>{element.content}</p>
-                        <a className='elementAuthor' href={'users/' + element.author}>{element.author}</a>
+                        <a className='elementAuthor' href={'users/'+element.author}>{element.author}</a>
+                        <br />
+                        <a href={'/entries/'+element.id}><button className='readButton'>Read</button></a>
                     </article>
                 )
             })}

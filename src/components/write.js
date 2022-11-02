@@ -36,7 +36,8 @@ export default function Write() {
             // console.log(formdata);
             const url = serverAddress+'/entries';
             const response = await axiosRequest(url, 'POST', formdata);
-            console.log(response);
+            alert("Entry was written to the database");
+            window.location = '/main';
         } catch (error) {
             console.log(error);
         }
@@ -63,7 +64,7 @@ export default function Write() {
                 <br />
                 <button>Write</button>
             </form>
-            <a href='/main'><button id="returnButton">Return 0</button></a>
+            <a href='/main'><button id='writeReturn'>Return 0</button></a>
         </div>
     )
 }

@@ -15,7 +15,7 @@ export default function Enter() {
     const initializeUser = async() => {
         let userinit = await userdataUpdate();
         setUser(userinit);
-        if (typeof(userinit) == 'string') {
+        if (userinit.username) {
             window.location = '/main';
         }
     }
@@ -25,7 +25,8 @@ export default function Enter() {
         try {
             const url = serverAddress+"/login";
             let response = await axiosRequest(url, "POST", formdata);
-            console.log(response);
+            // TOKEN:
+            // alert(response.created);
             localStorage.setItem('localToken', response.created);
             window.location = '/main';
         } catch (error) {
