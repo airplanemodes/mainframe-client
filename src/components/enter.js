@@ -7,6 +7,7 @@ import './enter.css';
 export default function Enter() {
 
     let [ user, setUser ] = useState(null);
+    let [ error, setError ] = useState(null);
 
     useEffect(() => {
         initializeUser();
@@ -30,7 +31,8 @@ export default function Enter() {
             localStorage.setItem('localToken', response.created);
             window.location = '/main';
         } catch (error) {
-            console.log(error.response.data);
+            // console.log(error.response.data);
+            setError(error.response.data)
         }
     };
 
@@ -47,6 +49,7 @@ export default function Enter() {
                 <label>Password: </label>
                 <input type={'password'} {...passwdRef} />
                 <br />
+                { error && <div><br />{error}</div>}
                 <button>Login</button>
             </form>
             <br />

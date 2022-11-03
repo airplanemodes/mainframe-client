@@ -16,7 +16,7 @@ export default function Read() {
         let url = serverAddress+"/entries/"+id;
         let data = getRequest(url);
         data.then((value) => setEntry(value));
-        console.log(entry);
+        console.log(data);
     }
 
     return (

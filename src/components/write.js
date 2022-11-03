@@ -14,7 +14,7 @@ export default function Write() {
 
     const initializeUser = async() => {
         let userinit = await userdataUpdate();
-        console.log(userinit);
+        // console.log(userinit);
         if (userinit.username) {
             setUser(userinit);
         } else {

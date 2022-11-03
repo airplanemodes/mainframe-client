@@ -12,7 +12,6 @@ export default function Header() {
   
     const initializeUser = async() => {
         let userinit = await userdataUpdate();
-        console.log(userinit);
         if (userinit.username) {
             setUser(userinit.username);
         } else {

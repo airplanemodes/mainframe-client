@@ -9,34 +9,28 @@ export default function Profile() {
     const [ authored, setAuthored ] = useState([]);
 
     useEffect(() => {
-        initializeUser();
-        getAuthored();
+        initializeProfile();
     },[]);
   
-    const initializeUser = async() => {
+    const initializeProfile = async() => {
         let userinit = await userdataUpdate();
         setProfile(userinit);
-        // console.log(userinit);
-    };
+        console.log(userinit); // User object
+        if (!userinit.username) {
+            window.location = '/main'; // Redirect if token expired
+        } else {
+            let url = serverAddress+"/entries";
+            let entries = await getRequest(url); // All entries
 
-    const getAuthored = async() => {
-        let userinit = await userdataUpdate();
-        console.log(userinit);
-
-        let url = serverAddress+"/entries";
-        let entries = await getRequest(url);
-        console.log(entries);
-
-        let authoredArray = [];
-        for (let i = 0; i < entries.length; i++) {
-            if (entries[i].author == userinit.username) {
-                authoredArray.push(entries[i]);
+            let authoredArray = [];
+            for (let i = 0; i < entries.length; i++) {
+                if (entries[i].author == userinit.username) {
+                    authoredArray.push(entries[i]);
+                }
             }
+            setAuthored(authoredArray);
         }
-
-        setAuthored(authoredArray);
-        console.log(authoredArray);
-    }
+    };
 
     return (
         <div id='profile'>

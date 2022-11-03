@@ -9,7 +9,7 @@ export const getRequest = async(url) => {
         return response.data;
 
     } catch (error) {
-        console.log(error);
+        // console.log(error);
         return error;
     }
 };
@@ -28,7 +28,7 @@ export const axiosRequest = async(url, method, data) => {
         return response.data;
 
     } catch (error) {
-        console.log(error);
+        // console.log(error);
         throw error;
     };
 };
