@@ -15,8 +15,10 @@ export default function Read() {
     const getSingleEntry = async() => {
         let url = serverAddress+"/entries/"+id;
         let data = getRequest(url);
-        data.then((value) => setEntry(value));
-        console.log(data);
+        data.then((value) => {
+            console.log(value);
+            setEntry(value);
+        });
     }
 
     return (

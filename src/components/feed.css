@@ -2,6 +2,15 @@
     margin-top: 100px;
 }
 
+#nodeSwitch {
+    margin-left: 100px;
+}
+
+.nodeButton {
+    height: 40px;
+    width: 100px;
+}
+
 .elementArticle {
     margin: 50px;
     margin-left: 100px;
@@ -13,36 +22,34 @@
 }
 
 .elementTitle {
-    margin: 20px;
-    font-size: 26px;
+    margin: 30px;
+    font-size: 24px;
     color: var(--bg-color);
 }
 
-.elementP {
-    padding: 20px;
-    color: var(--bg-color);
- }
-
- .elementNode {
-    margin: 20px;
+.elementNode {
+    margin: 30px;
     padding: 10px;
     color: var(--primary-color);
     background-color: var(--bg-color);
- }
+}
 
- .elementAuthor {
-    margin: 20px;
-    text-align: right;
+.elementContent {
+    margin: 30px;
     color: var(--bg-color);
- }
+}
 
- .readButton {
-    margin-top: 50px;
+.elementAuthor {
+    margin: 30px;
+    color: var(--bg-color);
+}
+
+.readButton {
     margin-left: 30px;
     background-color: var(--bg-color);
- }
+}
 
- .elementDelete {
+.elementDelete {
     margin-left: 10px;
     background-color: var(--bg-color);
- }
+}

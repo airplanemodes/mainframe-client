@@ -1,27 +1,34 @@
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { axiosRequest, serverAddress } from '../services/api';
 import './register.css';
 
 export default function Register() {
 
+    let [ error, setError ] = useState(null);
+
     const { register, handleSubmit } = useForm();
 
     const submit = async(formdata) => {
         try {
-            // console.log(formdata);
+            formdata.points = 0;
             const dateObj = new Date();
             formdata.entered = `${dateObj.getFullYear()}-${dateObj.getMonth()+1}-${dateObj.getDate()}`;
+            formdata.moderator = false;
+            console.log(formdata);
             const url = serverAddress+"/users";
             await axiosRequest(url, 'POST', formdata);
             alert("user created successfully");
             window.location = '/';
         
-        // TODO: client-side validation
         } catch (error) {
-            if (error.response.data == 'username already taken') {
-                alert("choose new username");
-            } else if (error.response.data == 'email already taken') {
-                alert("choose new email");
+            console.log(error);
+            if (error.response.data === 'username already taken') {
+                setError('username already taken');
+            } else if (error.response.data === 'email already taken') {
+                setError('email already taken');
+            } else {
+                setError(error.response.data);
             }
         }
     };
@@ -50,7 +57,7 @@ export default function Register() {
                     </tr>
                     </tbody>
                 </table>
-                <br />
+                { error && <div><br />{error}</div>}
                 <button>Create</button>
             </form>
             <br />

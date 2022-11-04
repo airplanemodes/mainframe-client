@@ -41,5 +41,6 @@
 
 #entryReturn {
     background-color: var(--bg-color);
-    margin-left: 40px;
+    margin-top: 40px;
+    margin-left: 50px;
 }

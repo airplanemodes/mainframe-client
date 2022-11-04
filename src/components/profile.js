@@ -24,7 +24,7 @@ export default function Profile() {
 
             let authoredArray = [];
             for (let i = 0; i < entries.length; i++) {
-                if (entries[i].author == userinit.username) {
+                if (entries[i].author === userinit.username) {
                     authoredArray.push(entries[i]);
                 }
             }
@@ -38,13 +38,15 @@ export default function Profile() {
             <div id='userdata'>
                 <h4>Username: {profile.username}</h4>
                 <h4>Email: {profile.email}</h4>
+                <h4>Points: {profile.points}</h4>
+                <br />
                 <h4>Enter date: {profile.entered}</h4>
                 <br />
                 <h4>Authored posts: </h4>
                 <ul>
                 {authored.map((element) => {
                     return (
-                        <li key={element.id}>{element.title}</li>
+                        <li key={element.id}>{element.title} (<a href={'/entries/'+element.id}>Read</a>)</li>
                         )
                     })}
                 </ul>

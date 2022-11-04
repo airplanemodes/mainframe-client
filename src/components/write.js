@@ -33,9 +33,11 @@ export default function Write() {
             const dateObj = new Date();
             formdata.created = `${dateObj.getFullYear()}-${dateObj.getMonth()+1}-${dateObj.getDate()}`;
             formdata.author = user.username;
+            formdata.points = 0;
             // console.log(formdata);
             const url = serverAddress+'/entries';
             const response = await axiosRequest(url, 'POST', formdata);
+            console.log(response);
             alert("Entry was written to the database");
             window.location = '/main';
         } catch (error) {
@@ -54,7 +56,10 @@ export default function Write() {
                 <br />
                 <label>Node</label>
                 <select {...nodeRef}>
-                    <option>core</option>
+                    <option>code</option>
+                    <option>network</option>
+                    <option>hack</option>
+                    <option>society</option>
                 </select>
                 <br />
                 <br />

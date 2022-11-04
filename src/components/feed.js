@@ -1,23 +1,16 @@
 import './feed.css';
 import { axiosRequest, getRequest, serverAddress } from '../services/api';
 import { useEffect, useState } from 'react';
-import { userdataUpdate } from '../services/userdata';
 
-export default function Feed() {
+export default function Feed(props) {
 
-    const [ user, setUser ] = useState({});
+    // console.log(props);
+
     const [ entries, setEntries ] = useState([]);
 
     useEffect(() => {
-        initializeUser();
         getEntries();
     }, []);
-    
-    const initializeUser = async() => {
-        let userinit = await userdataUpdate();
-        setUser(userinit);
-        console.log(userinit);
-    }
     
     const getEntries = async() => {
         let url = serverAddress+"/entries";
@@ -27,22 +20,29 @@ export default function Feed() {
 
     return (
         <div id='entriesPage'>
+            <nav id='nodeSwitch'>
+                <button className='nodeButton'>code</button>
+                <button className='nodeButton'>network</button>
+                <button className='nodeButton'>hack</button>
+                <button className='nodeButton'>society</button>
+            </nav>
             {entries.map((element) => {
                 return (
                     <article className='elementArticle' key={element.id}>
                         <h2 className='elementTitle'>{element.title}</h2>
-                        <p className='elementNode'>{element.node}</p>
-                        <p className='elementP'>{element.content}</p>
+                        <div className='elementNode'>{element.node}</div>
+                        <div className='elementContent'>{element.content}</div>
                         <a className='elementAuthor' href={'users/'+element.author}>{element.author}</a>
                         <br />
-                        <a href={'/entries/'+element.id}><button className='readButton'>Read</button></a>
-                        { user.moderator && <button onClick={async() => {
-                            // TODO: fix delete
-                            const url = serverAddress+'/entries/'+element.id;
-                            console.log(url);
-                            const data = await axiosRequest(url, "DELETE");
-                            console.log(data);
-                        }} className='elementDelete'>Delete</button> }
+                        <br />
+                        <div className='feedButtons'>
+                            <a href={'/entries/'+element.id}><button className='readButton'>Read</button></a>
+                            { props.user.moderator && <button onClick={async() => {
+                                const url = serverAddress+'/entries/'+element.id;
+                                const data = await axiosRequest(url, "DELETE");
+                                console.log(data);
+                            }} className='elementDelete'>Delete</button> }
+                        </div>
                     </article>
                 )
             })}
