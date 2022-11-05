@@ -21,11 +21,30 @@ export default function Feed(props) {
     return (
         <div id='entriesPage'>
             <nav id='nodeSwitch'>
-                <button className='nodeButton'>code</button>
-                <button className='nodeButton'>network</button>
-                <button className='nodeButton'>hack</button>
-                <button className='nodeButton'>society</button>
+                <button className='nodeButton' onClick={getEntries}>all</button>
+                <button className='nodeButton' onClick={async() => {
+                    let url = serverAddress+"/entries/node/code";
+                    let data = await getRequest(url);
+                    setEntries(data.reverse());
+                }}>code</button>
+                <button className='nodeButton' onClick={async() => {
+                    let url = serverAddress+"/entries/node/network";
+                    let data = await getRequest(url);
+                    setEntries(data.reverse());
+                }}>network</button>
+                <button className='nodeButton' onClick={async() => {
+                    let url = serverAddress+"/entries/node/hack";
+                    let data = await getRequest(url);
+                    setEntries(data.reverse());
+                }}>hack</button>
+                <button className='nodeButton' onClick={async() => {
+                    let url = serverAddress+"/entries/node/society";
+                    let data = await getRequest(url);
+                    console.log(data);
+                    setEntries(data.reverse());
+                }}>society</button>
             </nav>
+            {entries.length === 0 && <div className='noEntries'>Node is empty</div>}
             {entries.map((element) => {
                 return (
                     <article className='elementArticle' key={element.id}>
@@ -39,8 +58,8 @@ export default function Feed(props) {
                             <a href={'/entries/'+element.id}><button className='readButton'>Read</button></a>
                             { props.user.moderator && <button onClick={async() => {
                                 const url = serverAddress+'/entries/'+element.id;
-                                const data = await axiosRequest(url, "DELETE");
-                                console.log(data);
+                                await axiosRequest(url, "DELETE");
+                                getEntries();
                             }} className='elementDelete'>Delete</button> }
                         </div>
                     </article>

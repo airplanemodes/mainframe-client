@@ -1,16 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { axiosRequest, getRequest, serverAddress } from '../services/api';
+import { getRequest, serverAddress } from '../services/api';
 import './read.css';
 
 export default function Read() {
 
     const { id } = useParams();
     const [ entry, setEntry ] = useState({});
-    
-    useEffect(() => {
-        getSingleEntry();
-    }, []);
     
     const getSingleEntry = async() => {
         let url = serverAddress+"/entries/"+id;
@@ -19,8 +15,13 @@ export default function Read() {
             console.log(value);
             setEntry(value);
         });
-    }
+    };
 
+    useEffect(() => {
+        getSingleEntry();
+        // eslint-disable-next-line
+    }, []);
+    
     return (
         <div id='read'>
             <h3 id='entryHeader'>{entry.title}</h3>
