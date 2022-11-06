@@ -6,6 +6,7 @@ import Register from './components/register';
 import Write from './components/write';
 import Profile from './components/profile';
 import Read from './components/read';
+import Edit from './components/edit';
 
 export default function App() {
 
@@ -18,6 +19,7 @@ export default function App() {
         <Route path='/write' element={<Write />}/>
         <Route path='/profile' element={<Profile />}/>
         <Route path='/entries/:id' element={<Read />}/>
+        <Route path='/edit/:id' element={<Edit />}/>
       </Routes>
     </BrowserRouter>
   );

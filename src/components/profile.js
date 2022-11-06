@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { getRequest, serverAddress } from '../services/api';
 import { userdataUpdate } from '../services/userdata';
-import './profile.css';
+import './styles/profile.css';
 
 export default function Profile() {
 
-    const [ profile, setProfile ] = useState({});
-    const [ authored, setAuthored ] = useState([]);
+    let [ profile, setProfile ] = useState({});
+    let [ authored, setAuthored ] = useState([]);
 
     useEffect(() => {
         initializeProfile();

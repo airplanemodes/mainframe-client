@@ -1,0 +1,46 @@
+#edit {
+    background-color: var(--secondary-color);
+    margin: 0 auto;
+    margin-top: 100px;
+    color: var(--primary-color);
+    height: 640px;
+    width: 80vw;
+    border: 8px solid var(--primary-color);
+    border-radius: 15px;
+}
+
+#entryHeader {
+    text-align: center;
+    color: var(--bg-color);
+    background-color: var(--secondary-color);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#entryContent {
+    padding: 40px;
+    color: var(--primary-color);
+    background-color: var(--bg-color);
+}
+
+#entryDate {
+    padding: 40px;
+    color: var(--bg-color);
+}
+
+#entrySignature {
+    padding: 40px;
+    color: var(--primary-color);
+    background-color: var(--bg-color);
+}
+
+#entrySignature > a {
+    color: var(--primary-color);
+    margin-right: 10px;
+}
+
+#entryReturn {
+    background-color: var(--bg-color);
+    margin-top: 40px;
+    margin-left: 50px;
+}

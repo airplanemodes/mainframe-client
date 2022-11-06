@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { axiosRequest, serverAddress } from "../services/api";
 import { userdataUpdate } from "../services/userdata";
-import './write.css';
+import './styles/write.css';
 
 export default function Write() {
 
-    const [ user, setUser ] = useState();
+    let [ user, setUser ] = useState();
 
     useEffect(() => {
         initializeUser();

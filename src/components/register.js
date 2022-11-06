@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { axiosRequest, serverAddress } from '../services/api';
-import './register.css';
+import './styles/register.css';
 
 export default function Register() {
 

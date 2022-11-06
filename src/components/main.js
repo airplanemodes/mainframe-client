@@ -4,7 +4,7 @@ import { userdataUpdate } from '../services/userdata';
 import Header from './header';
 import Feed from './feed';
 import Footer from './footer';
-import './main.css';
+import './styles/main.css';
 
 export default function Main() {
 

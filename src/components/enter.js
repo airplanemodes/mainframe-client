@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { axiosRequest, serverAddress } from '../services/api';
 import { userdataUpdate } from '../services/userdata';
-import './enter.css';
+import './styles/enter.css';
 
 export default function Enter() {
 

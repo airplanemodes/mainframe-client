@@ -1,29 +1,26 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { getRequest, serverAddress } from '../services/api';
-import './styles/read.css';
+import { axiosRequest, serverAddress } from '../services/api';
+import './styles/edit.css';
 
-export default function Read() {
+export default function Edit() {
 
     const { id } = useParams();
     const [ entry, setEntry ] = useState({});
-    
-    const getSingleEntry = async() => {
-        let url = serverAddress+"/entries/"+id;
-        let data = getRequest(url);
-        data.then((value) => {
-            console.log(value);
-            setEntry(value);
-        });
-    };
+
+    const getEntryForEditing = async() => {
+        const url = serverAddress+'/edit/'+id;
+        const data = await axiosRequest(url);
+        console.log(data);
+        setEntry(data);
+    }
 
     useEffect(() => {
-        getSingleEntry();
-        // eslint-disable-next-line
-    }, []);
-    
+        getEntryForEditing();
+    },[]);
+
     return (
-        <div id='read'>
+        <div id='edit'>
             <h3 id='entryHeader'>{entry.title}</h3>
             <div id='entryContent'>{entry.content}</div>
             {/* <div id="entryDate">{entry.created}</div> */}
@@ -33,5 +30,5 @@ export default function Read() {
             </div>
             <a href='/main'><button id='entryReturn'>Return 0</button></a>
         </div>
-    )
+    );
 };

@@ -14,6 +14,8 @@ export const getRequest = async(url) => {
     }
 };
 
+
+
 export const axiosRequest = async(url, method, data) => {
     try {
         let response = await axios({

@@ -6,6 +6,12 @@
     margin-left: 100px;
 }
 
+.activeNode {
+    background-color: var(--primary-color);
+    height: 40px;
+    width: 100px;
+}
+
 .nodeButton {
     height: 40px;
     width: 100px;
@@ -55,7 +61,12 @@
     background-color: var(--bg-color);
 }
 
-.elementDelete {
+.editButton {
+    margin-left: 10px;
+    background-color: var(--bg-color);
+}
+
+.deleteButton {
     margin-left: 10px;
     background-color: var(--bg-color);
 }
