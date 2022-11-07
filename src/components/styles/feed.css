@@ -26,7 +26,7 @@
 .elementArticle {
     margin: 50px;
     margin-left: 100px;
-    height: 400px;
+    /* height: 400px; */
     width: 800px;
     background-color: var(--secondary-color);
     border: 5px solid var(--primary-color);
@@ -47,6 +47,7 @@
 }
 
 .elementContent {
+    width: 600px;
     margin: 30px;
     color: var(--bg-color);
 }
@@ -54,6 +55,10 @@
 .elementAuthor {
     margin: 30px;
     color: var(--bg-color);
+}
+
+.feedButtons {
+    margin-bottom: 30px;
 }
 
 .readButton {

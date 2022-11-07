@@ -1,27 +1,50 @@
 import './styles/feed.css';
 import { axiosRequest, getRequest, serverAddress } from '../services/api';
 import { useEffect, useState } from 'react';
+import Replies from './replies';
 
 export default function Feed(props) {
 
     // console.log(props);
 
     let [ entries, setEntries ] = useState([]);
+    let [ replies, setReplies ] = useState([]);
     let [ activeNode, setActiveNode ] = useState('all');
 
     useEffect(() => {
         getEntries();
+        getReplies();
     }, []);
     
     const getEntries = async() => {
-        let url = serverAddress+"/entries";
+        let url = serverAddress+'/entries';
         let data = await getRequest(url);
         setEntries(data.reverse());
     };
 
+    const getReplies = async() => {
+        let url = serverAddress+'/replies';
+        let data = await getRequest(url);
+        console.log(data);
+        setReplies(data);
+    };
+
+    let repliesMap = {};
+    for (let i = 0; i < replies.length; i++) {
+        repliesMap[replies[i].entryid] = [];
+    }
+    
+    for (let i = 0; i < replies.length; i++) {
+        if (repliesMap[replies[i].entryid]) {
+            repliesMap[replies[i].entryid].push(replies[i]);
+        }
+    }
+    console.log(repliesMap);
+
     return (
       <div id='entriesPage'>
         {/* Node switch buttons */}
+        {/* =================== */}
         <nav id='nodeSwitch'>
             <button className={activeNode === 'all' ? 'activeNode' : 'nodeButton'}
                     onClick={async() => {
@@ -53,8 +76,8 @@ export default function Feed(props) {
                         setActiveNode('society'); }}>society</button>
         </nav>
 
-
             {/* Entries feed */}
+            {/* ============ */}
             {entries.length === 0 && <div className='noEntries'>Node is empty</div>}
             {entries.map((element) => {
               return (
@@ -64,6 +87,13 @@ export default function Feed(props) {
                   <div className='elementContent'>{element.content}</div>
                   <a className='elementAuthor' href={'users/'+element.author}>{element.author}</a>
                   <br />
+
+                  {/* Replies */}
+                  {/* ======= */}
+                  <Replies repliesArray={repliesMap[element.id]} />
+
+                  {/* Entry buttons */}
+                  {/* ============= */}
                   <br />
                   <div className='feedButtons'>
                       <a href={'/entries/'+element.id}>

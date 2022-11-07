@@ -1,9 +1,9 @@
 #read {
     background-color: var(--secondary-color);
     margin: 0 auto;
-    margin-top: 100px;
+    margin-top: 80px;
+    margin-bottom: 100px;
     color: var(--primary-color);
-    height: 640px;
     width: 80vw;
     border: 8px solid var(--primary-color);
     border-radius: 15px;
@@ -18,7 +18,9 @@
 }
 
 #entryContent {
-    padding: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 40px;
     color: var(--primary-color);
     background-color: var(--bg-color);
 }
@@ -35,12 +37,13 @@
 }
 
 #entrySignature > a {
-    color: var(--primary-color);
     margin-right: 10px;
+    color: var(--primary-color);
 }
 
 #entryReturn {
     background-color: var(--bg-color);
     margin-top: 40px;
     margin-left: 50px;
+    margin-bottom: 30px;
 }

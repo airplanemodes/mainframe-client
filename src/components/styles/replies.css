@@ -1,0 +1,11 @@
+#replies {
+    background-color: var(--bg-color);
+    margin-top: 10px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.singleReply {
+    margin-top: 10px;
+    font-size: 12px;
+}
