@@ -1,5 +1,5 @@
 #edit {
-    background-color: var(--secondary-color);
+    background-color: var(--bg-color);
     margin: 0 auto;
     margin-top: 100px;
     color: var(--primary-color);
@@ -17,30 +17,37 @@
     padding-bottom: 10px;
 }
 
-#entryContent {
-    padding: 40px;
-    color: var(--primary-color);
-    background-color: var(--bg-color);
+#editForm {
+    padding: 30px;
 }
 
-#entryDate {
-    padding: 40px;
+#editForm > label {
+    margin: 5px;
+    padding: 5px
+}
+
+#editForm > select {
+    background-color: var(--primary-color);
+    width: 180px;
+    height: 30px;
+    margin-left: 30px;
+}
+
+#editForm > textarea {
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 14px;
+    width: 80%;
+    padding: 10px;
     color: var(--bg-color);
+    background-color: var(--primary-color);
+    resize: none;
 }
 
-#entrySignature {
-    padding: 40px;
-    color: var(--primary-color);
-    background-color: var(--bg-color);
+#editForm > button {
+    margin-left: 30px;
 }
 
-#entrySignature > a {
-    color: var(--primary-color);
-    margin-right: 10px;
-}
-
-#entryReturn {
-    background-color: var(--bg-color);
-    margin-top: 40px;
-    margin-left: 50px;
+#editReturn {
+    margin-left: 40px;
 }
