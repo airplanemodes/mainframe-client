@@ -1,6 +1,6 @@
-import './styles/replies.css';
+import './styles/short-replies.css';
 
-export default function Replies(props) {
+export default function ShortReplies(props) {
 
     return (
         <div id='replies'>
@@ -8,7 +8,7 @@ export default function Replies(props) {
                 return (
                     <article key={element.id} className="singleReply">
                         <div>#{props.repliesArray.indexOf(element) + 1} @ {element.username}</div>
-                        <div>$ {element.body}</div>
+                        <div>{element.body}</div>
                     </article>
                 )
             })}

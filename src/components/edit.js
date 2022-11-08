@@ -65,7 +65,7 @@ export default function Edit() {
                 <br />
                 <textarea rows={12} {...contentRef} defaultValue={entry.content}/>
                 <br />
-                <button>Edit</button>
+                <button>Save</button>
             </form>
             <a href='/main'><button id='editReturn'>Return 0</button></a>
         </div>

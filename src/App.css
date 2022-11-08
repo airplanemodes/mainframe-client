@@ -11,8 +11,8 @@
 
 
 :root {
-    --primary-color: green;
-    --secondary-color: darkgreen;
+    --primary-color: rgb(0, 160, 0);
+    --secondary-color: rgb(0, 120, 0);
     --light-color: white;
     --bg-color: black;
 }

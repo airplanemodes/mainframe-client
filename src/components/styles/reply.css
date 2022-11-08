@@ -1,0 +1,30 @@
+#replyForm {
+    background-color: var(--secondary-color);
+    margin: 0 auto;
+    margin-bottom: 100px;
+    color: var(--primary-color);
+    width: 50vw;
+    border: 5px solid var(--primary-color);
+    border-radius: 15px;
+}
+
+#replyHeader {
+    color: var(--bg-color);
+    margin: 20px;
+}
+
+#replyTextArea {
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    display: flex;
+    margin: 0 auto;
+    font-size: 20px;
+    resize: none;
+    width: 95%;
+    outline: none;
+}
+
+#replyButton {
+    margin: 20px;
+    background-color: var(--bg-color);
+}

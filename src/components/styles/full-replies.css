@@ -1,0 +1,14 @@
+#fullReplies {
+    background-color: var(--bg-color);
+    margin: 0 auto;
+    margin-bottom: 100px;
+    color: var(--primary-color);
+    width: 40vw;
+    border: 5px solid var(--primary-color);
+    border-radius: 15px;
+}
+
+.singleFullReply {
+    padding: 20px;
+    color: var(--primary-color);
+}
