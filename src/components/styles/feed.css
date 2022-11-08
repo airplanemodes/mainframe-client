@@ -61,17 +61,7 @@
     margin-bottom: 30px;
 }
 
-.readButton {
-    margin-left: 30px;
-    background-color: var(--bg-color);
-}
-
-.editButton {
-    margin-left: 10px;
-    background-color: var(--bg-color);
-}
-
-.deleteButton {
+.delete-button {
     margin-left: 10px;
     background-color: var(--bg-color);
 }

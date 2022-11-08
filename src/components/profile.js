@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getRequest, serverAddress } from '../services/api';
 import { userdataUpdate } from '../services/userdata';
+import ReturnLight from './buttons/return-light';
 import './styles/profile.css';
 
 export default function Profile() {
@@ -51,7 +52,9 @@ export default function Profile() {
                     })}
                 </ul>
             </div>
-            <a href='/main'><button id='profileReturn'>Return 0</button></a>
+            <div id='profile-return-div'>
+                <ReturnLight />
+            </div>
         </div>
     )
 };

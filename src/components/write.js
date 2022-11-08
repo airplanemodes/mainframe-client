@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { axiosRequest, serverAddress } from "../services/api";
 import { userdataUpdate } from "../services/userdata";
+import ReturnLight from "./buttons/return-light";
 import './styles/write.css';
 
 export default function Write() {
@@ -69,7 +70,9 @@ export default function Write() {
                 <br />
                 <button>Write</button>
             </form>
-            <a href='/main'><button id='writeReturn'>Return 0</button></a>
+            <div id="write-return-div">
+                <ReturnLight />
+            </div>
         </div>
     )
 }

@@ -4,6 +4,7 @@ import { getRequest, serverAddress } from '../services/api';
 import { userdataUpdate } from '../services/userdata';
 import FullReplies from './full-replies';
 import Reply from './reply';
+import ReturnDark from './buttons/return-dark';
 import './styles/read.css';
 
 export default function Read() {
@@ -65,11 +66,13 @@ export default function Read() {
                     <a href={'/users/'+entry.author}>{entry.author}</a>
                     @ {entry.node} {entry.created}
                 </div>
-                <a href='/main'><button id='entryReturn'>Return 0</button></a>
+                <div id='read-return-div'>
+                    <ReturnDark />
+                </div>
             </div>
             { user.username && repliesMap[entry.id] && 
                 <FullReplies repliesArray={repliesMap[entry.id]} /> }
-                
+
             { user.username && <Reply user={user} entryid={id}/> }
         </div>
     )
