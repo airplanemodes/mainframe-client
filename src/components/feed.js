@@ -7,10 +7,11 @@ import EditButton from './buttons/edit-button';
 
 export default function Feed(props) {
 
-// console.log(props);
+  // console.log(props);
 
   let [ entries, setEntries ] = useState([]);
   let [ replies, setReplies ] = useState([]);
+  let [ credits, setCredits ] = useState([]);
   let [ activeNode, setActiveNode ] = useState('all');
   
   
@@ -26,20 +27,54 @@ export default function Feed(props) {
     setReplies(data);
   };
 
+  const getCredits = async() => {
+    let url = serverAddress+'/credits';
+    let data = await getRequest(url);
+    setCredits(data);
+  };
+
   useEffect(() => {
     getEntries();
     getReplies();
+    getCredits();
   }, []);
     
   let repliesMap = {};
   for (let i = 0; i < replies.length; i++) {
     repliesMap[replies[i].entryid] = [];
   };
-  
   for (let i = 0; i < replies.length; i++) {
     if (repliesMap[replies[i].entryid]) {
       repliesMap[replies[i].entryid].push(replies[i]);
     };
+  };
+
+  let creditsMap = {};
+  for (let i = 0; i < credits.length; i++) {
+    creditsMap[credits[i].entryid] = [];
+  };
+  for (let i = 0; i < credits.length; i++) {
+    if (creditsMap[credits[i].entryid]) {
+        creditsMap[credits[i].entryid].push(credits[i].userid);
+    }
+  }
+  
+  const applyPlus = async(event) => {
+    const creditData = {};
+    creditData.entryid = event.currentTarget.getAttribute('elem');
+    creditData.userid = props.user.id;
+    const url = serverAddress+'/credits';
+    await axiosRequest(url, 'POST', creditData);
+    getCredits();
+  };
+
+  const applyMinus = async(event) => {
+    const creditData = {};
+    creditData.entryid = event.currentTarget.getAttribute('elem');
+    creditData.userid = props.user.id;
+    const url = serverAddress+'/credits';
+    await axiosRequest(url, 'DELETE', creditData);
+    getCredits();
   };
 
   return (
@@ -110,6 +145,17 @@ export default function Feed(props) {
                   await axiosRequest(url, 'DELETE');
                   getEntries();
                 }} className='delete-button'>Delete</button> }
+              { props.user.id ? (
+                  creditsMap[element.id] ? (
+                    creditsMap[element.id].includes(props.user.id) ?
+                      <button className='minus-button' elem={element.id} onClick={applyMinus}>-</button> : 
+                      <button className='plus-button' elem={element.id} onClick={applyPlus}>+</button>
+                  ) : false
+                ) : false }
+              { props.user.id ? (
+                  creditsMap[element.id] ? <div className='credits-counter'>Credits: {creditsMap[element.id].length}</div>
+                                         : <div className='credits-counter'>Credits: 0</div>
+                ) : false }
             </div>
           </article>
         )

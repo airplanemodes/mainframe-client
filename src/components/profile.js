@@ -16,7 +16,7 @@ export default function Profile() {
     const initializeProfile = async() => {
         let userinit = await userdataUpdate();
         setProfile(userinit);
-        console.log(userinit); // User object
+        // console.log(userinit); // User object
         if (!userinit.username) {
             window.location = '/main'; // Redirect if token expired
         } else {

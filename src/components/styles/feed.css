@@ -47,7 +47,7 @@
 }
 
 .elementContent {
-    width: 600px;
+    width: 700px;
     margin: 30px;
     color: var(--bg-color);
 }
@@ -63,5 +63,29 @@
 
 .delete-button {
     margin-left: 10px;
+    background-color: var(--bg-color);
+}
+
+.credits-counter {
+    float: right;
+    margin-top: 25px;
+    margin-right: 20px;
+    margin-left: 20px;
+    color: var(--bg-color);
+}
+
+.plus-button {
+    float: right;
+    font-size: 14px;
+    margin-top: 20px;
+    margin-right: 30px;
+    background-color: var(--bg-color);
+}
+
+.minus-button {
+    float: right;
+    font-size: 14px;
+    margin-top: 20px;
+    margin-right: 30px;
     background-color: var(--bg-color);
 }
