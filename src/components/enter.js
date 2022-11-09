@@ -6,20 +6,21 @@ import './styles/enter.css';
 
 export default function Enter() {
 
+    // eslint-disable-next-line
     let [ user, setUser ] = useState(null);
     let [ error, setError ] = useState(null);
-
-    useEffect(() => {
-        initializeUser();
-    },[]);
   
     const initializeUser = async() => {
         let userinit = await userdataUpdate();
         setUser(userinit);
         if (userinit.username) {
             window.location = '/main';
-        }
-    }
+        };
+    };
+
+    useEffect(() => {
+        initializeUser();
+    },[]);
 
     const { register, handleSubmit } = useForm();
     const submit = async(formdata) => {
@@ -33,7 +34,7 @@ export default function Enter() {
         } catch (error) {
             // console.log(error.response.data);
             setError(error.response.data)
-        }
+        };
     };
 
     let usernameRef = register('username');
@@ -56,6 +57,6 @@ export default function Enter() {
             <p>continue as <a href="/main">guest</a></p>
             <p>create new <a href="/register">user</a></p>
         </div>
-    )
+    );
 
 };

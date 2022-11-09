@@ -14,7 +14,7 @@ export default function Feed(props) {
   let [ credits, setCredits ] = useState([]);
   let [ activeNode, setActiveNode ] = useState('all');
   
-  
+
   const getEntries = async() => {
     let url = serverAddress+'/entries';
     let data = await getRequest(url);
@@ -33,12 +33,14 @@ export default function Feed(props) {
     setCredits(data);
   };
 
+
   useEffect(() => {
     getEntries();
     getReplies();
     getCredits();
   }, []);
     
+
   let repliesMap = {};
   for (let i = 0; i < replies.length; i++) {
     repliesMap[replies[i].entryid] = [];
@@ -49,6 +51,7 @@ export default function Feed(props) {
     };
   };
 
+
   let creditsMap = {};
   for (let i = 0; i < credits.length; i++) {
     creditsMap[credits[i].entryid] = [];
@@ -56,9 +59,10 @@ export default function Feed(props) {
   for (let i = 0; i < credits.length; i++) {
     if (creditsMap[credits[i].entryid]) {
         creditsMap[credits[i].entryid].push(credits[i].userid);
-    }
-  }
+    };
+  };
   
+
   const applyPlus = async(event) => {
     const creditData = {};
     creditData.entryid = event.currentTarget.getAttribute('elem');
@@ -77,6 +81,7 @@ export default function Feed(props) {
     getCredits();
   };
 
+  
   return (
     <div id='entriesPage'>
       {/* Node switch buttons */}
@@ -150,7 +155,7 @@ export default function Feed(props) {
                     creditsMap[element.id].includes(props.user.id) ?
                       <button className='minus-button' elem={element.id} onClick={applyMinus}>-</button> : 
                       <button className='plus-button' elem={element.id} onClick={applyPlus}>+</button>
-                  ) : false
+                  ) : <button className='plus-button' elem={element.id} onClick={applyPlus}>+</button>
                 ) : false }
               { props.user.id ? (
                   creditsMap[element.id] ? <div className='credits-counter'>Credits: {creditsMap[element.id].length}</div>
@@ -159,7 +164,7 @@ export default function Feed(props) {
             </div>
           </article>
         )
-    })}
-  </div>
-);
+      })}
+    </div>
+  );
 };

@@ -8,10 +8,6 @@ export default function Profile() {
 
     let [ profile, setProfile ] = useState({});
     let [ authored, setAuthored ] = useState([]);
-
-    useEffect(() => {
-        initializeProfile();
-    },[]);
   
     const initializeProfile = async() => {
         let userinit = await userdataUpdate();
@@ -30,8 +26,12 @@ export default function Profile() {
                 }
             }
             setAuthored(authoredArray);
-        }
+        };
     };
+
+    useEffect(() => {
+        initializeProfile();
+    },[]);
 
     return (
         <div id='profile'>
@@ -43,14 +43,16 @@ export default function Profile() {
                 <br />
                 <h4>Enter date: {profile.entered}</h4>
                 <br />
-                <h4>Authored posts: </h4>
-                <ul>
-                {authored.map((element) => {
-                    return (
-                        <li key={element.id}>{element.title} (<a href={'/entries/'+element.id}>Read</a>)</li>
-                        )
-                    })}
-                </ul>
+                { authored.length > 0 && <div>
+                    <h4>Authored posts: </h4>
+                    <ul>
+                        {authored.map((element) => {
+                            return (
+                                <li key={element.id}>{element.title} (<a href={'/entries/'+element.id}>Read</a>)</li>
+                                )
+                            })}
+                    </ul>
+                </div>}
             </div>
             <div id='profile-return-div'>
                 <ReturnLight />

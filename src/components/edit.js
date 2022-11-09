@@ -12,7 +12,6 @@ export default function Edit() {
     const getEntryForEditing = async() => {
         const url = serverAddress+'/edit/'+id;
         const data = await axiosRequest(url);
-        console.log(data);
         setEntry(data);
     }
     

@@ -29,8 +29,8 @@ export default function Register() {
                 setError('email already taken');
             } else {
                 setError(error.response.data);
-            }
-        }
+            };
+        };
     };
 
     let usernameRef = register('username', { required: true, maxLength: 16 });

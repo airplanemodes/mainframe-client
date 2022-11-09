@@ -9,10 +9,6 @@ import './styles/main.css';
 export default function Main() {
 
     let [ user, setUser ] = useState();
-
-    useEffect(() => {
-        initializeUser();
-    },[]);
   
     const initializeUser = async() => {
         let userinit = await userdataUpdate();
@@ -24,11 +20,15 @@ export default function Main() {
         }
     };
 
+    useEffect(() => {
+        initializeUser();
+    },[]);
+
     return (
         <div>
             <Header user={user || "guest"}/>
                 <Feed user={user || "guest"}/>
             <Footer />
         </div>
-    )
+    );
 };

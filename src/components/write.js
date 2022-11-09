@@ -9,10 +9,6 @@ export default function Write() {
 
     let [ user, setUser ] = useState();
 
-    useEffect(() => {
-        initializeUser();
-    },[]);
-
     const initializeUser = async() => {
         let userinit = await userdataUpdate();
         // console.log(userinit);
@@ -20,8 +16,12 @@ export default function Write() {
             setUser(userinit);
         } else {
             window.location = '/main';
-        }
+        };
     };
+
+    useEffect(() => {
+        initializeUser();
+    },[]);
 
     const { register, handleSubmit } = useForm();
 
@@ -43,7 +43,7 @@ export default function Write() {
             window.location = '/main';
         } catch (error) {
             console.log(error);
-        }
+        };
     };
 
     return (

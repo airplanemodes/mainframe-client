@@ -7,19 +7,21 @@ import Write from './components/write';
 import Profile from './components/profile';
 import Read from './components/read';
 import Edit from './components/edit';
+import NoPage from './components/nopage';
 
 export default function App() {
 
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Enter />}/>
+        <Route exact path='/' element={<Enter />}/>
         <Route path='/main' element={<Main />}/>
         <Route path='/register' element={<Register />}/>
         <Route path='/write' element={<Write />}/>
         <Route path='/profile' element={<Profile />}/>
         <Route path='/entries/:id' element={<Read />}/>
         <Route path='/edit/:id' element={<Edit />}/>
+        <Route path='*' element={<NoPage />} />
       </Routes>
     </BrowserRouter>
   );
