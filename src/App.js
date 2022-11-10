@@ -8,6 +8,7 @@ import Profile from './components/profile';
 import Read from './components/read';
 import Edit from './components/edit';
 import NoPage from './components/nopage';
+import Look from './components/look';
 
 export default function App() {
 
@@ -19,6 +20,7 @@ export default function App() {
         <Route path='/register' element={<Register />}/>
         <Route path='/write' element={<Write />}/>
         <Route path='/profile' element={<Profile />}/>
+        <Route path='/users/:username' element={<Look />} />
         <Route path='/entries/:id' element={<Read />}/>
         <Route path='/edit/:id' element={<Edit />}/>
         <Route path='*' element={<NoPage />} />
