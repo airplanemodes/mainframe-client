@@ -1,0 +1,36 @@
+#look {
+    width: 40%;
+    border: 5px solid var(--primary-color);
+    height: 400px;
+    margin: 0 auto;
+    margin-top: 200px;
+    border-radius: 5px;
+    background-color: var(--bg-color);
+}
+
+#look-header {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    text-align: center;
+    margin: 5px;
+}
+
+#look-username {
+    margin-top: 20px;
+    margin-left: 30px;
+    font-size: 20px;
+}
+
+#look-authored {
+    font-size: 14px;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+#look-entered {
+    margin-left: 30px;
+}
+
+#look-return {
+    margin-left: 30px;
+}

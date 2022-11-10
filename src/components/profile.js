@@ -44,7 +44,7 @@ export default function Profile() {
                 <h4>Enter date: {profile.entered}</h4>
                 <br />
                 { authored.length > 0 && <div>
-                    <h4>Authored posts: </h4>
+                    <h4>Authored entries: </h4>
                     <ul>
                         {authored.map((element) => {
                             return (
