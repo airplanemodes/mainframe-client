@@ -14,7 +14,7 @@ export default function Profile() {
     setProfile(userinit);
     // console.log(userinit); // User object
     if (!userinit.username) {
-        window.location = '/main'; // Redirect if token expired
+      window.location = '/main'; // Redirect if token expired
     } else {
       let url = serverAddress+"/entries";
       let entries = await getRequest(url); // All entries
@@ -29,7 +29,7 @@ export default function Profile() {
   };
 
   useEffect(() => {
-      initializeProfile();
+    initializeProfile();
   }, []);
 
   return (

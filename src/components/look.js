@@ -22,7 +22,7 @@ export default function Look() {
     let authoredArray = [];
     for (let i = 0; i < entries.length; i++) {
       if (entries[i].author === lookOn.username) {
-          authoredArray.push(entries[i]);
+        authoredArray.push(entries[i]);
       };
     };
     setAuthored(authoredArray);
@@ -40,14 +40,14 @@ export default function Look() {
       <div id='look-username'>User: {profileForLook.username}</div>
       <div id='look-entered'>Entered Mainframe on {profileForLook.entered}</div>
       { authored.length > 0 && <div id='look-authored'>
-        <h4>Authored entries: </h4>
+        <h4>Authored entries:</h4>
           <ul>
             {authored.map((element) => {
               return (
                 <li key={element.id}>{element.title} (
                   <a href={'/entries/'+element.id}>Read</a>
                 )</li>
-              )
+              );
             })}
           </ul>
         </div>
