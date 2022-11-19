@@ -51,7 +51,8 @@ export default function Profile() {
             )
           })}
           </ul>
-          </div>}
+          </div>
+        }
         </div>
         <div id='profile-return-div'>
           <ReturnLight />

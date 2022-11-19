@@ -58,7 +58,7 @@ export default function Feed(props) {
   };
   for (let i = 0; i < credits.length; i++) {
     if (creditsMap[credits[i].entryid]) {
-        creditsMap[credits[i].entryid].push(credits[i].userid);
+      creditsMap[credits[i].entryid].push(credits[i].userid);
     };
   };
   

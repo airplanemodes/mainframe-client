@@ -51,9 +51,9 @@ export default function Look() {
             })}
           </ul>
         </div>
-      }
+      };
       <div id='look-return'>
-          <ReturnLight />
+        <ReturnLight />
       </div>
     </div>
   );
