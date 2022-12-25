@@ -1,0 +1,14 @@
+#chat-box {
+  margin-top: 100px;
+  margin-left: 150px;
+  width: 400px;
+  background-color: var(--secondary-color);
+  border: 3px solid var(--primary-color);
+  border-radius: 5px;
+  color: var(--bg-color);
+  padding: 5px;
+}
+
+#chat-box h4 {
+  text-align: center;
+}

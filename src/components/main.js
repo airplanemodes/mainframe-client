@@ -3,6 +3,7 @@ import { userdataUpdate } from '../services/userdata';
 
 import Header from './header';
 import Feed from './feed';
+import Chat from './chat';
 import Footer from './footer';
 import './styles/main.css';
 
@@ -27,7 +28,14 @@ export default function Main() {
   return (
     <div>
       <Header user={user || "guest"}/>
-        <Feed user={user || "guest"}/>
+        <table id='main-table'>
+          <tbody>
+            <tr>
+              <td><Feed user={user || "guest"}/></td>
+              <td><Chat user={user || "guest"}/></td>
+            </tr>
+          </tbody>
+        </table>
       <Footer />
     </div>
   );

@@ -11,7 +11,7 @@ export default function ShortReplies(props) {
             <div>{element.body}</div>
           </article>
         );
-      })};
+      })}
     </div>
   );
 };
