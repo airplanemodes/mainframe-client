@@ -16,26 +16,34 @@ export default function Chat(props) {
   let inputRef = useRef();
 
   const socketListener = () => {
-    socket.on("msgToClient", (dataFromSocket) => {
-      setMessages(messages => [...messages, dataFromSocket]);
-      console.log(dataFromSocket);
+    socket.on('msgFromServer', (dataFromServer) => {
+      setMessages(messages => [...messages, dataFromServer]);
+      console.log(dataFromServer);
     });
   };
 
   const onSend = () => {
-    socket.emit("msgFromClient", { msg: inputRef.current.value, id: props.user.id })
-    console.log(inputRef.current.value);
-  }
+    socket.emit("msgFromClient", { 
+      msg: inputRef.current.value, 
+      name: props.user.usernamename 
+    });
+    console.log(`${props.user.username}: ${inputRef.current.value}`);
+  };
 
   useEffect(() => {
     socketListener();
   }, []);
 
 	return (
-		<div id='chat-box'>
+		<aside id='chat-box'>
       <h4>Message exchange</h4>
-      <input ref={inputRef} type="text" />
-      <button onClick={onSend}>Send</button>
-    </div>
+      <div id='chat-messages'>
+        One<br/>
+        Two<br/>
+        Three<br/>
+      </div>
+      <input id='chat-input' ref={inputRef} type='text' />
+      <button id='chat-send' onClick={onSend}>Send</button>
+    </aside>
 	);
 };
