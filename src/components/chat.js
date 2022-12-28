@@ -3,13 +3,7 @@ import { io } from 'socket.io-client';
 import { serverAddress } from '../services/api';
 import './styles/chat.css';
 
-const socket = io(serverAddress, {
-  // transports: ['websocket'],
-  // withCredentials: true,
-  // extraHeaders: {
-  //   "my-custom-header": "abcd"
-  // }
-});
+const socket = io(serverAddress);
 
 export default function Chat(props) {
 
@@ -42,10 +36,9 @@ export default function Chat(props) {
         { messages.map((element, index) => {
           return (
             <React.Fragment key={index}>
-              { element.name === props.user.username ?
-                <div>You: { element.msg }</div> :
-                <div>{ element.name }: { element.msg }</div>
-              }
+              { element.name ?
+              <div>{element.name}: {element.msg}</div> :
+              <div id='system-message'>* {element}</div> }
             </React.Fragment>
           )
         })}

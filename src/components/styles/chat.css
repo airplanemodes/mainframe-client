@@ -33,3 +33,7 @@
   margin-left: 10px;
   background-color: var(--bg-color);
 }
+
+#system-message {
+  color: var(--secondary-color);
+}
