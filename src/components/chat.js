@@ -17,12 +17,14 @@ export default function Chat(props) {
     });
   };
 
-  const onSend = () => {
+  const onSend = (event) => {
+    event.preventDefault();
     socket.emit('msgFromClient', { 
       msg: inputRef.current.value, 
       name: props.user.username 
     });
-    console.log(`${props.user.username}: ${inputRef.current.value}`);
+    inputRef.current.value = "";
+    // console.log(`${props.user.username}: ${inputRef.current.value}`);
   };
 
   useEffect(() => {
@@ -43,8 +45,10 @@ export default function Chat(props) {
           )
         })}
       </div>
-      <input id='chat-input' ref={inputRef} type='text' />
-      <button id='chat-send' onClick={onSend}>Send</button>
+      <form onSubmit={onSend}>
+        <input id='chat-input' ref={inputRef} type='text' />
+        <button id='chat-send' type='submit'>Send</button>
+      </form>
     </aside>
 	);
 };

@@ -13,7 +13,7 @@ export default function Edit() {
     const url = serverAddress+'/edit/'+id;
     const data = await axiosRequest(url);
     setEntry(data);
-  }
+  };
   
   useEffect(() => {
     getEntryForEditing();
