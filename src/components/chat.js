@@ -13,7 +13,8 @@ export default function Chat(props) {
   const socketListener = () => {
     socket.on('msgFromServer', (dataFromServer) => {
       setMessages(messages => [...messages, dataFromServer]);
-      console.log(dataFromServer);
+      document.getElementById('chat-messages').scrollTop = 
+      document.getElementById('chat-messages').scrollHeight;
     });
   };
 
