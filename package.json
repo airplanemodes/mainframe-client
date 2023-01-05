@@ -1,6 +1,6 @@
 {
   "name": "mainframe-client",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
@@ -20,6 +20,21 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/airplanemodes/mainframe-client.git"
+  },
+  "keywords": [
+    "social",
+    "blog",
+    "communication",
+    "network",
+    "binary",
+    "interactive",
+    "platform"
+  ],
+  "author": "airplanemodes",
+  "licnese": "MIT",
   "eslintConfig": {
     "extends": [
       "react-app",
