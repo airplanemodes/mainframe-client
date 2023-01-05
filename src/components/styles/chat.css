@@ -33,6 +33,7 @@
   font-size: 14px;
   background-color: var(--bg-color);
   overflow-y: scroll;
+  overflow-wrap: break-word;
   max-height: 400px;
 }
 

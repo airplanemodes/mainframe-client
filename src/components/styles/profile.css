@@ -3,12 +3,12 @@
     margin-top: 100px;
     color: var(--primary-color);
     height: 640px;
-    width: 80vw;
+    width: 40vw;
     border: 8px solid var(--primary-color);
     border-radius: 15px;
 }
 
-#profileHeader {
+#profile-header {
     text-align: center;
     color: var(--bg-color);
     background-color: var(--secondary-color);
@@ -16,9 +16,9 @@
     padding-bottom: 10px;
 }
 
-#profile-return-div {
-    margin-top: 50px;
-    margin-left: 100px;
+#profile-return {
+    margin-top: 100px;
+    margin-left: 300px;
 }
 
 #userdata {

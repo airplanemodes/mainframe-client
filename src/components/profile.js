@@ -34,7 +34,7 @@ export default function Profile() {
 
   return (
     <div id='profile'>
-      <h3 id='profileHeader'>User profile</h3>
+      <h3 id='profile-header'>User profile</h3>
         <div id='userdata'>
         <h4>Username: {profile.username}</h4>
         <h4>Email: {profile.email}</h4>
@@ -43,18 +43,18 @@ export default function Profile() {
         <h4>Enter date: {profile.entered}</h4>
         <br />
         { authored.length > 0 && <div>
-        <h4>Authored entries: </h4>
-          <ul>
-          {authored.map((element) => {
-            return (
-              <li key={element.id}>{element.title} (<a href={'/entries/'+element.id}>Read</a>)</li>
-            )
-          })}
-          </ul>
+          <h4>Authored entries: </h4>
+            <ul>
+              {authored.map((element) => {
+                return (
+                  <li key={element.id}>{element.title} (<a href={'/entries/'+element.id}>Read</a>)</li>
+                )
+              })}
+            </ul>
           </div>
         }
         </div>
-        <div id='profile-return-div'>
+        <div id='profile-return'>
           <ReturnLight />
         </div>
     </div>

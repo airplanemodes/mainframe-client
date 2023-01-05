@@ -47,11 +47,11 @@ export default function Look() {
                 <li key={element.id}>{element.title} (
                   <a href={'/entries/'+element.id}>Read</a>
                 )</li>
-              );
+              )
             })}
           </ul>
         </div>
-      };
+      }
       <div id='look-return'>
         <ReturnLight />
       </div>

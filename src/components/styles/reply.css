@@ -18,10 +18,11 @@
     color: var(--primary-color);
     display: flex;
     margin: 0 auto;
-    font-size: 20px;
+    font-size: 18px;
     resize: none;
     width: 95%;
     outline: none;
+    padding: 5px;
 }
 
 #replyButton {

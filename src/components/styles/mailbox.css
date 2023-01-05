@@ -1,0 +1,30 @@
+#mailbox {
+  margin: 0 auto;
+  margin-top: 100px;
+  color: var(--primary-color);
+  height: 640px;
+  width: 40vw;
+  border: 8px solid var(--primary-color);
+  border-radius: 15px;
+}
+
+#mailbox-header {
+  text-align: center;
+  color: var(--bg-color);
+  background-color: var(--secondary-color);
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#mailbox-switch {
+  text-align: center;
+}
+
+#mailbox-return {
+  margin-top: 100px;
+  margin-left: 300px;
+}
+
+.active-box {
+  background-color: var(--primary-color);
+}
