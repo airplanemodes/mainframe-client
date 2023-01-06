@@ -12,7 +12,6 @@ import NoPage from './components/nopage';
 import Look from './components/look';
 
 export default function App() {
-
   return (
     <BrowserRouter>
       <Routes>

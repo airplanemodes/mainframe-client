@@ -1,4 +1,4 @@
-#replyForm {
+#reply {
     background-color: var(--secondary-color);
     margin: 0 auto;
     margin-bottom: 100px;
@@ -8,12 +8,12 @@
     border-radius: 15px;
 }
 
-#replyHeader {
+#reply-header {
     color: var(--bg-color);
     margin: 20px;
 }
 
-#replyTextArea {
+#reply-textarea {
     background-color: var(--bg-color);
     color: var(--primary-color);
     display: flex;
@@ -25,7 +25,7 @@
     padding: 5px;
 }
 
-#replyButton {
+#reply-button {
     margin: 20px;
     background-color: var(--bg-color);
 }

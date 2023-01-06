@@ -25,10 +25,10 @@ export default function Reply(props) {
   let bodyRef = register('body', { required: true, maxLength: 255 });
 
   return (
-    <form id='replyForm' onSubmit={handleSubmit(writeReply)}>
-      <h3 id='replyHeader'>Reply</h3>
-      <textarea id='replyTextArea' rows={4} maxLength={255} {...bodyRef}/>
-      <button id='replyButton'>Reply</button>
+    <form id='reply' onSubmit={handleSubmit(writeReply)}>
+      <h3 id='reply-header'>Reply</h3>
+      <textarea id='reply-textarea' rows={4} maxLength={255} {...bodyRef}/>
+      <button id='reply-button'>Reply</button>
     </form>
   );
 };
