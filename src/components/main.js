@@ -32,7 +32,7 @@ export default function Main() {
           <tbody>
             <tr>
               <td><Feed user={user || "guest"}/></td>
-              <td><Chat user={user || "guest"}/></td>
+              <td>{ user != 'guest' && <Chat user={user}/> }</td>
             </tr>
           </tbody>
         </table>

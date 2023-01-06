@@ -3,18 +3,26 @@
     src: url('./fonts/JetBrainsMono-Regular.ttf');
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    font-family: JetBrainsMono Regular;
-}
-
-
 :root {
     --primary-color: rgb(0, 160, 0);
     --secondary-color: rgb(0, 120, 0);
     --light-color: white;
     --bg-color: black;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: var(--secondary-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: JetBrainsMono Regular;
 }
 
 body {

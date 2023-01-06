@@ -20,17 +20,17 @@ export default function Header(props) {
       <React.Fragment>
         <div className='userbar'>
           <h4>logged as guest</h4>
-          <a href='/'><button id='loginButton'>Login</button></a>
+          <a href='/'><button id='login-bar-button'>Login</button></a>
         </div>
       </React.Fragment>
       :
       <React.Fragment>
         <div className='userbar'>
           <h4>logged as {props.user.username}</h4>
-          <a href='/write'><button id='writeButton'>Write</button></a>
-          <a href='/mailbox'><button id='mailboxButton'>Mailbox</button></a>
-          <a href='/profile'><button id='profileButton'>Profile</button></a>
-          <button id='logoutButton' onClick={userLogout}>Logout</button>
+          <a href='/write'><button>Write</button></a>
+          <a href='/mailbox'><button>Mailbox</button></a>
+          <a href='/profile'><button>Profile</button></a>
+          <button onClick={userLogout}>Logout</button>
         </div>
       </React.Fragment>
       }

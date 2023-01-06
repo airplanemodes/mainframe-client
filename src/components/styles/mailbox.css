@@ -1,8 +1,16 @@
+#pm-table {
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.pm-table-td {
+  vertical-align: top;
+}
+
 #mailbox {
   margin: 0 auto;
-  margin-top: 100px;
   color: var(--primary-color);
-  height: 640px;
+  height: 680px;
   width: 40vw;
   border: 8px solid var(--primary-color);
   border-radius: 15px;

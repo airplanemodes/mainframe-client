@@ -11,16 +11,8 @@
 }
 
 #chat-box h4 {
+  padding-bottom: 5px;
   text-align: center;
-}
-
-::-webkit-scrollbar {
-  width: 10px;
-  background-color: var(--secondary-color);
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: var(--primary-color);
 }
 
 #chat-messages {

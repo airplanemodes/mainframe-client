@@ -1,0 +1,32 @@
+#compose {
+  background-color: var(--secondary-color);
+  margin: 0 auto;
+  color: var(--primary-color);
+  width: 30vw;
+  border: 5px solid var(--primary-color);
+  border-radius: 15px;
+}
+
+#compose-header {
+  text-align: center;
+  color: var(--bg-color);
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#compose-textarea {
+  background-color: var(--bg-color);
+  color: var(--primary-color);
+  display: flex;
+  margin: 0 auto;
+  font-size: 18px;
+  resize: none;
+  width: 95%;
+  outline: none;
+  padding: 5px;
+}
+
+#compose-button {
+  margin: 20px;
+  background-color: var(--bg-color);
+}
