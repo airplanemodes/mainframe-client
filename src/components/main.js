@@ -7,6 +7,7 @@ import Chat from './chat';
 import Footer from './footer';
 import './styles/main.css';
 
+
 export default function Main() {
 
   let [ user, setUser ] = useState();
@@ -32,7 +33,7 @@ export default function Main() {
           <tbody>
             <tr>
               <td><Feed user={user || "guest"}/></td>
-              <td>{ user != 'guest' && <Chat user={user}/> }</td>
+              <td>{user !== 'guest' && <Chat user={user}/>}</td>
             </tr>
           </tbody>
         </table>

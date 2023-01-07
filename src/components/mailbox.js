@@ -1,14 +1,31 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { userdataUpdate } from '../services/userdata';
 import ReturnLight from './buttons/return-light';
 import Compose from './compose';
 import './styles/mailbox.css';
 
-export default function Mailbox(props) {
+export default function Mailbox() {
 
+  let [ user, setUser ] = useState([]);
   let [ activeBox, setActiveBox ] = useState('inbox');
+
+  const initializeUser = async() => {
+    let userinit = await userdataUpdate();
+    if (userinit.username) {
+      setUser(userinit);
+    } else {
+      setUser("guest");
+      localStorage.removeItem('localToken');
+    };
+  };
+
+  useEffect(() => {
+    initializeUser();
+  }, []);
 
   return (
     <table id='pm-table'>
+      <tbody>
       <tr>
         <td className='pm-table-td'>
           <div id='mailbox'>
@@ -39,9 +56,10 @@ export default function Mailbox(props) {
           </div>
         </td>
         <td className='pm-table-td'>
-          <Compose />
+          <Compose username={user.username}/>
         </td>
       </tr>
+      </tbody>
     </table>
   )
 };

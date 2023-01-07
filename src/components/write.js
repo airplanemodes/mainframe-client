@@ -48,8 +48,8 @@ export default function Write() {
 
   return (
     <div id="write">
-      <h3 id="writeHeader">Write a new entry</h3>
-      <form id="writeForm" onSubmit={handleSubmit(writeEntry)}>
+      <h3 id="write-header">Write a new entry</h3>
+      <form id="write-form" onSubmit={handleSubmit(writeEntry)}>
         {/* TODO: add table */}
         <label>Title</label>
         <input type={'text'} {...titleRef} />
