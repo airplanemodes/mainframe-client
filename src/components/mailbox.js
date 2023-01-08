@@ -73,31 +73,29 @@ export default function Mailbox() {
                 </tr>
               </thead>
               <tbody>
-                { activeBox === 'inbox' && privateMessages.map((element) => {
-                  if (element.receiver === user.username) {
-                    return (
-                      <tr className='pm-data-row' key={element.id}>
-                        { element.subject ? <td className='pm-data-msg-subject'>{element.subject}</td>
-                                          : <td className='pm-data-msg-subject'>...</td>}
-                        <td className='pm-data-msg-body'>{element.body}</td>
-                        <td className='pm-data-msg'>{element.sender}</td>
-                        <td className='pm-data-msg'>x</td>
-                      </tr>
-                    )
-                  }
+                { activeBox === 'inbox' && privateMessages.filter((element) => element.receiver === user.username)
+                                                          .map((element) => {
+                  return (
+                    <tr className='pm-data-row' key={element.id}>
+                      { element.subject ? <td className='pm-data-msg-subject'>{element.subject}</td>
+                                        : <td className='pm-data-msg-subject'>...</td>}
+                      <td className='pm-data-msg-body'>{element.body}</td>
+                      <td className='pm-data-msg'>{element.sender}</td>
+                      <td className='pm-data-msg'>x</td>
+                    </tr>
+                  )
                 }) }
-                { activeBox === 'sent' && privateMessages.map((element) => {
-                  if (element.sender === user.username) {
-                    return (
-                      <tr className='pm-data-row' key={element.id}>
-                        { element.subject ? <td className='pm-data-msg-subject'>{element.subject}</td>
-                                          : <td className='pm-data-msg-subject'>...</td>}
-                        <td className='pm-data-msg-body'>{element.body}</td>
-                        <td className='pm-data-msg'>{element.receiver}</td>
-                        <td className='pm-data-msg'>x</td>
-                      </tr>
-                    )
-                  }
+                { activeBox === 'sent' && privateMessages.filter((element) => element.sender === user.username)
+                                                         .map((element) => {
+                  return (
+                    <tr className='pm-data-row' key={element.id}>
+                      { element.subject ? <td className='pm-data-msg-subject'>{element.subject}</td>
+                                        : <td className='pm-data-msg-subject'>...</td>}
+                      <td className='pm-data-msg-body'>{element.body}</td>
+                      <td className='pm-data-msg'>{element.receiver}</td>
+                      <td className='pm-data-msg'>x</td>
+                    </tr>
+                  )
                 })}
               </tbody>
             </table>

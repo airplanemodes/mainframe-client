@@ -17,10 +17,10 @@ export default function Compose(props) {
   const sendPrivateMessage = async(formdata) => {
     try {
       formdata.sender = props.username;
-      console.log(formdata);
+      if (formdata.subject === "") delete formdata.subject;
       const url = serverAddress+'/privates';
-      const response = await axiosRequest(url, 'POST', formdata);
-      console.log(response);
+      await axiosRequest(url, 'POST', formdata);
+      window.location = '/mailbox';
     } catch (error) {
       console.log(error);
     }
@@ -41,12 +41,10 @@ export default function Compose(props) {
       <h3>Compose</h3>
       <label>Receiver:</label>
       <select {...receiverRef}>
-        {receivers.map((element) => {
-          if (element.username !== props.username) {
-            return (
-              <option key={element.id}>{element.username}</option>
-            )
-          }
+        {receivers.filter((element) => element.username !== props.username).map((element) => {
+          return (
+            <option key={element.id}>{element.username}</option>
+          )
         })}
       </select>
       <br />
