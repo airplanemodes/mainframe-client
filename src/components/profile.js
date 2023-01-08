@@ -16,7 +16,7 @@ export default function Profile() {
     if (!userinit.username) {
       window.location = '/main'; // Redirect if token expired
     } else {
-      let url = serverAddress+"/entries";
+      const url = serverAddress+"/entries";
       let entries = await getRequest(url); // All entries
       let authoredArray = [];
       for (let i = 0; i < entries.length; i++) {

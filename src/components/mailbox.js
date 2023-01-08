@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { axiosRequest, serverAddress } from '../services/api';
 import { userdataUpdate } from '../services/userdata';
 import ReturnLight from './buttons/return-light';
 import Compose from './compose';
@@ -8,6 +9,7 @@ export default function Mailbox() {
 
   let [ user, setUser ] = useState([]);
   let [ activeBox, setActiveBox ] = useState('inbox');
+  let [ privateMessages, setPrivateMessages ] = useState([]);
 
   const initializeUser = async() => {
     let userinit = await userdataUpdate();
@@ -16,11 +18,24 @@ export default function Mailbox() {
     } else {
       setUser("guest");
       localStorage.removeItem('localToken');
-    };
-  };
+      window.location = '/main';
+    }
+  }
+
+  const getPrivateMessages = async() => {
+    try {
+      const url = serverAddress+"/privates";
+      const data = await axiosRequest(url);
+      console.log(data);
+      setPrivateMessages(data.reverse());
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   useEffect(() => {
     initializeUser();
+    getPrivateMessages();
   }, []);
 
   return (
@@ -47,9 +62,43 @@ export default function Mailbox() {
                 Deleted
               </button>
             </nav>
-            <div id='pm-data'>
-              {/* TABLE */}
-            </div>
+            <table id='pm-data'>
+              <thead>
+                <tr>
+                  <th className='pm-data-heading'>Subject</th>
+                  <th className='pm-data-heading'>Message</th>
+                  { activeBox === 'inbox' && <th className='pm-data-heading'>From</th> }
+                  { activeBox === 'sent' && <th className='pm-data-heading'>To</th> }
+                  <th className='pm-data-heading'>Del</th>
+                </tr>
+              </thead>
+              <tbody>
+                { activeBox === 'inbox' && privateMessages.map((element) => {
+                  if (element.receiver === user.username) {
+                    return (
+                      <tr className='pm-data-row' key={element.id}>
+                        <td className='pm-data-msg'>...</td>
+                        <td className='pm-data-msg-body'>{element.body}</td>
+                        <td className='pm-data-msg'>{element.sender}</td>
+                        <td className='pm-data-msg'>x</td>
+                      </tr>
+                    )
+                  }
+                }) }
+                { activeBox === 'sent' && privateMessages.map((element) => {
+                  if (element.sender === user.username) {
+                    return (
+                      <tr className='pm-data-row' key={element.id}>
+                        <td className='pm-data-msg'>...</td>
+                        <td className='pm-data-msg-body'>{element.body}</td>
+                        <td className='pm-data-msg'>{element.receiver}</td>
+                        <td className='pm-data-msg'>x</td>
+                      </tr>
+                    )
+                  }
+                })}
+              </tbody>
+            </table>
             <div id='mailbox-return'>
               <ReturnLight />
             </div>
