@@ -77,7 +77,8 @@ export default function Mailbox() {
                   if (element.receiver === user.username) {
                     return (
                       <tr className='pm-data-row' key={element.id}>
-                        <td className='pm-data-msg'>...</td>
+                        { element.subject ? <td className='pm-data-msg-subject'>{element.subject}</td>
+                                          : <td className='pm-data-msg-subject'>...</td>}
                         <td className='pm-data-msg-body'>{element.body}</td>
                         <td className='pm-data-msg'>{element.sender}</td>
                         <td className='pm-data-msg'>x</td>
@@ -89,7 +90,8 @@ export default function Mailbox() {
                   if (element.sender === user.username) {
                     return (
                       <tr className='pm-data-row' key={element.id}>
-                        <td className='pm-data-msg'>...</td>
+                        { element.subject ? <td className='pm-data-msg-subject'>{element.subject}</td>
+                                          : <td className='pm-data-msg-subject'>...</td>}
                         <td className='pm-data-msg-body'>{element.body}</td>
                         <td className='pm-data-msg'>{element.receiver}</td>
                         <td className='pm-data-msg'>x</td>
