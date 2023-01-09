@@ -59,10 +59,9 @@ export default function Read() {
   return (
     <div>
       <div id='read'>
-        <h3 id='entryHeader'>{entry.title}</h3>
-        <div id='entryContent'>{entry.content}</div>
-        {/* <div id="entryDate">{entry.created}</div> */}
-        <div id='entrySignature'>
+        <h3 id='entry-header'>{entry.title}</h3>
+        <div id='entry-content'>{entry.content}</div>
+        <div id='entry-signature'>
           <a href={'/users/'+entry.author}>{entry.author}</a>
           @ {entry.node} {entry.created}
         </div>

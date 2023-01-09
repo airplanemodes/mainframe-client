@@ -9,7 +9,7 @@
     border-radius: 15px;
 }
 
-#entryHeader {
+#entry-header {
     text-align: center;
     color: var(--bg-color);
     background-color: var(--secondary-color);
@@ -17,7 +17,7 @@
     padding-bottom: 10px;
 }
 
-#entryContent {
+#entry-content {
     padding-left: 40px;
     padding-right: 40px;
     padding-top: 40px;
@@ -25,18 +25,13 @@
     background-color: var(--bg-color);
 }
 
-#entryDate {
-    padding: 40px;
-    color: var(--bg-color);
-}
-
-#entrySignature {
+#entry-signature {
     padding: 40px;
     color: var(--primary-color);
     background-color: var(--bg-color);
 }
 
-#entrySignature > a {
+#entry-signature > a {
     margin-right: 10px;
     color: var(--primary-color);
 }
