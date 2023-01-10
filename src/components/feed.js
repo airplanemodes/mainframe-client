@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import ShortReplies from './short-replies';
 import ReadButton from './buttons/read-button';
 import EditButton from './buttons/edit-button';
+import Pagination from './pagination';
 
 export default function Feed(props) {
 
@@ -14,25 +15,23 @@ export default function Feed(props) {
   let [ credits, setCredits ] = useState([]);
   let [ activeNode, setActiveNode ] = useState('all');
   
-
   const getEntries = async() => {
     let url = serverAddress+'/entries';
     let data = await getRequest(url);
     setEntries(data);
-  };
+  }
   
   const getReplies = async() => {
     let url = serverAddress+'/replies';
     let data = await getRequest(url);
     setReplies(data);
-  };
+  }
 
   const getCredits = async() => {
     let url = serverAddress+'/credits';
     let data = await getRequest(url);
     setCredits(data);
-  };
-
+  }
 
   useEffect(() => {
     getEntries();
@@ -44,23 +43,23 @@ export default function Feed(props) {
   let repliesMap = {};
   for (let i = 0; i < replies.length; i++) {
     repliesMap[replies[i].entryid] = [];
-  };
+  }
   for (let i = 0; i < replies.length; i++) {
     if (repliesMap[replies[i].entryid]) {
       repliesMap[replies[i].entryid].push(replies[i]);
-    };
-  };
+    }
+  }
 
 
   let creditsMap = {};
   for (let i = 0; i < credits.length; i++) {
     creditsMap[credits[i].entryid] = [];
-  };
+  }
   for (let i = 0; i < credits.length; i++) {
     if (creditsMap[credits[i].entryid]) {
       creditsMap[credits[i].entryid].push(credits[i].userid);
-    };
-  };
+    }
+  }
   
 
   const applyPlus = async(event) => {
@@ -70,7 +69,7 @@ export default function Feed(props) {
     const url = serverAddress+'/credits';
     await axiosRequest(url, 'POST', creditData);
     getCredits();
-  };
+  }
 
   const applyMinus = async(event) => {
     const creditData = {};
@@ -79,7 +78,7 @@ export default function Feed(props) {
     const url = serverAddress+'/credits';
     await axiosRequest(url, 'DELETE', creditData);
     getCredits();
-  };
+  }
 
   
   return (
@@ -111,7 +110,7 @@ export default function Feed(props) {
             let url = serverAddress+"/entries/node/hack";
             let data = await getRequest(url);
             setActiveNode('hack');
-            setEntries(data); 
+            setEntries(data);
           }}>hack</button>  
         <button className={activeNode === 'society' ? 'activeNode' : 'nodeButton'}
           onClick={async() => {
@@ -120,6 +119,11 @@ export default function Feed(props) {
             setEntries(data);
             setActiveNode('society'); 
           }}>society</button>
+          { activeNode === 'all' && <Pagination number={entries.length}/> }
+          { activeNode === 'code' && <Pagination number={entries.length}/> }
+          { activeNode === 'network' && <Pagination number={entries.length}/> }
+          { activeNode === 'hack' && <Pagination number={entries.length}/> }
+          { activeNode === 'society' && <Pagination number={entries.length}/> }
       </nav>  
       {/* Entries feed */}
       {/* ============ */}
