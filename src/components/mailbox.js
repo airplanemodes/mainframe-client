@@ -99,9 +99,6 @@ export default function Mailbox() {
                 })}
               </tbody>
             </table>
-            <div id='mailbox-return'>
-              <ReturnLight />
-            </div>
           </div>
         </td>
         <td className='pm-table-td'>
@@ -109,6 +106,9 @@ export default function Mailbox() {
         </td>
       </tr>
       </tbody>
+      <div id='mailbox-return'>
+        <ReturnLight />
+      </div>
     </table>
   )
 };

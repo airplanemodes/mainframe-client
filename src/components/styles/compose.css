@@ -5,6 +5,7 @@
   width: 30vw;
   border: 5px solid var(--primary-color);
   border-radius: 15px;
+  margin-left: 30px;
 }
 
 #compose > h3 {

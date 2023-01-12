@@ -1,16 +1,25 @@
 import { useEffect, useState } from "react"
+import { getRequest, serverAddress } from "../services/api";
 
 export default function Pagination(props) {
 
+  let entriesPerPage = 2;
+
   let [ countPages, setCountPages ] = useState(0);
 
+  const getNodeTotal = async() => {
+    let url = serverAddress+props.urlOfNodeTotal;
+    // let data = await getRequest(url);
+    console.log(url);
+  }
+
   useEffect(() => {
-    setCountPages(props.number);
-  }, [])
+    getNodeTotal();
+  }, []);
 
   return (
-    <div>
-      Number of entries: { countPages }
-    </div>
+    <nav>
+      Pagination will be here.
+    </nav>
   )
 }

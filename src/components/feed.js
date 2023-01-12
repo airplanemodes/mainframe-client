@@ -119,11 +119,11 @@ export default function Feed(props) {
             setEntries(data);
             setActiveNode('society'); 
           }}>society</button>
-          { activeNode === 'all' && <Pagination number={entries.length}/> }
-          { activeNode === 'code' && <Pagination number={entries.length}/> }
-          { activeNode === 'network' && <Pagination number={entries.length}/> }
-          { activeNode === 'hack' && <Pagination number={entries.length}/> }
-          { activeNode === 'society' && <Pagination number={entries.length}/> }
+          { activeNode === 'all' && <Pagination urlOfNodeTotal={'/entries/total/all'} /> }
+          { activeNode === 'code' && <Pagination urlOfNodeTotal={'/entries/total/code'}/> }
+          { activeNode === 'network' && <Pagination urlOfNodeTotal={'/entries/total/network'}/> }
+          { activeNode === 'hack' && <Pagination urlOfNodeTotal={'/entries/total/hack'}/> }
+          { activeNode === 'society' && <Pagination urlOfNodeTotal={'/entries/total/society'}/> }
       </nav>  
       {/* Entries feed */}
       {/* ============ */}
