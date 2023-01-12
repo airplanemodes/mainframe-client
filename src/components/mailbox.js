@@ -81,7 +81,9 @@ export default function Mailbox() {
                                         : <td className='pm-data-msg-subject'>...</td>}
                       <td className='pm-data-msg-body'>{element.body}</td>
                       <td className='pm-data-msg'>{element.sender}</td>
-                      <td className='pm-data-msg'>x</td>
+                      <td className='pm-data-msg'>
+                        <button className='mail-del'>x</button>
+                      </td>
                     </tr>
                   )
                 }) }
@@ -93,7 +95,9 @@ export default function Mailbox() {
                                         : <td className='pm-data-msg-subject'>...</td>}
                       <td className='pm-data-msg-body'>{element.body}</td>
                       <td className='pm-data-msg'>{element.receiver}</td>
-                      <td className='pm-data-msg'>x</td>
+                      <td className='pm-data-msg'>
+                        <button className='mail-del'>x</button>
+                      </td>
                     </tr>
                   )
                 })}
