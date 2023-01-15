@@ -3,9 +3,9 @@ import { getRequest, serverAddress } from "../services/api";
 
 export default function Pagination(props) {
 
-  let entriesPerPage = 2;
+  // let entriesPerPage = 2;
 
-  let [ countPages, setCountPages ] = useState(0);
+  // let [ countPages, setCountPages ] = useState(0);
 
   const getNodeTotal = async() => {
     let url = serverAddress+props.urlOfNodeTotal;
@@ -15,6 +15,7 @@ export default function Pagination(props) {
 
   useEffect(() => {
     getNodeTotal();
+    // eslint-disable-next-line
   }, []);
 
   return (

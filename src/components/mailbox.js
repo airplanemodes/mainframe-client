@@ -56,11 +56,6 @@ export default function Mailbox() {
                 onClick={async() => { setActiveBox('sent'); }}>
                 Sent
               </button>
-              <button 
-                className={activeBox === 'deleted' ? 'active-box' : 'box-button'}
-                onClick={async() => { setActiveBox('deleted'); }}>
-                Deleted
-              </button>
             </nav>
             <table id='pm-data'>
               <thead>
