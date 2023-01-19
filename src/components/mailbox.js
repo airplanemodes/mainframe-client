@@ -69,6 +69,7 @@ export default function Mailbox() {
               </thead>
               <tbody>
                 { activeBox === 'inbox' && privateMessages.filter((element) => element.receiver === user.username)
+                                                          .filter((element) => element.receiver_del !== true)
                                                           .map((element) => {
                   return (
                     <tr className='pm-data-row' key={element.id}>
@@ -77,12 +78,20 @@ export default function Mailbox() {
                       <td className='pm-data-msg-body'>{element.body}</td>
                       <td className='pm-data-msg'>{element.sender}</td>
                       <td className='pm-data-msg'>
-                        <button className='mail-del'>x</button>
+                        <button className='mail-del'
+                                onClick={async() => {
+                                  const url = serverAddress+'/privates/receiver-del/'+element.id;
+                                  await axiosRequest(url, 'PUT', element.id);
+                                  getPrivateMessages();
+                                }}>
+                          x
+                        </button>
                       </td>
                     </tr>
                   )
                 }) }
                 { activeBox === 'sent' && privateMessages.filter((element) => element.sender === user.username)
+                                                         .filter((element) => element.sender_del !== true)
                                                          .map((element) => {
                   return (
                     <tr className='pm-data-row' key={element.id}>
@@ -91,7 +100,14 @@ export default function Mailbox() {
                       <td className='pm-data-msg-body'>{element.body}</td>
                       <td className='pm-data-msg'>{element.receiver}</td>
                       <td className='pm-data-msg'>
-                        <button className='mail-del'>x</button>
+                        <button className='mail-del'
+                                onClick={async() => {
+                                  const url = serverAddress+'/privates/sender-del/'+element.id;
+                                  await axiosRequest(url, 'PUT', element.id);
+                                  getPrivateMessages();
+                                }}>
+                          x
+                        </button>
                       </td>
                     </tr>
                   )
