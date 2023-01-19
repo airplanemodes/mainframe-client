@@ -50,7 +50,7 @@ export default function Compose(props) {
       <br />
       <label>Subject:</label>
       <input type={'text'} maxLength={16} {...subjectRef}/>
-      <textarea id='compose-textarea' rows={20} maxLength={255} {...bodyRef} />
+      <textarea id='compose-textarea' rows={10} maxLength={255} {...bodyRef} />
       <button id='compose-button'>Send</button>
     </form>
   ) 

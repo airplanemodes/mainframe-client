@@ -86,11 +86,11 @@
   border: 1px solid var(--primary-color);
 }
 
-.mail-del {
+.mail-btn {
   margin: 0;
   width: 30px;
 }
 
-.mail-del:hover {
+.mail-btn:hover {
   background-color: var(--primary-color);
 }

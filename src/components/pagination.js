@@ -10,7 +10,7 @@ export default function Pagination(props) {
   const getNodeTotal = async() => {
     let url = serverAddress+props.urlOfNodeTotal;
     // let data = await getRequest(url);
-    console.log(url);
+    // console.log(url);
   }
 
   useEffect(() => {

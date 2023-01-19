@@ -26,8 +26,8 @@ export default function Mailbox() {
     try {
       const url = serverAddress+"/privates";
       const data = await axiosRequest(url);
-      console.log(data);
-      setPrivateMessages(data.reverse());
+      // console.log(data);
+      setPrivateMessages(data);
     } catch (error) {
       console.log(error);
     }
@@ -56,15 +56,26 @@ export default function Mailbox() {
                 onClick={async() => { setActiveBox('sent'); }}>
                 Sent
               </button>
+              <button 
+                className={activeBox === 'deleted' ? 'active-box' : 'box-button'}
+                onClick={async() => { setActiveBox('deleted'); }}>
+                Deleted
+              </button>
             </nav>
             <table id='pm-data'>
               <thead>
                 <tr>
-                  <th className='pm-data-heading'>Subject</th>
-                  <th className='pm-data-heading'>Message</th>
                   { activeBox === 'inbox' && <th className='pm-data-heading'>From</th> }
                   { activeBox === 'sent' && <th className='pm-data-heading'>To</th> }
-                  <th className='pm-data-heading'>Del</th>
+                  { activeBox === 'deleted' && <th className='pm-data-heading'>Box</th> }
+                  { activeBox === 'inbox' && <th className='pm-data-heading'>Subject</th> }
+                  { activeBox === 'sent' && <th className='pm-data-heading'>Subject</th> }
+                  { activeBox === 'deleted' && <th className='pm-data-heading'>Author</th> }
+                  <th className='pm-data-heading'>Message</th>
+                  { activeBox === 'inbox' && <th className='pm-data-heading'>Del</th> }
+                  { activeBox === 'sent' && <th className='pm-data-heading'>Del</th> }
+                  { activeBox === 'deleted' && <th className='pm-data-heading'>Recover</th> }
+                  { activeBox === 'deleted' && <th className='pm-data-heading'>Del</th> }
                 </tr>
               </thead>
               <tbody>
@@ -73,12 +84,12 @@ export default function Mailbox() {
                                                           .map((element) => {
                   return (
                     <tr className='pm-data-row' key={element.id}>
+                      <td className='pm-data-msg'>{element.sender}</td>
                       { element.subject ? <td className='pm-data-msg-subject'>{element.subject}</td>
                                         : <td className='pm-data-msg-subject'>...</td>}
                       <td className='pm-data-msg-body'>{element.body}</td>
-                      <td className='pm-data-msg'>{element.sender}</td>
                       <td className='pm-data-msg'>
-                        <button className='mail-del'
+                        <button className='mail-btn'
                                 onClick={async() => {
                                   const url = serverAddress+'/privates/receiver-del/'+element.id;
                                   await axiosRequest(url, 'PUT', element.id);
@@ -95,12 +106,12 @@ export default function Mailbox() {
                                                          .map((element) => {
                   return (
                     <tr className='pm-data-row' key={element.id}>
-                      { element.subject ? <td className='pm-data-msg-subject'>{element.subject}</td>
-                                        : <td className='pm-data-msg-subject'>...</td>}
-                      <td className='pm-data-msg-body'>{element.body}</td>
                       <td className='pm-data-msg'>{element.receiver}</td>
+                      { element.subject ? <td className='pm-data-msg-subject'>{element.subject}</td>
+                                        : <td className='pm-data-msg-subject'>...</td> }
+                      <td className='pm-data-msg-body'>{element.body}</td>
                       <td className='pm-data-msg'>
-                        <button className='mail-del'
+                        <button className='mail-btn'
                                 onClick={async() => {
                                   const url = serverAddress+'/privates/sender-del/'+element.id;
                                   await axiosRequest(url, 'PUT', element.id);
@@ -108,6 +119,25 @@ export default function Mailbox() {
                                 }}>
                           x
                         </button>
+                      </td>
+                    </tr>
+                  )
+                })}
+                { activeBox === 'deleted' && privateMessages.filter((element) => element.sender === user.username || element.receiver === user.username)
+                                                            .filter((element) => (element.receiver === user.username && element.receiver_del === true) || (element.sender === user.username && element.sender_del === true))
+                                                            .map((element) => {
+                  return (
+                    <tr className='pm-data-row' key={element.id}>
+                      { element.sender === user.username ? <td className='pm-data-msg'>Sent</td>
+                                                         : <td className='pm-data-msg'>Received</td> }
+                      { element.receiver === user.username && <td className='pm-data-msg'>{element.sender}</td> }
+                      { element.sender === user.username && <td className='pm-data-msg'>{element.sender}</td> }
+                      <td className='pm-data-msg-body'>{element.body}</td>
+                      <td className='pm-data-msg'>
+                        <button className='mail-btn'>R</button>
+                      </td>
+                      <td className='pm-data-msg'>
+                        <button className='mail-btn'>x</button>
                       </td>
                     </tr>
                   )
