@@ -94,8 +94,7 @@ export default function Mailbox() {
                                   const url = serverAddress+'/privates/receiver-del/'+element.id;
                                   await axiosRequest(url, 'PUT', element.id);
                                   getPrivateMessages();
-                                }}>
-                          x
+                                }}>x
                         </button>
                       </td>
                     </tr>
@@ -116,8 +115,7 @@ export default function Mailbox() {
                                   const url = serverAddress+'/privates/sender-del/'+element.id;
                                   await axiosRequest(url, 'PUT', element.id);
                                   getPrivateMessages();
-                                }}>
-                          x
+                                }}>x
                         </button>
                       </td>
                     </tr>
@@ -129,12 +127,22 @@ export default function Mailbox() {
                   return (
                     <tr className='pm-data-row' key={element.id}>
                       { element.sender === user.username ? <td className='pm-data-msg'>Sent</td>
-                                                         : <td className='pm-data-msg'>Received</td> }
+                                                         : <td className='pm-data-msg'>Inbox</td> }
                       { element.receiver === user.username && <td className='pm-data-msg'>{element.sender}</td> }
                       { element.sender === user.username && <td className='pm-data-msg'>{element.sender}</td> }
                       <td className='pm-data-msg-body'>{element.body}</td>
                       <td className='pm-data-msg'>
-                        <button className='mail-btn'>R</button>
+                        <button className='mail-btn' onClick={async() => {
+                          if (element.sender === user.username) {
+                            const url = serverAddress+'/privates/sender-rec/'+element.id;
+                            await axiosRequest(url, 'PUT', element.id);
+                            getPrivateMessages();
+                          } else {
+                            const url = serverAddress+'/privates/receiver-rec/'+element.id;
+                            await axiosRequest(url, 'PUT', element.id);
+                            getPrivateMessages();
+                          }
+                        }}>R</button>
                       </td>
                       <td className='pm-data-msg'>
                         <button className='mail-btn'>x</button>
