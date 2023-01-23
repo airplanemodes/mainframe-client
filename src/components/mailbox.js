@@ -122,7 +122,8 @@ export default function Mailbox() {
                   )
                 })}
                 { activeBox === 'deleted' && privateMessages.filter((element) => element.sender === user.username || element.receiver === user.username)
-                                                            .filter((element) => (element.receiver === user.username && element.receiver_del === true) || (element.sender === user.username && element.sender_del === true))
+                                                            .filter((element) => (element.sender === user.username && element.sender_full_del !== true) || (element.receiver === user.username && element.receiver_full_del !== true))
+                                                            .filter((element) => (element.sender === user.username && element.sender_del === true) || (element.receiver === user.username && element.receiver_del === true))
                                                             .map((element) => {
                   return (
                     <tr className='pm-data-row' key={element.id}>
@@ -134,18 +135,46 @@ export default function Mailbox() {
                       <td className='pm-data-msg'>
                         <button className='mail-btn' onClick={async() => {
                           if (element.sender === user.username) {
-                            const url = serverAddress+'/privates/sender-rec/'+element.id;
-                            await axiosRequest(url, 'PUT', element.id);
-                            getPrivateMessages();
+                            try {
+                              const url = serverAddress+'/privates/sender-rec/'+element.id;
+                              await axiosRequest(url, 'PUT', element.id);
+                              getPrivateMessages();
+                            } catch (error) {
+                              console.log(error);
+                            }
                           } else {
-                            const url = serverAddress+'/privates/receiver-rec/'+element.id;
-                            await axiosRequest(url, 'PUT', element.id);
-                            getPrivateMessages();
+                            try {
+                              const url = serverAddress+'/privates/receiver-rec/'+element.id;
+                              await axiosRequest(url, 'PUT', element.id);
+                              getPrivateMessages();
+                            } catch (error) {
+                              console.log(error);
+                            }
                           }
                         }}>R</button>
                       </td>
                       <td className='pm-data-msg'>
-                        <button className='mail-btn'>x</button>
+                        <button className='mail-btn'
+                                onClick={async() => {
+                                  if (element.sender === user.username) {
+                                    try {
+                                      const url = serverAddress+'/privates/sender-fulldel/'+element.id;
+                                      await axiosRequest(url, 'PUT', element.id);
+                                      getPrivateMessages();
+                                    } catch (error) {
+                                      console.log(error);
+                                    }
+                                  } else {
+                                    try {
+                                      const url = serverAddress+'/privates/receiver-fulldel/'+element.id;
+                                      await axiosRequest(url, 'PUT', element.id);
+                                      getPrivateMessages();
+                                    } catch (error) {
+                                      console.log(error);
+                                    }
+                                  }
+                                }}>x
+                        </button>
                       </td>
                     </tr>
                   )
