@@ -11,22 +11,30 @@ export default function Look() {
   let [ authored, setAuthored ] = useState([]);
   
   const getProfileForLook = async() => {
-    const url = serverAddress+'/users/'+lookOn.username;
-    const data = await axiosRequest(url, 'GET');
-    setProfileForLook(data);
-  };
+    try {
+      const url = serverAddress+'/users/'+lookOn.username;
+      const data = await axiosRequest(url, 'GET');
+      setProfileForLook(data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
   
   const getAuthored = async() => {
-    const url = serverAddress+'/entries';
-    let entries = await getRequest(url); // All entries
-    let authoredArray = [];
-    for (let i = 0; i < entries.length; i++) {
-      if (entries[i].author === lookOn.username) {
-        authoredArray.push(entries[i]);
-      };
-    };
-    setAuthored(authoredArray);
-  };
+    try {
+      const url = serverAddress+'/entries';
+      let entries = await getRequest(url); // All entries
+      let authoredArray = [];
+      for (let i = 0; i < entries.length; i++) {
+        if (entries[i].author === lookOn.username) {
+          authoredArray.push(entries[i]);
+        }
+      }
+      setAuthored(authoredArray);
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   useEffect(() => {
     getProfileForLook();

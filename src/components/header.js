@@ -11,7 +11,7 @@ export default function Header(props) {
     localStorage.removeItem('localToken');
     await userdataUpdate();
     window.location = '/';
-  };
+  }
 
   return (
     <header>
@@ -36,4 +36,4 @@ export default function Header(props) {
       }
     </header>
   );
-};
+}
