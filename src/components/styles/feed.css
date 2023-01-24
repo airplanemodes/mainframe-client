@@ -17,10 +17,11 @@
     width: 100px;
 }
 
-.noEntries {
-    margin: 50px;
-    margin-left: 100px;
-    font-size: 30px;
+#no-entries {
+  width: 810px;
+  margin: 50px;
+  margin-left: 100px;
+  font-size: 30px;
 }
 
 .elementArticle {

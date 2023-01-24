@@ -127,7 +127,7 @@ export default function Feed(props) {
       </nav>  
       {/* Entries feed */}
       {/* ============ */}
-      {entries.length === 0 && <div className='noEntries'>Node is empty</div>}
+      {entries.length === 0 && <div id='no-entries'>Node is empty</div>}
       {entries.map((element) => {
         return (
           <article className='elementArticle' key={element.id}>
