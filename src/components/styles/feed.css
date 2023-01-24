@@ -50,6 +50,7 @@
     width: 700px;
     margin: 30px;
     color: var(--bg-color);
+    white-space: pre-wrap;
 }
 
 .elementAuthor {

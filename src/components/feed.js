@@ -132,8 +132,8 @@ export default function Feed(props) {
         return (
           <article className='elementArticle' key={element.id}>
             <h2 className='elementTitle'>{element.title}</h2>
-            <div className='elementNode'>{element.node}</div>
-            <div className='elementContent'>{element.content}</div>
+            <div className='elementNode'>@ {element.node}</div>
+            <pre className='elementContent'>{element.content}</pre>
             <a className='elementAuthor' href={'users/'+element.author}>
               {element.author}
             </a>
