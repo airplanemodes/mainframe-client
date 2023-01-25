@@ -134,10 +134,10 @@ export default function Feed(props) {
             <h2 className='elementTitle'>{element.title}</h2>
             <div className='elementNode'>@ {element.node}</div>
             <pre className='elementContent'>{element.content}</pre>
-            <a className='elementAuthor' href={'users/'+element.author}>
-              {element.author}
-            </a>
-            <br />
+            { props.user === 'guest' ? <div className='elementAuthor'>{element.author}</div>
+                                     : <a className='elementAuthor' href={'users/'+element.author}>
+                                        {element.author}
+                                       </a> }
             {/* Replies */}
             { props.user !== 'guest' && 
                 <ShortReplies repliesArray={repliesMap[element.id]} />

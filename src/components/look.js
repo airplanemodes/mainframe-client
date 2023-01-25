@@ -1,15 +1,28 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getRequest, axiosRequest, serverAddress } from '../services/api';
+import { userdataUpdate } from '../services/userdata';
 import ReturnLight from './buttons/return-light';
 import './styles/look.css';
 
 export default function Look() {
 
   let lookOn = useParams();
+  let [ user, setUser ] = useState([]);
   let [ profileForLook, setProfileForLook ] = useState([]);
   let [ authored, setAuthored ] = useState([]);
   
+  const initializeUser = async() => {
+    let userinit = await userdataUpdate();
+    if (userinit.username) {
+      setUser(userinit);
+    } else {
+      setUser('guest');
+      localStorage.removeItem('localToken');
+      window.location = '/main';
+    }
+  }
+
   const getProfileForLook = async() => {
     try {
       const url = serverAddress+'/users/'+lookOn.username;
@@ -37,6 +50,7 @@ export default function Look() {
   }
 
   useEffect(() => {
+    initializeUser();
     getProfileForLook();
     getAuthored();
     // eslint-disable-next-line

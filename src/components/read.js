@@ -60,9 +60,10 @@ export default function Read() {
     <div>
       <div id='read'>
         <h3 id='entry-header'>{entry.title}</h3>
-        <div id='entry-content'>{entry.content}</div>
+        <pre id='entry-content'>{entry.content}</pre>
         <div id='entry-signature'>
-          <a href={'/users/'+entry.author}>{entry.author}</a>
+          { user.username ? <a href={'/users/'+entry.author}>{entry.author}</a> 
+                          : <span>{entry.author} </span> }
           @ {entry.node} {entry.created}
         </div>
         <div id='read-return-div'>
