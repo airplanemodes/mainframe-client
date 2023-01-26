@@ -7,4 +7,4 @@ export default function NoPage() {
       <a id='not-found-link' href='/main'>Back to main page</a>
     </div>
   );
-};
+}

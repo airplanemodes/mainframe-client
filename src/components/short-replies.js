@@ -6,7 +6,7 @@ export default function ShortReplies(props) {
     <div id='replies'>
       { props.repliesArray && props.repliesArray.map((element) => {
         return (
-          <article key={element.id} className="singleReply">
+          <article key={element.id} className='singleReply'>
             <div>#{props.repliesArray.indexOf(element) + 1} @ {element.username}</div>
             <div>{element.body}</div>
           </article>
@@ -14,4 +14,4 @@ export default function ShortReplies(props) {
       })}
     </div>
   );
-};
+}

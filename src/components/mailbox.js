@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { axiosRequest, serverAddress } from '../services/api';
 import { userdataUpdate } from '../services/userdata';
-import ReturnLight from './buttons/return-light';
 import Compose from './compose';
 import './styles/mailbox.css';
 
@@ -194,9 +193,6 @@ export default function Mailbox() {
         </td>
       </tr>
       </tbody>
-      <div id='mailbox-return'>
-        <ReturnLight />
-      </div>
     </table>
   )
-};
+}

@@ -19,8 +19,8 @@ export default function Main() {
     } else {
       setUser("guest");
       localStorage.removeItem('localToken');
-    };
-  };
+    }
+  }
 
   useEffect(() => {
     initializeUser();
@@ -40,4 +40,4 @@ export default function Main() {
       <Footer />
     </div>
   );
-};
+}

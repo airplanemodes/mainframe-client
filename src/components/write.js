@@ -16,8 +16,8 @@ export default function Write() {
       setUser(userinit);
     } else {
       window.location = '/main';
-    };
-  };
+    }
+  }
 
   useEffect(() => {
     initializeUser();
@@ -35,21 +35,19 @@ export default function Write() {
       formdata.created = `${dateObj.getFullYear()}-${dateObj.getMonth()+1}-${dateObj.getDate()}`;
       formdata.author = user.username;
       formdata.points = 0;
-      // console.log(formdata);
       const url = serverAddress+'/entries';
-      const response = await axiosRequest(url, 'POST', formdata);
-      console.log(response);
+      await axiosRequest(url, 'POST', formdata);
       alert("Entry was written to the database");
       window.location = '/main';
     } catch (error) {
       console.log(error);
-    };
-  };
+    }
+  }
 
   return (
-    <div id="write">
-      <h3 id="write-header">Write a new entry</h3>
-      <form id="write-form" onSubmit={handleSubmit(writeEntry)}>
+    <div id='write'>
+      <h3 id='write-header'>Write a new entry</h3>
+      <form id='write-form' onSubmit={handleSubmit(writeEntry)}>
         {/* TODO: add table */}
         <label>Title</label>
         <input type={'text'} {...titleRef} />
@@ -70,9 +68,9 @@ export default function Write() {
         <br />
         <button>Write</button>
       </form>
-      <div id="write-return-div">
+      <div id='write-return-div'>
         <ReturnLight />
       </div>
     </div>
   );
-};
+}

@@ -15,8 +15,8 @@ export default function Enter() {
     setUser(userinit);
     if (userinit.username) {
       window.location = '/main';
-    };
-  };
+    }
+  }
 
   useEffect(() => {
     initializeUser();
@@ -34,8 +34,8 @@ export default function Enter() {
     } catch (error) {
       // console.log(error.response.data);
       setError(error.response.data)
-    };
-  };
+    }
+  }
 
   let usernameRef = register('username');
   let passwdRef = register('passwd');
@@ -58,4 +58,4 @@ export default function Enter() {
       <p>create new <a href="/register">user</a></p>
     </div>
   );
-};
+}

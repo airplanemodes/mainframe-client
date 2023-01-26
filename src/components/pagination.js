@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react"
-import { getRequest, serverAddress } from "../services/api";
+// import { useEffect, useState } from "react"
+// import { getRequest, serverAddress } from "../services/api";
 
 export default function Pagination(props) {
 
@@ -7,16 +7,16 @@ export default function Pagination(props) {
 
   // let [ countPages, setCountPages ] = useState(0);
 
-  const getNodeTotal = async() => {
-    let url = serverAddress+props.urlOfNodeTotal;
+  // const getNodeTotal = async() => {
+    // let url = serverAddress+props.urlOfNodeTotal;
     // let data = await getRequest(url);
     // console.log(url);
-  }
+  // }
 
-  useEffect(() => {
-    getNodeTotal();
-    // eslint-disable-next-line
-  }, []);
+  // useEffect(() => {
+  //   getNodeTotal();
+  //   // eslint-disable-next-line
+  // }, []);
 
   return (
     <nav>

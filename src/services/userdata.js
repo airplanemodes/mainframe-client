@@ -17,14 +17,14 @@ export const userdataUpdate = async() => {
     } catch (error) {
         user = {};
         return user;
-    };
+    }
   } else {
     localStorage.removeItem('localToken');
     user = {};
     return user;
-  };
-};
+  }
+}
 
 export const userdataReturn = () => {
   return user;
-};
+}

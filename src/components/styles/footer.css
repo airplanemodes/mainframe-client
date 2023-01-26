@@ -2,3 +2,8 @@ footer {
     text-align: center;
     margin: 50px;
 }
+
+#open-source {
+  margin-top: 2px;
+  font-size: 10px;
+}

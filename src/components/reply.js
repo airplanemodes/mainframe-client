@@ -19,8 +19,8 @@ export default function Reply(props) {
       window.location = '/entries/'+props.entryid;
     } catch (error) {
       console.log(error);
-    };
-  };
+    }
+  }
 
   let bodyRef = register('body', { required: true, maxLength: 255 });
 
@@ -31,4 +31,4 @@ export default function Reply(props) {
       <button id='reply-button'>Reply</button>
     </form>
   );
-};
+}

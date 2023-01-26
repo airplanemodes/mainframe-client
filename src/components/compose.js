@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { axiosRequest, serverAddress } from '../services/api';
+import ReturnLight from './buttons/return-light';
 import './styles/compose.css';
 
 export default function Compose(props) {
@@ -24,34 +25,43 @@ export default function Compose(props) {
     } catch (error) {
       console.log(error);
     }
-  };
+  }
 
   const getReceiversList = async() => {
-    const url = serverAddress+"/users/all";
-    const data = await axiosRequest(url, 'GET');
-    setReceivers(data);
-  };
+    try {
+      const url = serverAddress+'/users/all';
+      const data = await axiosRequest(url, 'GET');
+      setReceivers(data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   useEffect(() => {
     getReceiversList();
   }, []);
 
   return (
-    <form id='compose' onSubmit={handleSubmit(sendPrivateMessage)}>
-      <h3>Compose</h3>
-      <label>Receiver:</label>
-      <select {...receiverRef}>
-        {receivers.filter((element) => element.username !== props.username).map((element) => {
-          return (
-            <option key={element.id}>{element.username}</option>
-          )
-        })}
-      </select>
-      <br />
-      <label>Subject:</label>
-      <input type={'text'} maxLength={16} {...subjectRef}/>
-      <textarea id='compose-textarea' rows={10} maxLength={255} {...bodyRef} />
-      <button id='compose-button'>Send</button>
-    </form>
+    <div>
+      <form id='compose' onSubmit={handleSubmit(sendPrivateMessage)}>
+        <h3>Compose</h3>
+        <label>Receiver:</label>
+        <select {...receiverRef}>
+          {receivers.filter((element) => element.username !== props.username).map((element) => {
+            return (
+              <option key={element.id}>{element.username}</option>
+              )
+            })}
+        </select>
+        <br />
+        <label>Subject:</label>
+        <input type={'text'} maxLength={16} {...subjectRef}/>
+        <textarea id='compose-textarea' rows={10} maxLength={255} {...bodyRef} />
+        <button id='compose-button'>Send</button>
+      </form>
+      <div id='mailbox-return'>
+        <ReturnLight />
+      </div>
+    </div>
   ) 
-};
+}

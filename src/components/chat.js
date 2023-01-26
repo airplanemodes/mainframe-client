@@ -52,4 +52,4 @@ export default function Chat(props) {
       </form>
     </aside>
 	);
-};
+}

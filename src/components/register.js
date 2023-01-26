@@ -29,9 +29,9 @@ export default function Register() {
         setError('email already taken');
       } else {
         setError(error.response.data);
-      };
-    };
-  };
+      }
+    }
+  }
 
   let usernameRef = register('username', { required: true, maxLength: 16 });
   let emailRef = register('email', { required: true , maxLength: 60 } );
@@ -65,4 +65,4 @@ export default function Register() {
       <p>back to <a href="/">login</a></p>
     </div>
   );
-};
+}

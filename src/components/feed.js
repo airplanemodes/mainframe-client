@@ -16,21 +16,33 @@ export default function Feed(props) {
   let [ activeNode, setActiveNode ] = useState('all');
   
   const getEntries = async() => {
-    let url = serverAddress+'/entries';
-    let data = await getRequest(url);
-    setEntries(data);
+    try {
+      let url = serverAddress+'/entries';
+      let data = await getRequest(url);
+      setEntries(data);
+    } catch (error) {
+      console.log(error);
+    }
   }
   
   const getReplies = async() => {
-    let url = serverAddress+'/replies';
-    let data = await getRequest(url);
-    setReplies(data);
+    try {
+      let url = serverAddress+'/replies';
+      let data = await getRequest(url);
+      setReplies(data);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   const getCredits = async() => {
-    let url = serverAddress+'/credits';
-    let data = await getRequest(url);
-    setCredits(data);
+    try {
+      let url = serverAddress+'/credits';
+      let data = await getRequest(url);
+      setCredits(data);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   useEffect(() => {
@@ -63,21 +75,29 @@ export default function Feed(props) {
   
 
   const applyPlus = async(event) => {
-    const creditData = {};
-    creditData.entryid = event.currentTarget.getAttribute('elem');
-    creditData.userid = props.user.id;
-    const url = serverAddress+'/credits';
-    await axiosRequest(url, 'POST', creditData);
-    getCredits();
+    try {
+      const creditData = {};
+      creditData.entryid = event.currentTarget.getAttribute('elem');
+      creditData.userid = props.user.id;
+      const url = serverAddress+'/credits';
+      await axiosRequest(url, 'POST', creditData);
+      getCredits();
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   const applyMinus = async(event) => {
-    const creditData = {};
-    creditData.entryid = event.currentTarget.getAttribute('elem');
-    creditData.userid = props.user.id;
-    const url = serverAddress+'/credits';
-    await axiosRequest(url, 'DELETE', creditData);
-    getCredits();
+    try {
+      const creditData = {};
+      creditData.entryid = event.currentTarget.getAttribute('elem');
+      creditData.userid = props.user.id;
+      const url = serverAddress+'/credits';
+      await axiosRequest(url, 'DELETE', creditData);
+      getCredits();
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   
@@ -86,33 +106,33 @@ export default function Feed(props) {
       {/* Node switch buttons */}
       {/* =================== */}
       <nav id='nodeSwitch'>
-        <button className={activeNode === 'all' ? 'activeNode' : 'nodeButton'}
+        <button className={activeNode === 'all' ? 'active-node' : 'nodeButton'}
           onClick={async() => {
             getEntries();
             setActiveNode('all'); 
           }}>all</button>  
-        <button className={activeNode === 'code' ? 'activeNode' : 'nodeButton'}
+        <button className={activeNode === 'code' ? 'active-node' : 'nodeButton'}
           onClick={async() => {
             let url = serverAddress+"/entries/node/code";
             let data = await getRequest(url);
             setActiveNode('code');
             setEntries(data); 
           }}>code</button>  
-        <button className={activeNode === 'network' ? 'activeNode' : 'nodeButton'}
+        <button className={activeNode === 'network' ? 'active-node' : 'nodeButton'}
           onClick={async() => {
             let url = serverAddress+"/entries/node/network";
             let data = await getRequest(url);
             setActiveNode('network');
             setEntries(data); 
           }}>network</button>  
-        <button className={activeNode === 'hack' ? 'activeNode' : 'nodeButton'}
+        <button className={activeNode === 'hack' ? 'active-node' : 'nodeButton'}
           onClick={async() => {
             let url = serverAddress+"/entries/node/hack";
             let data = await getRequest(url);
             setActiveNode('hack');
             setEntries(data);
           }}>hack</button>  
-        <button className={activeNode === 'society' ? 'activeNode' : 'nodeButton'}
+        <button className={activeNode === 'society' ? 'active-node' : 'nodeButton'}
           onClick={async() => {
             let url = serverAddress+"/entries/node/society";
             let data = await getRequest(url);
@@ -134,10 +154,13 @@ export default function Feed(props) {
             <h2 className='elementTitle'>{element.title}</h2>
             <div className='elementNode'>@ {element.node}</div>
             <pre className='elementContent'>{element.content}</pre>
-            { props.user === 'guest' ? <div className='elementAuthor'>{element.author}</div>
-                                     : <a className='elementAuthor' href={'users/'+element.author}>
-                                        {element.author}
-                                       </a> }
+            { props.user === 'guest' && <div className='elementAuthor'>{element.author}</div> }
+            { props.user.username === element.author ? <a className='elementAuthor' href={'/profile'}>
+                                                        {element.author}
+                                                       </a>
+                                                     : <a className='elementAuthor' href={'/users/'+element.author}>
+                                                        {element.author}
+                                                       </a> }
             {/* Replies */}
             { props.user !== 'guest' && 
                 <ShortReplies repliesArray={repliesMap[element.id]} />
@@ -171,4 +194,4 @@ export default function Feed(props) {
       })}
     </div>
   );
-};
+}

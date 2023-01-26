@@ -8,9 +8,13 @@ export default function Header(props) {
   // console.log(props);
 
   const userLogout = async() => {
-    localStorage.removeItem('localToken');
-    await userdataUpdate();
-    window.location = '/';
+    try {
+      localStorage.removeItem('localToken');
+      await userdataUpdate();
+      window.location = '/';
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   return (

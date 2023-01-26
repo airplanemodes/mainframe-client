@@ -16,17 +16,21 @@ export default function Profile() {
     if (!userinit.username) {
       window.location = '/main'; // Redirect if token expired
     } else {
-      const url = serverAddress+"/entries";
-      let entries = await getRequest(url); // All entries
-      let authoredArray = [];
-      for (let i = 0; i < entries.length; i++) {
-        if (entries[i].author === userinit.username) {
-          authoredArray.push(entries[i]);
-        };
-      };
-      setAuthored(authoredArray);
-    };
-  };
+      try {
+        const url = serverAddress+'/entries';
+        let entries = await getRequest(url); // All entries
+        let authoredArray = [];
+        for (let i = 0; i < entries.length; i++) {
+          if (entries[i].author === userinit.username) {
+            authoredArray.push(entries[i]);
+          }
+        }
+        setAuthored(authoredArray);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  }
 
   useEffect(() => {
     initializeProfile();
@@ -59,4 +63,4 @@ export default function Profile() {
         </div>
     </div>
   );
-};
+}

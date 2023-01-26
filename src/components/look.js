@@ -8,6 +8,7 @@ import './styles/look.css';
 export default function Look() {
 
   let lookOn = useParams();
+  // eslint-disable-next-line
   let [ user, setUser ] = useState([]);
   let [ profileForLook, setProfileForLook ] = useState([]);
   let [ authored, setAuthored ] = useState([]);

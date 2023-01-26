@@ -23,6 +23,7 @@
     padding-top: 40px;
     color: var(--primary-color);
     background-color: var(--bg-color);
+    white-space: pre-wrap;
 }
 
 #entry-signature {

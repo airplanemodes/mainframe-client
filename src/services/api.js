@@ -10,8 +10,8 @@ export const getRequest = async(url) => {
   } catch (error) {
       // console.log(error);
       return error;
-  };
-};
+  }
+}
 
 
 
@@ -30,5 +30,5 @@ export const axiosRequest = async(url, method, data) => {
   } catch (error) {
     // console.log(error);
     throw error;
-  };
-};
+  }
+}

@@ -1,20 +1,20 @@
 #entriesPage {
-    margin-top: 100px;
+  margin-top: 100px;
 }
 
 #nodeSwitch {
-    margin-left: 100px;
+  margin-left: 100px;
 }
 
-.activeNode {
-    background-color: var(--primary-color);
-    height: 40px;
-    width: 100px;
+.active-node {
+  background-color: var(--primary-color);
+  height: 40px;
+  width: 100px;
 }
 
 .nodeButton {
-    height: 40px;
-    width: 100px;
+  height: 40px;
+  width: 100px;
 }
 
 #no-entries {
@@ -25,69 +25,68 @@
 }
 
 .elementArticle {
-    margin: 50px;
-    margin-left: 100px;
-    /* height: 400px; */
-    width: 800px;
-    background-color: var(--secondary-color);
-    border: 5px solid var(--primary-color);
-    border-radius: 2px;
+  margin: 50px;
+  margin-left: 100px;
+  width: 800px;
+  background-color: var(--secondary-color);
+  border: 5px solid var(--primary-color);
+  border-radius: 2px;
 }
 
 .elementTitle {
-    margin: 30px;
-    font-size: 24px;
-    color: var(--bg-color);
+  margin: 30px;
+  font-size: 24px;
+  color: var(--bg-color);
 }
 
 .elementNode {
-    margin: 30px;
-    padding: 10px;
-    color: var(--primary-color);
-    background-color: var(--bg-color);
+  margin: 30px;
+  padding: 10px;
+  color: var(--primary-color);
+  background-color: var(--bg-color);
 }
 
 .elementContent {
-    width: 700px;
-    margin: 30px;
-    color: var(--bg-color);
-    white-space: pre-wrap;
+  width: 700px;
+  margin: 30px;
+  color: var(--bg-color);
+  white-space: pre-wrap;
 }
 
 .elementAuthor {
-    margin: 30px;
-    color: var(--bg-color);
+  margin: 30px;
+  color: var(--bg-color);
 }
 
 .feedButtons {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 .delete-button {
-    margin-left: 10px;
-    background-color: var(--bg-color);
+  margin-left: 10px;
+  background-color: var(--bg-color);
 }
 
 .credits-counter {
-    float: right;
-    margin-top: 25px;
-    margin-right: 20px;
-    margin-left: 20px;
-    color: var(--bg-color);
+  float: right;
+  margin-top: 25px;
+  margin-right: 20px;
+  margin-left: 20px;
+  color: var(--bg-color);
 }
 
 .plus-button {
-    float: right;
-    font-size: 14px;
-    margin-top: 20px;
-    margin-right: 30px;
-    background-color: var(--bg-color);
+  float: right;
+  font-size: 14px;
+  margin-top: 20px;
+  margin-right: 30px;
+  background-color: var(--bg-color);
 }
 
 .minus-button {
-    float: right;
-    font-size: 14px;
-    margin-top: 20px;
-    margin-right: 30px;
-    background-color: var(--bg-color);
+  float: right;
+  font-size: 14px;
+  margin-top: 20px;
+  margin-right: 30px;
+  background-color: var(--bg-color);
 }

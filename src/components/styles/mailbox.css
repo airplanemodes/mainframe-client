@@ -33,12 +33,6 @@
   text-align: center;
 }
 
-#mailbox-return {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left: 300px;
-}
-
 .active-box {
   background-color: var(--primary-color);
 }

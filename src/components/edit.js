@@ -10,10 +10,14 @@ export default function Edit() {
   const [ entry, setEntry ] = useState({});
   
   const getEntryForEditing = async() => {
-    const url = serverAddress+'/edit/'+id;
-    const data = await axiosRequest(url);
-    setEntry(data);
-  };
+    try {
+      const url = serverAddress+'/edit/'+id;
+      const data = await axiosRequest(url);
+      setEntry(data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
   
   useEffect(() => {
     getEntryForEditing();
@@ -33,10 +37,7 @@ export default function Edit() {
       formdata.id = entry.id;
       formdata.points = entry.points;
       const url = serverAddress+"/entries/"+formdata.id;
-      console.log(formdata);
-      // console.log(url);
-      let response = await axiosRequest(url, 'PUT', formdata);
-      console.log(response);
+      await axiosRequest(url, 'PUT', formdata);
       window.location = '/main';
     } catch (error) {
       console.log(error);
@@ -69,4 +70,4 @@ export default function Edit() {
       <a href='/main'><button id='editReturn'>Return 0</button></a>
     </div>
   );
-};
+}

@@ -14,12 +14,16 @@ export default function Read() {
   const [ user, setUser ] = useState({});
   
   const getSingleEntry = async() => {
-    let url = serverAddress+"/entries/"+id;
-    let data = getRequest(url);
-    data.then((value) => {
-      setEntry(value);
-    });
-  };
+    try {
+      let url = serverAddress+'/entries/'+id;
+      let data = getRequest(url);
+      data.then((value) => {
+        setEntry(value);
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  }
     
   const initializeUser = async() => {
     let userinit = await userdataUpdate();
@@ -27,16 +31,20 @@ export default function Read() {
       setUser(userinit);
     } else {
       localStorage.removeItem('localToken');
-    };
-  };
+    }
+  }
 
   let [ replies, setReplies ] = useState([]);
 
   const getReplies = async() => {
-    let url = serverAddress+'/replies';
-    let data = await getRequest(url);
-    setReplies(data);
-  };
+    try {
+      let url = serverAddress+'/replies';
+      let data = await getRequest(url);
+      setReplies(data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
     
   useEffect(() => {
     getSingleEntry();
@@ -48,13 +56,13 @@ export default function Read() {
   let repliesMap = {};
   for (let i = 0; i < replies.length; i++) {
     repliesMap[replies[i].entryid] = [];
-  };
+  }
     
   for (let i = 0; i < replies.length; i++) {
     if (repliesMap[replies[i].entryid]) {
       repliesMap[replies[i].entryid].push(replies[i]);
-    };
-  };
+    }
+  }
     
   return (
     <div>
