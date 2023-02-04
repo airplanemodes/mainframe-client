@@ -56,6 +56,9 @@ export default function Enter() {
       <br />
       <p>continue as <a href="/main">guest</a></p>
       <p>create new <a href="/register">user</a></p>
+      <br />
+      <br />
+      <p id='terms-notice'>By entering the website you're agreeing to our <a href='/terms'>Terms</a> and confirm that you are at least 16 years of age.</p>
     </div>
   );
 }

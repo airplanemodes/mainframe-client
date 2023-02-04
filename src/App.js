@@ -10,6 +10,7 @@ import Read from './components/read';
 import Edit from './components/edit';
 import NoPage from './components/nopage';
 import Look from './components/look';
+import UserAgreement from './components/terms';
 
 export default function App() {
   return (
@@ -21,9 +22,10 @@ export default function App() {
         <Route path='/write' element={<Write />}/>
         <Route path='/mailbox' element={<Mailbox />}/>
         <Route path='/profile' element={<Profile />}/>
-        <Route path='/users/:username' element={<Look />} />
+        <Route path='/users/:username' element={<Look />}/>
         <Route path='/entries/:id' element={<Read />}/>
         <Route path='/edit/:id' element={<Edit />}/>
+        <Route path='/terms' element={<UserAgreement />}/>
         <Route path='*' element={<NoPage />} />
       </Routes>
     </BrowserRouter>
