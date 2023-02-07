@@ -1,8 +1,8 @@
-#entriesPage {
+#entries-page {
   margin-top: 100px;
 }
 
-#nodeSwitch {
+#node-switch {
   margin-left: 100px;
 }
 
@@ -12,7 +12,7 @@
   width: 100px;
 }
 
-.nodeButton {
+.node-button {
   height: 40px;
   width: 100px;
 }
@@ -24,7 +24,7 @@
   font-size: 30px;
 }
 
-.elementArticle {
+.element-article {
   margin: 50px;
   margin-left: 100px;
   width: 800px;
@@ -33,32 +33,37 @@
   border-radius: 2px;
 }
 
-.elementTitle {
+.element-title {
   margin: 30px;
   font-size: 24px;
   color: var(--bg-color);
 }
 
-.elementNode {
+.element-node {
   margin: 30px;
   padding: 10px;
   color: var(--primary-color);
   background-color: var(--bg-color);
 }
 
-.elementContent {
+.element-content {
   width: 700px;
   margin: 30px;
   color: var(--bg-color);
   white-space: pre-wrap;
 }
 
-.elementAuthor {
+.element-author {
   margin: 30px;
   color: var(--bg-color);
 }
 
-.feedButtons {
+.element-guest-author {
+  margin-left: 30px;
+  color: var(--bg-color);
+}
+
+.feed-buttons {
   margin-bottom: 30px;
 }
 

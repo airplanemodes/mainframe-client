@@ -17,7 +17,7 @@ export default function Feed(props) {
   
   const getEntries = async() => {
     try {
-      let url = serverAddress+'/entries';
+      const url = serverAddress+'/entries';
       let data = await getRequest(url);
       setEntries(data);
     } catch (error) {
@@ -27,7 +27,7 @@ export default function Feed(props) {
   
   const getReplies = async() => {
     try {
-      let url = serverAddress+'/replies';
+      const url = serverAddress+'/replies';
       let data = await getRequest(url);
       setReplies(data);
     } catch (error) {
@@ -37,7 +37,7 @@ export default function Feed(props) {
 
   const getCredits = async() => {
     try {
-      let url = serverAddress+'/credits';
+      const url = serverAddress+'/credits';
       let data = await getRequest(url);
       setCredits(data);
     } catch (error) {
@@ -102,37 +102,37 @@ export default function Feed(props) {
 
   
   return (
-    <div id='entriesPage'>
+    <div id='entries-page'>
       {/* Node switch buttons */}
       {/* =================== */}
-      <nav id='nodeSwitch'>
-        <button className={activeNode === 'all' ? 'active-node' : 'nodeButton'}
+      <nav id='node-switch'>
+        <button className={activeNode === 'all' ? 'active-node' : 'node-button'}
           onClick={async() => {
             getEntries();
             setActiveNode('all'); 
           }}>all</button>  
-        <button className={activeNode === 'code' ? 'active-node' : 'nodeButton'}
+        <button className={activeNode === 'code' ? 'active-node' : 'node-button'}
           onClick={async() => {
             let url = serverAddress+"/entries/node/code";
             let data = await getRequest(url);
             setActiveNode('code');
             setEntries(data); 
           }}>code</button>  
-        <button className={activeNode === 'network' ? 'active-node' : 'nodeButton'}
+        <button className={activeNode === 'network' ? 'active-node' : 'node-button'}
           onClick={async() => {
             let url = serverAddress+"/entries/node/network";
             let data = await getRequest(url);
             setActiveNode('network');
             setEntries(data); 
           }}>network</button>  
-        <button className={activeNode === 'hack' ? 'active-node' : 'nodeButton'}
+        <button className={activeNode === 'hack' ? 'active-node' : 'node-button'}
           onClick={async() => {
             let url = serverAddress+"/entries/node/hack";
             let data = await getRequest(url);
             setActiveNode('hack');
             setEntries(data);
           }}>hack</button>  
-        <button className={activeNode === 'society' ? 'active-node' : 'nodeButton'}
+        <button className={activeNode === 'society' ? 'active-node' : 'node-button'}
           onClick={async() => {
             let url = serverAddress+"/entries/node/society";
             let data = await getRequest(url);
@@ -150,15 +150,15 @@ export default function Feed(props) {
       {entries.length === 0 && <div id='no-entries'>Node is empty</div>}
       {entries.map((element) => {
         return (
-          <article className='elementArticle' key={element.id}>
-            <h2 className='elementTitle'>{element.title}</h2>
-            <div className='elementNode'>@ {element.node}</div>
-            <pre className='elementContent'>{element.content}</pre>
-            { props.user === 'guest' && <div className='elementAuthor'>{element.author}</div> }
-            { props.user.username === element.author ? <a className='elementAuthor' href={'/profile'}>
+          <article className='element-article' key={element.id}>
+            <h2 className='element-title'>{element.title}</h2>
+            <div className='element-node'>@ {element.node}</div>
+            <pre className='element-content'>{element.content}</pre>
+            { props.user === 'guest' ? <div className='element-guest-author'>{element.author}</div> :
+              props.user.username === element.author ? <a className='element-author' href={'/profile'}>
                                                         {element.author}
                                                        </a>
-                                                     : <a className='elementAuthor' href={'/users/'+element.author}>
+                                                     : <a className='element-author' href={'/users/'+element.author}>
                                                         {element.author}
                                                        </a> }
             {/* Replies */}
@@ -167,7 +167,7 @@ export default function Feed(props) {
             }
             {/* Entry buttons */}
             <br />
-            <div className='feedButtons'>
+            <div className='feed-buttons'>
               <ReadButton id={element.id} />
               { props.user.username === element.author &&
               <EditButton id={element.id} /> }
