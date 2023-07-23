@@ -2,3 +2,7 @@
     margin-left: 10px;
     background-color: var(--bg-color);
 }
+
+.edit-button:hover {
+    background-color: var(--bg-color-light);
+}

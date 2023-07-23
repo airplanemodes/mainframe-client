@@ -1,21 +1,25 @@
 header {
-  margin-top: 10px;
-  height: 80px;
-  background-color: var(--bg-color);
-  color: var(--primary-color);
-  text-align: center;
+    margin-top: 10px;
+    height: 80px;
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    text-align: center;
 }
 
 #login-bar-button {
-  margin-right: 110px;
+    margin-right: 110px;
+}
+
+.bar-button:hover {
+    background-color: var(--primary-color);
 }
 
 .userbar {
-  margin-right: 100px;
-  text-align: right;
+    margin-right: 100px;
+    text-align: right;
 }
 
 .userbar > h4 {
-  margin-top: 20px;
-  margin-right: 80px;
+    margin-top: 20px;
+    margin-right: 80px;
 }

@@ -1,65 +1,69 @@
 #compose {
-  background-color: var(--secondary-color);
-  margin: 0 auto;
-  color: var(--primary-color);
-  width: 30vw;
-  border: 5px solid var(--primary-color);
-  border-radius: 15px;
-  margin-left: 30px;
+    background-color: var(--secondary-color);
+    margin: 0 auto;
+    color: var(--primary-color);
+    width: 30vw;
+    border: 5px solid var(--primary-color);
+    border-radius: 15px;
+    margin-left: 30px;
 }
 
 #compose > h3 {
-  text-align: center;
-  color: var(--bg-color);
-  padding-top: 10px;
-  padding-bottom: 10px;
+    text-align: center;
+    color: var(--bg-color);
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 #compose > label {
-  color: var(--bg-color);
-  font-size: 16px;
-  padding-left: 20px;
+    color: var(--bg-color);
+    font-size: 16px;
+    padding-left: 20px;
 }
 
 #compose > select {
-  margin-top: 10px;
-  margin-left: 10px;
-  font-size: 14px;
-  width: 40%;
-  padding: 10px;
-  color: var(--bg-color);
-  background-color: var(--primary-color);
-  resize: none;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 14px;
+    width: 40%;
+    padding: 10px;
+    color: var(--bg-color);
+    background-color: var(--primary-color);
+    resize: none;
 }
 
 #compose > input {
-  height: 20px;
-  width: 30%;
-  margin-left: 5px;
-  margin-bottom: 10px;
-  border: var(--bg-color);
-  border-radius: 5px;
+    height: 20px;
+    width: 30%;
+    margin-left: 5px;
+    margin-bottom: 10px;
+    border: var(--bg-color);
+    border-radius: 5px;
 }
 
 #compose-textarea {
-  background-color: var(--bg-color);
-  color: var(--primary-color);
-  display: flex;
-  margin: 0 auto;
-  font-size: 18px;
-  resize: none;
-  width: 95%;
-  outline: none;
-  padding: 5px;
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    display: flex;
+    margin: 0 auto;
+    font-size: 18px;
+    resize: none;
+    width: 95%;
+    outline: none;
+    padding: 5px;
 }
 
 #compose-button {
-  margin: 20px;
-  background-color: var(--bg-color);
+    margin: 20px;
+    background-color: var(--bg-color);
+}
+
+#compose-button:hover {
+    background-color: var(--bg-color-light);
 }
 
 #mailbox-return {
-  text-align: center;
-  margin-top: 20px;
-  margin-left: 30px;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 30px;
 }

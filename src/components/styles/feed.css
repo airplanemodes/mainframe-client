@@ -64,34 +64,46 @@
 }
 
 .feed-buttons {
-  margin-bottom: 30px;
+    margin-bottom: 30px;
 }
 
 .delete-button {
-  margin-left: 10px;
-  background-color: var(--bg-color);
+    margin-left: 10px;
+    background-color: var(--bg-color);
+}
+
+.delete-button:hover {
+    background-color: var(--bg-color-light);
 }
 
 .credits-counter {
-  float: right;
-  margin-top: 25px;
-  margin-right: 20px;
-  margin-left: 20px;
-  color: var(--bg-color);
+    float: right;
+    margin-top: 25px;
+    margin-right: 20px;
+    margin-left: 20px;
+    color: var(--bg-color);
 }
 
 .plus-button {
-  float: right;
-  font-size: 14px;
-  margin-top: 20px;
-  margin-right: 30px;
-  background-color: var(--bg-color);
+    float: right;
+    font-size: 14px;
+    margin-top: 20px;
+    margin-right: 30px;
+    background-color: var(--bg-color);
+}
+
+.plus-button:hover {
+    background-color: var(--bg-color-light);
 }
 
 .minus-button {
-  float: right;
-  font-size: 14px;
-  margin-top: 20px;
-  margin-right: 30px;
-  background-color: var(--bg-color);
+    float: right;
+    font-size: 14px;
+    margin-top: 20px;
+    margin-right: 30px;
+    background-color: var(--bg-color);
+}
+
+.minus-button:hover {
+    background-color: var(--bg-color-light);
 }

@@ -1,3 +1,7 @@
 .return-button-dark {
     background-color: var(--bg-color);
 }
+
+.return-button-dark:hover {
+    background-color: var(--bg-color-light);
+}

@@ -29,3 +29,7 @@
     margin: 20px;
     background-color: var(--bg-color);
 }
+
+#reply-button:hover {
+    background-color: var(--bg-color-light);
+}

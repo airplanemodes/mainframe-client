@@ -66,7 +66,7 @@ export default function Write() {
         <br />
         <textarea rows={12} {...contentRef}/>
         <br />
-        <button>Write</button>
+        <button className='bar-button'>Write</button>
       </form>
       <div id='write-return-div'>
         <ReturnLight />
