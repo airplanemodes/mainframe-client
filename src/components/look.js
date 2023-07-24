@@ -7,77 +7,76 @@ import './styles/look.css';
 
 export default function Look() {
 
-  let lookOn = useParams();
-  // eslint-disable-next-line
-  let [ user, setUser ] = useState([]);
-  let [ profileForLook, setProfileForLook ] = useState([]);
-  let [ authored, setAuthored ] = useState([]);
-  
-  const initializeUser = async() => {
-    let userinit = await userdataUpdate();
-    if (userinit.username) {
-      setUser(userinit);
-    } else {
-      setUser('guest');
-      localStorage.removeItem('localToken');
-      window.location = '/main';
-    }
-  }
-
-  const getProfileForLook = async() => {
-    try {
-      const url = serverAddress+'/users/'+lookOn.username;
-      const data = await axiosRequest(url, 'GET');
-      setProfileForLook(data);
-    } catch (error) {
-      console.log(error);
-    }
-  }
-  
-  const getAuthored = async() => {
-    try {
-      const url = serverAddress+'/entries';
-      let entries = await getRequest(url); // All entries
-      let authoredArray = [];
-      for (let i = 0; i < entries.length; i++) {
-        if (entries[i].author === lookOn.username) {
-          authoredArray.push(entries[i]);
-        }
-      }
-      setAuthored(authoredArray);
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
-  useEffect(() => {
-    initializeUser();
-    getProfileForLook();
-    getAuthored();
+    let lookOn = useParams();
     // eslint-disable-next-line
-  }, []);
+    let [ user, setUser ] = useState([]);
+    let [ profileForLook, setProfileForLook ] = useState([]);
+    let [ authored, setAuthored ] = useState([]);
   
-  return (
-    <div id='look'>
-      <h2 id='look-header'>Look</h2>
-      <div id='look-username'>User: {profileForLook.username}</div>
-      <div id='look-entered'>Entered Mainframe on {profileForLook.entered}</div>
-      { authored.length > 0 && <div id='look-authored'>
-        <h4>Authored entries:</h4>
-          <ul>
-            {authored.map((element) => {
-              return (
-                <li key={element.id}>{element.title} (
-                  <a href={'/entries/'+element.id}>Read</a>
-                )</li>
-              )
-            })}
-          </ul>
+    const initializeUser = async() => {
+        let userinit = await userdataUpdate();
+        if (userinit.username) setUser(userinit);
+        else {
+            setUser('guest');
+            localStorage.removeItem('localToken');
+            window.location = '/main';
+        }
+    }
+
+    const getProfileForLook = async() => {
+        try {
+            const url = serverAddress+'/users/'+lookOn.username;
+            const data = await axiosRequest(url, 'GET');
+            setProfileForLook(data);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+  
+    const getAuthored = async() => {
+        try {
+            const url = serverAddress+'/entries';
+            let entries = await getRequest(url); // all entries
+            let authoredArray = [];
+            for (let i = 0; i < entries.length; i++) {
+                if (entries[i].author === lookOn.username) {
+                    authoredArray.push(entries[i]);
+                }
+            }
+            setAuthored(authoredArray);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    useEffect(() => {
+        initializeUser();
+        getProfileForLook();
+        getAuthored();
+        // eslint-disable-next-line
+    }, []);
+  
+    return (
+        <div id='look'>
+            <h2 id='look-header'>Look</h2>
+            <div id='look-username'>User: {profileForLook.username}</div>
+            <div id='look-entered'>Entered Mainframe on {profileForLook.entered}</div>
+            { authored.length > 0 && <div id='look-authored'>
+                <h4>Authored entries:</h4>
+                <ul>
+                {authored.map((element) => {
+                    return (
+                        <li key={element.id}>{element.title} (
+                            <a className='read-word' href={'/entries/'+element.id}>Read</a>
+                        )</li>
+                    )
+                })}
+                </ul>
+            </div>
+            }
+            <div id='look-return'>
+                <ReturnLight />
+            </div>
         </div>
-      }
-      <div id='look-return'>
-        <ReturnLight />
-      </div>
-    </div>
-  );
-};
+    );
+}

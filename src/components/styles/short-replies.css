@@ -5,7 +5,15 @@
     margin-right: 30px;
 }
 
-.singleReply {
+.single-reply {
     padding: 10px;
     font-size: 12px;
+}
+
+.short-reply-username {
+    color: var(--secondary-color);
+}
+
+.short-reply-username:hover {
+    color: var(--primary-color);
 }

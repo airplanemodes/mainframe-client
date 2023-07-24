@@ -21,14 +21,22 @@
     font-size: 20px;
 }
 
+#look-entered {
+    margin-left: 30px;
+}
+
 #look-authored {
     font-size: 14px;
     margin-top: 20px;
     margin-left: 30px;
 }
 
-#look-entered {
-    margin-left: 30px;
+.read-word {
+    color: var(--secondary-color);
+}
+
+.read-word:hover {
+    color: var(--primary-color);
 }
 
 #look-return {

@@ -34,6 +34,10 @@
 
 #entry-signature > a {
     margin-right: 10px;
+    color: var(--secondary-color);
+}
+
+#entry-signature > a:hover {
     color: var(--primary-color);
 }
 
