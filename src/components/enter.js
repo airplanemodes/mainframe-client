@@ -32,8 +32,8 @@ export default function Enter() {
             localStorage.setItem('localToken', response.created);
             window.location = '/main';
         } catch (error) {
-            error.code == "ERR_NETWORK" ? setError("server unavailable")
-                                        : setError(error.response.data);
+            error.code === "ERR_NETWORK" ? setError("server unavailable")
+                                         : setError(error.response.data);
         }
     }
 
