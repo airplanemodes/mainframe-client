@@ -8,97 +8,151 @@ import Pagination from './pagination';
 
 export default function Feed(props) {
 
-  // console.log(props);
+    // console.log(props);
 
-  let [ entries, setEntries ] = useState([]);
-  let [ replies, setReplies ] = useState([]);
-  let [ credits, setCredits ] = useState([]);
-  let [ activeNode, setActiveNode ] = useState('all');
+    let [ entries, setEntries ] = useState([]);
+    let [ replies, setReplies ] = useState([]);
+    let [ credits, setCredits ] = useState([]);
+    let [ activeNode, setActiveNode ] = useState('all');
   
-  const getEntries = async() => {
-    try {
-      const url = serverAddress+'/entries';
-      let data = await getRequest(url);
-      setEntries(data);
-    } catch (error) {
-      console.log(error);
+    const getEntries = async() => {
+	try {
+	    const url = serverAddress+'/entries';
+	    let data = await getRequest(url);
+	    setEntries(data);
+	} catch (error) {
+	    console.log(error);
+	}
     }
-  }
   
-  const getReplies = async() => {
-    try {
-      const url = serverAddress+'/replies';
-      let data = await getRequest(url);
-      setReplies(data);
-    } catch (error) {
-      console.log(error);
+    const getReplies = async() => {
+	try {
+	    const url = serverAddress+'/replies';
+	    let data = await getRequest(url);
+	    setReplies(data);
+	} catch (error) {
+	    console.log(error);
+	}
     }
-  }
 
-  const getCredits = async() => {
-    try {
-      const url = serverAddress+'/credits';
-      let data = await getRequest(url);
-      setCredits(data);
-    } catch (error) {
-      console.log(error);
+    const getCredits = async() => {
+	try {
+	    const url = serverAddress+'/credits';
+	    let data = await getRequest(url);
+	    setCredits(data);
+	} catch (error) {
+	    console.log(error);
+	}
     }
-  }
 
-  useEffect(() => {
-    getEntries();
-    getReplies();
-    getCredits();
-  }, []);
+    useEffect(() => {
+	    getEntries();
+	    getReplies();
+	    getCredits();
+    }, []);
     
 
-  let repliesMap = {};
-  for (let i = 0; i < replies.length; i++) {
-    repliesMap[replies[i].entryid] = [];
-  }
-  for (let i = 0; i < replies.length; i++) {
-    if (repliesMap[replies[i].entryid]) {
-      repliesMap[replies[i].entryid].push(replies[i]);
+    let repliesMap = {};
+    for (let i = 0; i < replies.length; i++) {
+        repliesMap[replies[i].entryid] = [];
     }
-  }
+    for (let i = 0; i < replies.length; i++) {
+        if (repliesMap[replies[i].entryid]) {
+            repliesMap[replies[i].entryid].push(replies[i]);
+        }
+    }
 
 
-  let creditsMap = {};
-  for (let i = 0; i < credits.length; i++) {
-    creditsMap[credits[i].entryid] = [];
-  }
-  for (let i = 0; i < credits.length; i++) {
-    if (creditsMap[credits[i].entryid]) {
-      creditsMap[credits[i].entryid].push(credits[i].userid);
+    let creditsMap = {};
+    for (let i = 0; i < credits.length; i++) {
+        creditsMap[credits[i].entryid] = [];
     }
-  }
+    for (let i = 0; i < credits.length; i++) {
+        if (creditsMap[credits[i].entryid]) {
+            creditsMap[credits[i].entryid].push(credits[i].userid);
+        }
+    }
   
-
-  const applyPlus = async(event) => {
-    try {
-      const creditData = {};
-      creditData.entryid = event.currentTarget.getAttribute('elem');
-      creditData.userid = props.user.id;
-      const url = serverAddress+'/credits';
-      await axiosRequest(url, 'POST', creditData);
-      getCredits();
-    } catch (error) {
-      console.log(error);
+    // set node buttons
+    const setAllNode = async() => {
+        try {
+            getEntries();
+            setActiveNode('all'); 
+        } catch (error) {
+            console.log(error);
+        }
     }
-  }
 
-  const applyMinus = async(event) => {
-    try {
-      const creditData = {};
-      creditData.entryid = event.currentTarget.getAttribute('elem');
-      creditData.userid = props.user.id;
-      const url = serverAddress+'/credits';
-      await axiosRequest(url, 'DELETE', creditData);
-      getCredits();
-    } catch (error) {
-      console.log(error);
+    const setCodeNode = async() => {
+        try {
+            let url = serverAddress+"/entries/node/code";
+            let data = await getRequest(url);
+            setActiveNode('code');
+            setEntries(data); 
+        } catch (error) {
+            console.log(error);
+        }
     }
-  }
+
+    const setNetworkNode = async() => {
+        try {
+            let url = serverAddress+"/entries/node/network";
+            let data = await getRequest(url);
+            setActiveNode('network');
+            setEntries(data); 
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    const setHackNode = async() => {
+        try {
+            let url = serverAddress+"/entries/node/hack";
+            let data = await getRequest(url);
+            setActiveNode('hack');
+            setEntries(data);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    const setSocietyNode = async() => {
+        try {
+            let url = serverAddress+"/entries/node/society";
+            let data = await getRequest(url);
+            setEntries(data);
+            setActiveNode('society'); 
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    // credit buttons
+    const applyPlus = async(event) => {
+        try {
+            const creditData = {};
+            creditData.entryid = event.currentTarget.getAttribute('elem');
+            creditData.userid = props.user.id;
+            const url = serverAddress+'/credits';
+            await axiosRequest(url, 'POST', creditData);
+            getCredits();
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    const applyMinus = async(event) => {
+        try {
+            const creditData = {};
+            creditData.entryid = event.currentTarget.getAttribute('elem');
+            creditData.userid = props.user.id;
+            const url = serverAddress+'/credits';
+            await axiosRequest(url, 'DELETE', creditData);
+            getCredits();
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
   
   return (
@@ -107,38 +161,15 @@ export default function Feed(props) {
       {/* =================== */}
       <nav id='node-switch'>
         <button className={activeNode === 'all' ? 'active-node' : 'node-button'}
-          onClick={async() => {
-            getEntries();
-            setActiveNode('all'); 
-          }}>all</button>  
+          onClick={setAllNode}>all</button>  
         <button className={activeNode === 'code' ? 'active-node' : 'node-button'}
-          onClick={async() => {
-            let url = serverAddress+"/entries/node/code";
-            let data = await getRequest(url);
-            setActiveNode('code');
-            setEntries(data); 
-          }}>code</button>  
+          onClick={setCodeNode}>code</button>  
         <button className={activeNode === 'network' ? 'active-node' : 'node-button'}
-          onClick={async() => {
-            let url = serverAddress+"/entries/node/network";
-            let data = await getRequest(url);
-            setActiveNode('network');
-            setEntries(data); 
-          }}>network</button>  
+          onClick={setNetworkNode}>network</button>  
         <button className={activeNode === 'hack' ? 'active-node' : 'node-button'}
-          onClick={async() => {
-            let url = serverAddress+"/entries/node/hack";
-            let data = await getRequest(url);
-            setActiveNode('hack');
-            setEntries(data);
-          }}>hack</button>  
+          onClick={setHackNode}>hack</button>  
         <button className={activeNode === 'society' ? 'active-node' : 'node-button'}
-          onClick={async() => {
-            let url = serverAddress+"/entries/node/society";
-            let data = await getRequest(url);
-            setEntries(data);
-            setActiveNode('society'); 
-          }}>society</button>
+          onClick={setSocietyNode}>society</button>
           { activeNode === 'all' && <Pagination urlOfNodeTotal={'/entries/total/all'} /> }
           { activeNode === 'code' && <Pagination urlOfNodeTotal={'/entries/total/code'}/> }
           { activeNode === 'network' && <Pagination urlOfNodeTotal={'/entries/total/network'}/> }
