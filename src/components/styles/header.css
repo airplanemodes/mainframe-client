@@ -6,20 +6,20 @@ header {
     text-align: center;
 }
 
-#login-bar-button {
-    margin-right: 110px;
+#welcome {
+    text-align: right;
+    margin-right: 120px;
+    margin-top: 20px;
 }
 
-.bar-button:hover {
+#login-bar-button {
+    margin-right: 150px;
+}
+
+#login-bar-button:hover {
     background-color: var(--primary-color);
 }
 
-.userbar {
-    margin-right: 100px;
-    text-align: right;
-}
-
-.userbar > h4 {
-    margin-top: 20px;
-    margin-right: 80px;
+#logout-bar-button {
+    margin-right: 30px;
 }

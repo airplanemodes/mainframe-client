@@ -1,66 +1,70 @@
 #entries-page {
-  margin-top: 100px;
+    margin-top: 100px;
 }
 
 #node-switch {
-  margin-left: 100px;
+    margin-left: 100px;
 }
 
 .active-node {
-  background-color: var(--primary-color);
-  height: 40px;
-  width: 100px;
+    background-color: var(--primary-color);
+    height: 40px;
+    width: 100px;
 }
 
 .node-button {
-  height: 40px;
-  width: 100px;
+    height: 40px;
+    width: 100px;
+}
+
+.node-button:hover {
+    background-color: var(--primary-color);
 }
 
 #no-entries {
-  width: 810px;
-  margin: 50px;
-  margin-left: 100px;
-  font-size: 30px;
+    width: 810px;
+    margin: 50px;
+    margin-left: 100px;
+    font-size: 30px;
 }
 
 .element-article {
-  margin: 50px;
-  margin-left: 100px;
-  width: 800px;
-  background-color: var(--secondary-color);
-  border: 5px solid var(--primary-color);
-  border-radius: 2px;
+    margin: 50px;
+    margin-left: 100px;
+    width: 800px;
+    background-color: var(--secondary-color);
+    border: 5px solid var(--primary-color);
+    border-radius: 4px;
 }
 
 .element-title {
-  margin: 30px;
-  font-size: 24px;
-  color: var(--bg-color);
+    margin: 30px;
+    font-size: 24px;
+    color: var(--bg-color);
 }
 
 .element-node {
-  margin: 30px;
-  padding: 10px;
-  color: var(--primary-color);
-  background-color: var(--bg-color);
+    margin: 30px;
+    padding: 10px;
+    color: var(--primary-color);
+    background-color: var(--bg-color);
 }
 
 .element-content {
-  width: 700px;
-  margin: 30px;
-  color: var(--bg-color);
-  white-space: pre-wrap;
+    width: 700px;
+    margin: 30px;
+    color: var(--bg-color);
+    white-space: pre-wrap;
 }
 
 .element-author {
-  margin: 30px;
-  color: var(--bg-color);
+    margin: 30px;
+    color: var(--bg-color);
 }
 
 .element-guest-author {
-  margin-left: 30px;
-  color: var(--bg-color);
+    margin-left: 30px;
+    color: var(--bg-color);
 }
 
 .feed-buttons {

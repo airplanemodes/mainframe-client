@@ -31,3 +31,25 @@ body {
   background-color: var(--bg-color);
   overflow-y: scroll;
 }
+
+.userbar {
+    margin-right: 140px;
+    text-align: right;
+}
+
+.userbar > h4 {
+    margin-top: 10px;
+    margin-right: 70px;
+}
+
+.bar-button:hover {
+    background-color: var(--primary-color);
+}
+
+.read-word {
+    color: var(--secondary-color);
+}
+
+.read-word:hover {
+    color: var(--primary-color);
+}
