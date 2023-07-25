@@ -31,14 +31,6 @@
     margin-left: 30px;
 }
 
-.read-word {
-    color: var(--secondary-color);
-}
-
-.read-word:hover {
-    color: var(--primary-color);
-}
-
 #look-return {
     margin-left: 30px;
 }

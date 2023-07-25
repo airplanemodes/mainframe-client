@@ -1,52 +1,53 @@
 #write {
-    margin: 0 auto;
+    margin: auto;
     margin-top: 100px;
     color: var(--primary-color);
-    height: 640px;
-    width: 80vw;
+    height: 660px;
+    width: 70vw;
     border: 8px solid var(--primary-color);
-    border-radius: 15px;
+    border-radius: 10px;
 }
 
 #write-header {
     text-align: center;
     color: var(--bg-color);
     background-color: var(--secondary-color);
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 #write-form {
-    padding: 30px;
+    padding: 40px;
 }
 
-#write-form > label {
-    margin: 5px;
-    padding: 5px
+#write-form input {
+    margin-left: 20px;
+    margin-bottom: 5px;
 }
 
-#write-form > select {
-    background-color: var(--primary-color);
-    width: 180px;
-    height: 30px;
+#write-form select {
     margin-left: 30px;
+    margin-bottom: 20px;
+    width: 240px;
+    height: 30px;
+    background-color: var(--primary-color);
 }
 
-#write-form > textarea {
+#write-form textarea {
     margin-top: 10px;
-    margin-left: 10px;
     font-size: 14px;
-    width: 80%;
+    width: 97%;
     padding: 10px;
     color: var(--bg-color);
     background-color: var(--primary-color);
     resize: none;
 }
 
-#write-form > button {
-    margin-left: 30px;
+#send-write {
+    margin-left: 40px;
+    margin-top: 40px;
 }
 
-#write-return-div {
+#write-return {
     margin-left: 40px;
 }
