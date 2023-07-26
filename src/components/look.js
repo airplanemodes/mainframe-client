@@ -14,8 +14,8 @@ export default function Look() {
     let [ authored, setAuthored ] = useState([]);
   
     const initializeUser = async() => {
-        let userinit = await userdataUpdate();
-        if (userinit.username) setUser(userinit);
+        let userobject = await userdataUpdate();
+        if (userobject.username) setUser(userobject);
         else {
             setUser('guest');
             localStorage.removeItem('localToken');

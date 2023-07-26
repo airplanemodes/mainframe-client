@@ -13,9 +13,7 @@ export default function Enter() {
     const initializeUser = async() => {
         let userinit = await userdataUpdate();
         setUser(userinit);
-        if (userinit.username) {
-            window.location = '/main';
-        }
+        if (userinit.username) window.location = '/main';
     }
 
     useEffect(() => {

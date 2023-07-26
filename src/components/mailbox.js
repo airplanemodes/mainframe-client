@@ -6,36 +6,35 @@ import './styles/mailbox.css';
 
 export default function Mailbox() {
 
-  let [ user, setUser ] = useState([]);
-  let [ activeBox, setActiveBox ] = useState('inbox');
-  let [ privateMessages, setPrivateMessages ] = useState([]);
+    let [ user, setUser ] = useState([]);
+    let [ activeBox, setActiveBox ] = useState('inbox');
+    let [ privateMessages, setPrivateMessages ] = useState([]);
 
-  const initializeUser = async() => {
-    let userinit = await userdataUpdate();
-    if (userinit.username) {
-      setUser(userinit);
-    } else {
-      setUser("guest");
-      localStorage.removeItem('localToken');
-      window.location = '/main';
+    const initializeUser = async() => {
+        let userobject = await userdataUpdate();
+        if (userobject.username) setUser(userobject);
+        else {
+            setUser("guest");
+            localStorage.removeItem('localToken');
+            window.location = '/main';
+        }
     }
-  }
 
-  const getPrivateMessages = async() => {
-    try {
-      const url = serverAddress+"/privates";
-      const data = await axiosRequest(url);
-      // console.log(data);
-      setPrivateMessages(data);
-    } catch (error) {
-      console.log(error);
+    const getPrivateMessages = async() => {
+        try {
+            const url = serverAddress+"/privates";
+            const data = await axiosRequest(url);
+            // console.log(data);
+            setPrivateMessages(data);
+        } catch (error) {
+            console.log(error);
+        }
     }
-  }
 
-  useEffect(() => {
-    initializeUser();
-    getPrivateMessages();
-  }, []);
+    useEffect(() => {
+        initializeUser();
+        getPrivateMessages();
+    }, []);
 
   return (
     <table id='pm-table'>
@@ -83,7 +82,9 @@ export default function Mailbox() {
                                                           .map((element) => {
                   return (
                     <tr className='pm-data-row' key={element.id}>
-                      <td className='pm-data-msg'>{element.sender}</td>
+                      <td className='pm-data-msg'>
+                        <a href={'/users/'+element.sender} className='sender-link'>{element.sender}</a>
+                      </td>
                       { element.subject ? <td className='pm-data-msg-subject'>{element.subject}</td>
                                         : <td className='pm-data-msg-subject'>...</td>}
                       <td className='pm-data-msg-body'>{element.body}</td>
@@ -107,7 +108,9 @@ export default function Mailbox() {
                                                          .map((element) => {
                   return (
                     <tr className='pm-data-row' key={element.id}>
-                      <td className='pm-data-msg'>{element.receiver}</td>
+                      <td className='pm-data-msg'>
+                        <a href={'/users/'+element.receiver} className='sender-link'>{element.receiver}</a>
+                      </td>
                       { element.subject ? <td className='pm-data-msg-subject'>{element.subject}</td>
                                         : <td className='pm-data-msg-subject'>...</td> }
                       <td className='pm-data-msg-body'>{element.body}</td>

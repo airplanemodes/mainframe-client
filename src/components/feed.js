@@ -16,33 +16,33 @@ export default function Feed(props) {
     let [ activeNode, setActiveNode ] = useState('all');
   
     const getEntries = async() => {
-	try {
-	    const url = serverAddress+'/entries';
-	    let data = await getRequest(url);
-	    setEntries(data);
-	} catch (error) {
-	    console.log(error);
-	}
+	    try {
+	        const url = serverAddress+'/entries';
+	        let data = await getRequest(url);
+	        setEntries(data);
+	    } catch (error) {
+	        console.log(error);
+	    }
     }
   
     const getReplies = async() => {
-	try {
-	    const url = serverAddress+'/replies';
-	    let data = await getRequest(url);
-	    setReplies(data);
-	} catch (error) {
-	    console.log(error);
-	}
+	    try {
+	        const url = serverAddress+'/replies';
+	        let data = await getRequest(url);
+	        setReplies(data);
+	    } catch (error) {
+	        console.log(error);
+	    }
     }
 
     const getCredits = async() => {
-	try {
-	    const url = serverAddress+'/credits';
-	    let data = await getRequest(url);
-	    setCredits(data);
-	} catch (error) {
-	    console.log(error);
-	}
+	    try {
+	        const url = serverAddress+'/credits';
+	        let data = await getRequest(url);
+	        setCredits(data);
+	    } catch (error) {
+	        console.log(error);
+	    }
     }
 
     useEffect(() => {
