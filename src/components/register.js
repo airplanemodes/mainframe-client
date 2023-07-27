@@ -5,37 +5,36 @@ import './styles/register.css';
 
 export default function Register() {
 
-  let [ error, setError ] = useState(null);
+    let [ error, setError ] = useState(null);
 
-  const { register, handleSubmit } = useForm();
+    const { register, handleSubmit } = useForm();
 
-  const submit = async(formdata) => {
-    try {
-      formdata.points = 0;
-      const dateObj = new Date();
-      formdata.entered = `${dateObj.getFullYear()}-${dateObj.getMonth()+1}-${dateObj.getDate()}`;
-      formdata.moderator = false;
-      console.log(formdata);
-      const url = serverAddress+"/users";
-      await axiosRequest(url, 'POST', formdata);
-      alert("user created successfully");
-      window.location = '/';
-    
-    } catch (error) {
-      console.log(error);
-      if (error.response.data === 'username already taken') {
-        setError('username already taken');
-      } else if (error.response.data === 'email already taken') {
-        setError('email already taken');
-      } else {
-        setError(error.response.data);
-      }
+    const submit = async(formdata) => {
+        try {
+            formdata.points = 0;
+            const dateObj = new Date();
+            formdata.entered = `${dateObj.getFullYear()}-${dateObj.getMonth()+1}-${dateObj.getDate()}`;
+            formdata.moderator = false;
+            console.log(formdata);
+            const url = serverAddress+"/users";
+            await axiosRequest(url, 'POST', formdata);
+            alert("user created successfully");
+            window.location = '/';
+        } catch (error) {
+            console.log(error);
+            if (error.response.data === 'username already taken') {
+                setError('username already taken');
+            } else if (error.response.data === 'email already taken') {
+                setError('email already taken');
+            } else {
+                setError(error.response.data);
+            }
+        }
     }
-  }
 
-  let usernameRef = register('username', { required: true, maxLength: 16 });
-  let emailRef = register('email', { required: true , maxLength: 60 } );
-  let passwdRef = register('passwd', { required: true }); 
+    let usernameRef = register('username', { required: true, maxLength: 16 });
+    let emailRef = register('email', { required: true , maxLength: 60 } );
+    let passwdRef = register('passwd', { required: true }); 
 
   return (
     <div id='regform'>

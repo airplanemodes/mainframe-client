@@ -1,83 +1,83 @@
 /* Both UIs */
 #pm-table {
-  margin: 0 auto;
-  margin-top: 30px;
+    margin: 0 auto;
+    margin-top: 30px;
 }
 
 .pm-table-td {
-  vertical-align: top;
+    vertical-align: top;
 }
 
 
 
 /* Mailbox UI */
 #mailbox {
-  margin: 0 auto;
-  height: 680px;
-  width: 40vw;
-  color: var(--primary-color);
-  border: 8px solid var(--primary-color);
-  border-radius: 15px;
-  overflow-y: scroll;
+    margin: 0 auto;
+    height: 680px;
+    width: 40vw;
+    color: var(--primary-color);
+    border: 8px solid var(--primary-color);
+    border-radius: 15px;
+    overflow-y: scroll;
 }
 
 #mailbox-header {
-  color: var(--bg-color);
-  background-color: var(--secondary-color);
-  text-align: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
+    color: var(--bg-color);
+    background-color: var(--secondary-color);
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 #mailbox-switch {
-  text-align: center;
+    text-align: center;
 }
 
 .active-box {
-  background-color: var(--primary-color);
+    background-color: var(--primary-color);
 }
 
 
 
 /* Private messages table */
 #pm-data {
-  margin-top: 10px;
-  width: 100%;
-  border: 1px solid var(--primary-color);
+    margin-top: 10px;
+    width: 100%;
+    border: 1px solid var(--primary-color);
 }
 
 .pm-data-heading {
-  padding: 5px;
-  color: var(--bg-color);
-  background-color: var(--primary-color);
-  border: 1px solid var(--primary-color);
+    padding: 5px;
+    color: var(--bg-color);
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
 }
 
 .pm-data-row:hover {
-  background-color: var(--secondary-color);
-  color: var(--bg-color);
+    background-color: var(--secondary-color);
+    color: var(--bg-color);
 }
 
 .pm-data-msg {
-  text-align: center;
-  padding: 5px;
-  border: 1px solid var(--primary-color);
-  font-size: 14px;
+    text-align: center;
+    padding: 5px;
+    border: 1px solid var(--primary-color);
+    font-size: 14px;
 }
 
 .pm-data-msg-subject {
-  font-size: 14px;
-  text-align: center;
-  width: 22%;
-  padding: 5px;
-  border: 1px solid var(--primary-color);
+    font-size: 14px;
+    text-align: center;
+    width: 22%;
+    padding: 5px;
+    border: 1px solid var(--primary-color);
 }
 
 .pm-data-msg-body {
-  font-size: 14px;
-  width: 60%;
-  padding: 5px;
-  border: 1px solid var(--primary-color);
+    font-size: 14px;
+    width: 60%;
+    padding: 5px;
+    border: 1px solid var(--primary-color);
 }
 
 .sender-link:hover {
@@ -85,10 +85,10 @@
 }
 
 .mail-btn {
-  margin: 0;
-  width: 30px;
+    margin: 0;
+    width: 30px;
 }
 
 .mail-btn:hover {
-  background-color: var(--primary-color);
+    background-color: var(--primary-color);
 }

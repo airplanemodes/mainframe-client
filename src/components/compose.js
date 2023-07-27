@@ -41,27 +41,27 @@ export default function Compose(props) {
         getReceiversList();
     }, []);
 
-  return (
-    <div>
-      <form id='compose' onSubmit={handleSubmit(sendPrivateMessage)}>
-        <h3>Compose</h3>
-        <label>Receiver:</label>
-        <select {...receiverRef}>
-          {receivers.filter((element) => element.username !== props.username).map((element) => {
-            return (
-              <option key={element.id}>{element.username}</option>
-            )
-          })}
-        </select>
-        <br />
-        <label>Subject:</label>
-        <input type={'text'} maxLength={16} {...subjectRef}/>
-        <textarea id='compose-textarea' rows={10} maxLength={255} {...bodyRef} />
-        <button id='compose-button'>Send</button>
-      </form>
-      <div id='mailbox-return'>
-        <ReturnLight />
-      </div>
-    </div>
+    return (
+        <div>
+            <form id='compose' onSubmit={handleSubmit(sendPrivateMessage)}>
+                <h3>Compose</h3>
+                <label>Receiver:</label>
+                <select {...receiverRef}>
+                    {receivers.filter((element) => element.username !== props.username).map((element) => {
+                        return (
+                            <option key={element.id}>{element.username}</option>
+                        )
+                    })}
+                </select>
+                <br />
+                <label>Subject:</label>
+                <input type={'text'} maxLength={16} {...subjectRef}/>
+                <textarea id='compose-textarea' rows={10} maxLength={255} {...bodyRef} />
+                <button id='compose-button'>Send</button>
+            </form>
+            <div id='mailbox-return'>
+                <ReturnLight />
+            </div>
+        </div>
   );
 }
