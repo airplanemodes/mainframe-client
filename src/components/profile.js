@@ -51,7 +51,9 @@ export default function Profile() {
                         <ul>
                         {authored.map((element) => {
                             return (
-                                <li key={element.id}>{element.title} (<a className='read-word' href={'/entries/'+element.id}>Read</a>)</li>
+                                <li key={element.id} className='written-article'>
+                                    {element.title} (<a className='read-word' href={'/entries/'+element.id}>Read</a>)
+                                </li>
                             )
                         })}
                         </ul>
