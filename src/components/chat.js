@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, Fragment } from 'react';
 import { io } from 'socket.io-client';
 import { serverAddress } from '../services/api';
 import './styles/chat.css';
@@ -35,18 +35,26 @@ export default function Chat(props) {
 	return (
 		<aside id='chat-box'>
             <h4>Message exchange</h4>
-            <div id='chat-messages'>
+            <table id='chat-messages'>
+                <tbody>
                 { messages.map((element, index) => {
                     return (
-                        <React.Fragment key={index}>
+                        <tr key={index}>
                             { element.name ?
-                            <div>{element.name}: {element.msg}</div> :
-                            <div id='system-message'>* {element}</div> }
-                        </React.Fragment>
+                            <Fragment>
+                                <td className='user-message'>
+                                    <a className='user-link' href={'/users/'+element.name}>{element.name}</a>:
+                                </td>
+                                <td>{element.msg}</td>
+                            </Fragment> 
+                            :
+                            <td className='system-message'>* {element}</td> }
+                        </tr>
                     )
                 })}
-            </div>
-            <form onSubmit={onSend}>
+                </tbody>
+            </table>
+            <form onSubmit={onSend} id='chat-form'>
                 <input id='chat-input' ref={inputRef} type='text' />
                 <button id='chat-send' type='submit'>Send</button>
             </form>

@@ -34,7 +34,7 @@
     width: 800px;
     background-color: var(--secondary-color);
     border: 5px solid var(--primary-color);
-    border-radius: 4px;
+    border-radius: 8px;
 }
 
 .element-title {

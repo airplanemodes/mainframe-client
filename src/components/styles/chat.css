@@ -1,26 +1,25 @@
 #chat-box {
     margin-top: 100px;
     margin-left: 220px;
+    padding: 5px;
     width: 400px;
     height: 490px;
     background-color: var(--secondary-color);
+    color: var(--bg-color);
     border: 3px solid var(--primary-color);
     border-radius: 5px;
-    color: var(--bg-color);
-    padding: 5px;
 }
 
 #chat-box h4 {
-    padding-bottom: 5px;
+    padding: 10px;
     text-align: center;
 }
 
 #chat-messages {
-    margin-left: 5px;
+    display: block;
+    margin-left: 10px;
+    padding: 5px;
     height: 380px;
-    padding-top: 5px;
-    padding-left: 10px;
-    padding-bottom: 20px;
     color: var(--primary-color);
     font-size: 14px;
     background-color: var(--bg-color);
@@ -29,22 +28,40 @@
     max-height: 400px;
 }
 
+#chat-form {
+    text-align: center;
+}
+
 #chat-input {
     padding-left: 5px;
     border: 2px solid var(--bg-color);
     border-radius: 3px;
-    margin-left: 40px;
+    outline: none;
 }
 
 #chat-send {
-    margin-left: 10px;
+    margin-left: 5px;
     background-color: var(--bg-color);
+    border: 1px solid var(--bg-color);
+    border-radius: 5px;
 }
 
 #chat-send:hover {
     background-color: var(--bg-color-light);
 }
 
-#system-message {
+.user-message {
+    padding-right: 5px;
+}
+
+.user-link {
+    color: var(--secondary-color);
+}
+
+.user-link:hover {
+    color: var(--primary-color);
+}
+
+.system-message {
     color: var(--secondary-color);
 }
