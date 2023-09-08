@@ -1,6 +1,8 @@
 .edit-button {
     margin-left: 10px;
     background-color: var(--bg-color);
+    border: 1px solid var(--bg-color);
+    border-radius: 5px;
 }
 
 .edit-button:hover {

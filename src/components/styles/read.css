@@ -1,26 +1,26 @@
 #read {
-    background-color: var(--secondary-color);
     margin: 0 auto;
     margin-top: 80px;
     margin-bottom: 100px;
-    color: var(--primary-color);
     width: 80vw;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
     border: 8px solid var(--primary-color);
-    border-radius: 15px;
+    border-radius: 10px;
 }
 
 #entry-header {
+    padding-top: 10px;
+    padding-bottom: 10px;
     text-align: center;
     color: var(--bg-color);
     background-color: var(--secondary-color);
-    padding-top: 10px;
-    padding-bottom: 10px;
 }
 
 #entry-content {
-    padding-left: 40px;
-    padding-right: 40px;
     padding-top: 40px;
+    padding-right: 40px;
+    padding-left: 40px;
     color: var(--primary-color);
     background-color: var(--bg-color);
     white-space: pre-wrap;

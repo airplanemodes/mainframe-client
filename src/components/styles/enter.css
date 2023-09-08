@@ -15,33 +15,42 @@
     margin-bottom: 30px;
 }
 
-h2 {
+#enter h2 {
     font-size: 28px;
     margin-bottom: 30px;
 }
 
-label {
+#enter label {
     font-size: 20px;
 }
 
-input {
+#enter input {
     margin-top: 5px;
+    padding-left: 5px;
     height: 30px;
+    border-radius: 2px;
+    border: var(--bg-color);
     background-color: var(--primary-color);
     color: var(--bg-color);
     font-size: 16px;
+    outline: none;
 }
 
-button {
+#enter button {
     margin-top: 20px;
     height: 30px;
     width: 80px;
     background-color: var(--secondary-color);
-    border: 1px solid green;
+    border: 1px solid var(--secondary-color);
+    border-radius: 2px;
     color: var(--light-color);
 }
 
-a {
+#enter button:hover {
+    background-color: var(--primary-color);
+}
+
+#enter a {
     color: var(--primary-color);
 }
 

@@ -1,6 +1,8 @@
 .read-button {
     margin-left: 30px;
     background-color: var(--bg-color);
+    border: 1px solid var(--bg-color);
+    border-radius: 5px;
 }
 
 .read-button:hover {

@@ -6,9 +6,9 @@
 :root {
     --primary-color: rgb(0, 160, 0);
     --secondary-color: rgb(0, 120, 0);
-    --light-color: white;
-    --bg-color: black;
-    --bg-color-light: #202020;
+    --light-color: #fafafa;
+    --bg-color: #0a0a0a;
+    --bg-color-light: #171717;
 }
 
 ::-webkit-scrollbar {

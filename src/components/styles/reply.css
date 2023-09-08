@@ -1,33 +1,36 @@
 #reply {
-    background-color: var(--secondary-color);
     margin: 0 auto;
     margin-bottom: 100px;
-    color: var(--primary-color);
     width: 50vw;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
     border: 5px solid var(--primary-color);
-    border-radius: 15px;
+    border-radius: 10px;
 }
 
 #reply-header {
-    color: var(--bg-color);
     margin: 20px;
+    color: var(--bg-color);
 }
 
 #reply-textarea {
-    background-color: var(--bg-color);
-    color: var(--primary-color);
     display: flex;
     margin: 0 auto;
-    font-size: 18px;
-    resize: none;
+    padding: 8px;
     width: 95%;
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    font-size: 16px;
+    resize: none;
     outline: none;
-    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid var(--primary-color);
 }
 
 #reply-button {
     margin: 20px;
     background-color: var(--bg-color);
+    border-radius: 5px;
 }
 
 #reply-button:hover {

@@ -17,7 +17,7 @@
     width: 40vw;
     color: var(--primary-color);
     border: 8px solid var(--primary-color);
-    border-radius: 15px;
+    border-radius: 12px;
     overflow-y: scroll;
 }
 

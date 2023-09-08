@@ -22,9 +22,9 @@
 }
 
 #no-entries {
-    width: 810px;
     margin: 50px;
     margin-left: 100px;
+    width: 810px;
     font-size: 30px;
 }
 
@@ -48,11 +48,13 @@
     padding: 10px;
     color: var(--primary-color);
     background-color: var(--bg-color);
+    border: 1px solid var(--bg-color);
+    border-radius: 5px;
 }
 
 .element-content {
-    width: 700px;
     margin: 30px;
+    width: 700px;
     color: var(--bg-color);
     white-space: pre-wrap;
 }
@@ -74,6 +76,8 @@
 .delete-button {
     margin-left: 10px;
     background-color: var(--bg-color);
+    border: 1px solid var(--bg-color);
+    border-radius: 5px;
 }
 
 .delete-button:hover {
@@ -81,19 +85,21 @@
 }
 
 .credits-counter {
-    float: right;
     margin-top: 25px;
     margin-right: 20px;
     margin-left: 20px;
+    float: right;
     color: var(--bg-color);
 }
 
 .plus-button {
-    float: right;
-    font-size: 14px;
     margin-top: 20px;
     margin-right: 30px;
+    float: right;
+    font-size: 14px;
     background-color: var(--bg-color);
+    border: 1px solid var(--bg-color);
+    border-radius: 5px;
 }
 
 .plus-button:hover {
@@ -101,11 +107,13 @@
 }
 
 .minus-button {
-    float: right;
-    font-size: 14px;
     margin-top: 20px;
     margin-right: 30px;
+    float: right;
+    font-size: 14px;
     background-color: var(--bg-color);
+    border: 1px solid var(--bg-color);
+    border-radius: 5px;
 }
 
 .minus-button:hover {
