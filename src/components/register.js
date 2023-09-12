@@ -20,15 +20,16 @@ export default function Register() {
             await axiosRequest(url, 'POST', formdata);
             alert("user created successfully");
             window.location = '/';
-        } catch (error) {
+        }
+        
+        catch (error) {
             console.log(error);
-            if (error.response.data === 'username already taken') {
+            if (error.response.data === 'username already taken')
                 setError('username already taken');
-            } else if (error.response.data === 'email already taken') {
+            else if (error.response.data === 'email already taken')
                 setError('email already taken');
-            } else {
+            else
                 setError(error.response.data);
-            }
         }
     }
 
@@ -37,10 +38,10 @@ export default function Register() {
     let passwdRef = register('passwd', { required: true }); 
 
   return (
-    <div id='regform'>
+    <div id='register-form'>
       <form onSubmit={handleSubmit(submit)}>
         <h2>Create new user</h2>
-        <table id='registerTable'>
+        <table id='register-table'>
           <tbody>
           <tr>
             <td><label>Username: </label></td>

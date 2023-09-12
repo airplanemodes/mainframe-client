@@ -9,10 +9,10 @@
 }
 
 #compose h3 {
-    text-align: center;
-    color: var(--bg-color);
     padding-top: 10px;
     padding-bottom: 10px;
+    text-align: center;
+    color: var(--bg-color);
 }
 
 #compose label {
@@ -36,6 +36,7 @@
     margin-bottom: 10px;
     margin-left: 5px;
     padding: 2px;
+    padding-left: 5px;
     height: 20px;
     width: 40%;
     font-size: 14px;
@@ -52,6 +53,8 @@
     background-color: var(--bg-color);
     color: var(--primary-color);
     font-size: 18px;
+    border: 1px solid var(--bg-color);
+    border-radius: 2px;
     resize: none;
     outline: none;
 }

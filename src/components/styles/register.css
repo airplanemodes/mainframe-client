@@ -1,22 +1,22 @@
-#regform {
+#register-form {
     margin: 0 auto;
     margin-top: 100px;
     padding-top: 30px;
-    text-align: center;
-    color: var(--primary-color);
     height: 360px;
     width: 600px;
+    text-align: center;
+    color: var(--primary-color);
     border: 8px solid var(--primary-color);
     border-radius: 15px;
 }
 
-#registerTable {
+#register-table {
     margin: auto;
 }
 
 h2 {
-    font-size: 28px;
     margin-bottom: 30px;
+    font-size: 28px;
 }
 
 label {
@@ -25,19 +25,28 @@ label {
 
 input {
     margin-top: 5px;
+    padding-left: 5px;
     height: 30px;
+    font-size: 16px;
+    border-radius: 2px;
+    border: var(--bg-color);
     background-color: var(--primary-color);
     color: var(--bg-color);
-    font-size: 16px;
+    outline: none;
 }
 
-button {
+#register-form button {
     margin-top: 20px;
     height: 30px;
     width: 80px;
     background-color: var(--secondary-color);
-    border: 1px solid green;
     color: var(--light-color);
+    border: 1px solid var(--secondary-color);
+    border-radius: 2px;
+}
+
+#register-form button:hover {
+    background-color: var(--primary-color);
 }
 
 a {

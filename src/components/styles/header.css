@@ -7,9 +7,9 @@ header {
 }
 
 #welcome {
-    text-align: right;
-    margin-right: 120px;
     margin-top: 20px;
+    margin-right: 120px;
+    text-align: right;
 }
 
 #login-bar-button {

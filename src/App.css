@@ -32,12 +32,12 @@ body {
   overflow-y: scroll;
 }
 
-.userbar {
+#userbar {
     margin-right: 140px;
     text-align: right;
 }
 
-.userbar > h4 {
+#userbar h4 {
     margin-top: 10px;
     margin-right: 70px;
 }

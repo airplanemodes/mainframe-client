@@ -18,7 +18,7 @@ export default function Write() {
 
     useEffect(() => {
         initializeUser();
-    },[]);
+    }, []);
 
     const { register, handleSubmit } = useForm();
 

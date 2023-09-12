@@ -22,11 +22,11 @@
 }
 
 #mailbox-header {
-    color: var(--bg-color);
-    background-color: var(--secondary-color);
-    text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
+    text-align: center;
+    color: var(--bg-color);
+    background-color: var(--secondary-color);
 }
 
 #mailbox-switch {
@@ -59,24 +59,24 @@
 }
 
 .pm-data-msg {
-    text-align: center;
     padding: 5px;
-    border: 1px solid var(--primary-color);
     font-size: 14px;
+    text-align: center;
+    border: 1px solid var(--primary-color);
 }
 
 .pm-data-msg-subject {
+    padding: 5px;
+    width: 22%;
     font-size: 14px;
     text-align: center;
-    width: 22%;
-    padding: 5px;
     border: 1px solid var(--primary-color);
 }
 
 .pm-data-msg-body {
-    font-size: 14px;
-    width: 60%;
     padding: 5px;
+    width: 60%;
+    font-size: 14px;
     border: 1px solid var(--primary-color);
 }
 

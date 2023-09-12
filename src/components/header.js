@@ -20,7 +20,7 @@ export default function Header(props) {
     return (
         <header>
             <h1 id='welcome'>Welcome to Mainframe</h1>
-            <div className='userbar'>
+            <div id='userbar'>
             { !localStorage.localToken ?
                 <React.Fragment>
                     <h4>you are logged as guest</h4>
