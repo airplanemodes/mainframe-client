@@ -47,12 +47,12 @@ export default function Profile() {
                 <h4>Enter date: {profile.entered}</h4>
                 <br />
                 { authored.length > 0 && <div>
-                    <h4>Authored entries: </h4>
+                    <h4 id='profile-authored-heading'>Authored entries: </h4>
                         <ul>
                         {authored.map((element) => {
                             return (
                                 <li key={element.id} className='written-article'>
-                                    {element.title} (<a className='read-word' href={'/entries/'+element.id}>Read</a>)
+                                    <a className='profile-authored-link' href={'/entries/'+element.id}>{element.title}</a>
                                 </li>
                             )
                         })}

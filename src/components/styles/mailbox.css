@@ -14,10 +14,10 @@
 #mailbox {
     margin: 0 auto;
     height: 680px;
-    width: 40vw;
+    width: 50vw;
     color: var(--primary-color);
     border: 8px solid var(--primary-color);
-    border-radius: 12px;
+    border-radius: 10px;
     overflow-y: scroll;
 }
 
@@ -31,6 +31,19 @@
 
 #mailbox-switch {
     text-align: center;
+}
+
+#mailbox-switch button {
+    margin-top: 10px;
+    height: 30px;
+    width: 80px;
+    background-color: var(--secondary-color);
+    color: var(--light-color);
+    border: 1px solid var(--bg-color);
+}
+
+#mailbox-switch button:hover {
+    background-color: var(--primary-color);
 }
 
 .active-box {
@@ -80,13 +93,20 @@
     border: 1px solid var(--primary-color);
 }
 
+.sender-link {
+    color: var(--primary-color);
+}
+
 .sender-link:hover {
     color: var(--bg-color);
 }
 
 .mail-btn {
     margin: 0;
+    height: 30px;
     width: 30px;
+    background-color: var(--secondary-color);
+    border: 1px solid var(--bg-color);
 }
 
 .mail-btn:hover {

@@ -62,13 +62,15 @@ export default function Look() {
             <div id='look-username'>User: {profileForLook.username}</div>
             <div id='look-entered'>Entered Mainframe on {profileForLook.entered}</div>
             { authored.length > 0 && <div id='look-authored'>
-                <h4>Authored entries:</h4>
+                <h4 id='authored-entries-heading'>Authored entries:</h4>
                 <ul>
                 {authored.map((element) => {
                     return (
-                        <li key={element.id}>{element.title} (
-                            <a className='read-word' href={'/entries/'+element.id}>Read</a>
-                        )</li>
+                        <li key={element.id}>
+                            <a className='authored-link' href={'/entries/'+element.id}>
+                                {element.title}
+                            </a>
+                        </li>
                     )
                 })}
                 </ul>

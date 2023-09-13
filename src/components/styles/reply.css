@@ -29,7 +29,11 @@
 
 #reply-button {
     margin: 20px;
+    height: 30px;
+    width: 80px;
     background-color: var(--bg-color);
+    color: var(--light-color);
+    border: 1px solid var(--bg-color);
     border-radius: 5px;
 }
 

@@ -1,11 +1,11 @@
 #look {
     margin: 0 auto;
     margin-top: 200px;
-    width: 40%;
     height: 400px;
+    width: 40%;
+    background-color: var(--bg-color);
     border: 5px solid var(--primary-color);
     border-radius: 5px;
-    background-color: var(--bg-color);
 }
 
 #look-header {
@@ -29,6 +29,19 @@
     margin-top: 20px;
     margin-left: 30px;
     font-size: 14px;
+}
+
+#authored-entries-heading {
+    margin-bottom: 5px;
+}
+
+.authored-link {
+    text-decoration: none;
+    color: var(--secondary-color);    
+}
+
+.authored-link:hover {
+    color: var(--primary-color);
 }
 
 #look-return {
