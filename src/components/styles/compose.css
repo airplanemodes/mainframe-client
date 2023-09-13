@@ -1,6 +1,7 @@
 #compose {
     margin: 0 auto;
     margin-left: 30px;
+    padding: 10px;
     width: 30vw;
     background-color: var(--secondary-color);
     color: var(--primary-color);
@@ -9,23 +10,20 @@
 }
 
 #compose h3 {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    margin-bottom: 10px;
     text-align: center;
     color: var(--bg-color);
 }
 
 #compose label {
-    padding-left: 20px;
+    margin-left: 20px;
     color: var(--bg-color);
     font-size: 16px;
 }
 
 #compose select {
-    margin-top: 10px;
     margin-left: 10px;
-    padding: 10px;
-    width: 40%;
+    width: 32%;
     font-size: 14px;
     color: var(--bg-color);
     background-color: var(--primary-color);
@@ -33,12 +31,13 @@
 }
 
 #compose input {
+    margin-top: 8px;
     margin-bottom: 10px;
-    margin-left: 5px;
+    margin-left: 20px;
     padding: 2px;
     padding-left: 5px;
     height: 20px;
-    width: 40%;
+    width: 30%;
     font-size: 14px;
     border: var(--bg-color);
     border-radius: 5px;
@@ -46,15 +45,13 @@
 }
 
 #compose-textarea {
-    display: flex;
-    margin: 0 auto;
     padding: 5px;
     width: 95%;
     background-color: var(--bg-color);
     color: var(--primary-color);
     font-size: 18px;
     border: 1px solid var(--bg-color);
-    border-radius: 2px;
+    border-radius: 5px;
     resize: none;
     outline: none;
 }

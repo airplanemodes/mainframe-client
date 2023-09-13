@@ -7,9 +7,9 @@
 }
 
 .active-node {
-    background-color: var(--primary-color);
     height: 40px;
     width: 100px;
+    background-color: var(--primary-color);
     border: 1px solid var(--primary-color);
     box-shadow: 2px 2px 40px var(--primary-color);
 }

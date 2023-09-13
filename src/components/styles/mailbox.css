@@ -57,6 +57,7 @@
     margin-top: 10px;
     width: 100%;
     border: 1px solid var(--primary-color);
+    border-collapse: collapse;
 }
 
 .pm-data-heading {
