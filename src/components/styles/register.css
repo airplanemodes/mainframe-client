@@ -49,6 +49,11 @@ input {
     background-color: var(--primary-color);
 }
 
-a {
+#register-form a {
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
+#register-form a:hover {
     color: var(--primary-color);
 }

@@ -10,11 +10,15 @@
     background-color: var(--primary-color);
     height: 40px;
     width: 100px;
+    border: 1px solid var(--primary-color);
 }
 
 .node-button {
     height: 40px;
     width: 100px;
+    background-color: var(--secondary-color);
+    color: var(--light-color);
+    border: 1px solid var(--primary-color);
 }
 
 .node-button:hover {
@@ -35,6 +39,7 @@
     background-color: var(--secondary-color);
     border: 5px solid var(--primary-color);
     border-radius: 8px;
+    box-shadow: 5px 5px 10px var(--secondary-color);
 }
 
 .element-title {
@@ -75,7 +80,10 @@
 
 .delete-button {
     margin-left: 10px;
+    height: 30px;
+    width: 80px;
     background-color: var(--bg-color);
+    color: var(--light-color);
     border: 1px solid var(--bg-color);
     border-radius: 5px;
 }
@@ -95,9 +103,12 @@
 .plus-button {
     margin-top: 20px;
     margin-right: 30px;
+    height: 30px;
+    width: 80px;
     float: right;
     font-size: 14px;
     background-color: var(--bg-color);
+    color: var(--light-color);
     border: 1px solid var(--bg-color);
     border-radius: 5px;
 }
@@ -109,9 +120,12 @@
 .minus-button {
     margin-top: 20px;
     margin-right: 30px;
+    height: 30px;
+    width: 80px;
     float: right;
     font-size: 14px;
     background-color: var(--bg-color);
+    color: var(--light-color);
     border: 1px solid var(--bg-color);
     border-radius: 5px;
 }

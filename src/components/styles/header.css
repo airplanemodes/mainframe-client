@@ -23,3 +23,16 @@ header {
 #logout-bar-button {
     margin-right: 30px;
 }
+
+.bar-button {
+    margin-top: 20px;
+    height: 30px;
+    width: 80px;
+    background-color: var(--secondary-color);
+    color: var(--light-color);
+    border: 1px solid var(--primary-color);
+}
+
+.bar-button:hover {
+    background-color: var(--primary-color);
+}

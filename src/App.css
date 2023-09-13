@@ -32,6 +32,16 @@ body {
   overflow-y: scroll;
 }
 
+/* button {
+    margin-top: 20px;
+    height: 30px;
+    width: 80px;
+    background-color: var(--secondary-color);
+    color: var(--light-color);
+    border: 1px solid var(--secondary-color);
+    border-radius: 2px;
+} */
+
 #userbar {
     margin-right: 140px;
     text-align: right;
@@ -40,10 +50,6 @@ body {
 #userbar h4 {
     margin-top: 10px;
     margin-right: 70px;
-}
-
-.bar-button:hover {
-    background-color: var(--primary-color);
 }
 
 .read-word {

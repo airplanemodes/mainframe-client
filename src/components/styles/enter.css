@@ -51,6 +51,11 @@
 }
 
 #enter a {
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
+#enter a:hover {
     color: var(--primary-color);
 }
 
