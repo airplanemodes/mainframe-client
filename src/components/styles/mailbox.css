@@ -16,7 +16,7 @@
     height: 680px;
     width: 50vw;
     color: var(--primary-color);
-    border: 8px solid var(--primary-color);
+    border: 5px solid var(--primary-color);
     border-radius: 10px;
     overflow-y: scroll;
 }

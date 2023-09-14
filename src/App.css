@@ -4,8 +4,10 @@
 }
 
 :root {
-    --primary-color: rgb(0, 160, 0);
-    --secondary-color: rgb(0, 120, 0);
+    --primary-color: #22c55e;
+    --secondary-color: #15803d;
+    /* --primary-color: rgb(0, 160, 0); */
+    /* --secondary-color: rgb(0, 120, 0); */
     --light-color: #fafafa;
     --bg-color: #0a0a0a;
     --bg-color-light: #171717;
@@ -30,32 +32,4 @@ body {
   color: var(--primary-color);
   background-color: var(--bg-color);
   overflow-y: scroll;
-}
-
-/* button {
-    margin-top: 20px;
-    height: 30px;
-    width: 80px;
-    background-color: var(--secondary-color);
-    color: var(--light-color);
-    border: 1px solid var(--secondary-color);
-    border-radius: 2px;
-} */
-
-#userbar {
-    margin-right: 140px;
-    text-align: right;
-}
-
-#userbar h4 {
-    margin-top: 10px;
-    margin-right: 70px;
-}
-
-.read-word {
-    color: var(--secondary-color);
-}
-
-.read-word:hover {
-    color: var(--primary-color);
 }

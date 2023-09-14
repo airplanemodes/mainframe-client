@@ -13,8 +13,24 @@ header {
     text-shadow: 2px 2px 20px var(--secondary-color);
 }
 
+#userbar {
+    margin-right: 140px;
+    text-align: right;
+}
+
+#userbar h4 {
+    margin-top: 10px;
+    margin-right: 70px;
+}
+
 #login-bar-button {
+    margin-top: 20px;
     margin-right: 150px;
+    height: 30px;
+    width: 80px;
+    background-color: var(--secondary-color);
+    color: var(--light-color);
+    border: 1px solid var(--primary-color);
 }
 
 #login-bar-button:hover {
