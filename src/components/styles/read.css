@@ -5,8 +5,8 @@
     width: 80vw;
     background-color: var(--secondary-color);
     color: var(--primary-color);
-    border: 7px solid var(--primary-color);
-    border-radius: 10px;
+    border: 5px solid var(--primary-color);
+    border-radius: 5px;
 }
 
 #entry-header {

@@ -15,6 +15,7 @@
 #chat-box h4 {
     padding: 10px;
     text-align: center;
+    text-shadow: 2px 2px 10px var(--primary-color);
 }
 
 #chat-messages {

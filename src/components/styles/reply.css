@@ -24,7 +24,7 @@
     resize: none;
     outline: none;
     border-radius: 5px;
-    border: 2px solid var(--primary-color);
+    border: 2px solid var(--bg-color);
 }
 
 #reply-button {

@@ -1,3 +1,4 @@
+import './styles/pagination.css'
 // import { useEffect, useState } from "react"
 // import { getRequest, serverAddress } from "../services/api";
 
@@ -19,7 +20,7 @@ export default function Pagination(props) {
   // }, []);
 
   return (
-    <nav>
+    <nav id='pagination'>
       Pagination will be here.
     </nav>
   )

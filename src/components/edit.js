@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { axiosRequest, serverAddress } from '../services/api';
+import ReturnLight from "./buttons/return-light";
 import './styles/edit.css';
 
 export default function Edit() {
@@ -48,11 +49,11 @@ export default function Edit() {
         <div id='edit'>
             <h3 id='entry-header'>Entry editing</h3>
             <form id='edit-form' onSubmit={handleSubmit(submitEdit)}>
-                <label>Title</label>
+                <label>Title:</label>
                 <input type={'text'} {...titleRef} defaultValue={entry.title}/>
                 <br />
                 <br />
-                <label>Node</label>
+                <label>Node:</label>
                 <select {...nodeRef}>
                     { entry.node === "code" ? <option selected>code</option> : <option>code</option> }
                     { entry.node === "network" ? <option selected>network</option> : <option>network</option> }
@@ -67,7 +68,9 @@ export default function Edit() {
                 <br />
                 <button>Save</button>
             </form>
-            <a href='/main'><button id='editReturn'>Return 0</button></a>
+            <div id='edit-return'>
+                <ReturnLight />
+            </div>
         </div>
     );
 }
