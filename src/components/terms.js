@@ -2,7 +2,7 @@ import './styles/terms.css';
 
 export default function UserAgreement() {
     return (
-        <div id="terms">
+        <section id="terms">
             <h2>Mainframe User Agreement</h2>
             <p>Hello, dear network explorers, science enthusiasts, cyberpunk fiction lovers, computer programmers, electronic engineers, artificial intelligence creatures, and all other kinds of tech wizards!</p>
             <br />
@@ -12,7 +12,7 @@ export default function UserAgreement() {
             <br />
             <p>...</p>
             <br />
-            <a href='/'>Back</a>
-        </div>
+            <a href="/">Back</a>
+        </section>
     );
 }

@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { getRequest, serverAddress } from '../services/api';
-import { userdataUpdate } from '../services/userdata';
-import ReturnLight from './buttons/return-light';
-import './styles/profile.css';
+import { useState, useEffect } from "react";
+import { getRequest, serverAddress } from "../services/api";
+import { userdataUpdate } from "../services/userdata";
+import ReturnLight from "./buttons/return-light";
+import "./styles/profile.css";
+
+// TODO: add table
 
 export default function Profile() {
 
@@ -12,19 +14,14 @@ export default function Profile() {
     const initializeProfile = async() => {
         let userobject = await userdataUpdate();
         setProfile(userobject);
-        // console.log(userobject);
-        // redirect if token expired
-        if (!userobject.username) window.location = '/main';
+        if (!userobject.username) window.location = "/main";
         else {
             try {
-                const url = serverAddress+'/entries';
-                let entries = await getRequest(url); // all entries
+                let entries = await getRequest(serverAddress+"/entries");
                 let authoredArray = [];
-                for (let i = 0; i < entries.length; i++) {
-                    if (entries[i].author === userobject.username) {
+                for (let i = 0; i < entries.length; i++)
+                    if (entries[i].author === userobject.username)
                         authoredArray.push(entries[i]);
-                    }
-                }
                 setAuthored(authoredArray);
             } catch (error) {
                 console.log(error);
@@ -37,9 +34,9 @@ export default function Profile() {
     }, []);
 
     return (
-        <div id='profile'>
-            <h3 id='profile-header'>User profile</h3>
-            <div id='userdata'>
+        <section id="profile">
+            <h3 id="profile-header">User profile</h3>
+            <div id="userdata">
                 <h4>Username: {profile.username}</h4>
                 <h4>Email: {profile.email}</h4>
                 <h4>Points: {profile.points}</h4>
@@ -47,12 +44,12 @@ export default function Profile() {
                 <h4>Enter date: {profile.entered}</h4>
                 <br />
                 { authored.length > 0 && <div>
-                    <h4 id='profile-authored-heading'>Authored entries: </h4>
+                    <h4 id="profile-authored-heading">Authored entries: </h4>
                         <ul>
                         {authored.map((element) => {
                             return (
-                                <li key={element.id} className='written-article'>
-                                    <a className='profile-authored-link' href={'/entries/'+element.id}>{element.title}</a>
+                                <li key={element.id} className="written-article">
+                                    <a className="profile-authored-link" href={"/entries/"+element.id}>{element.title}</a>
                                 </li>
                             )
                         })}
@@ -60,9 +57,9 @@ export default function Profile() {
                     </div>
                 }
             </div>
-            <div id='profile-return'>
+            <div id="profile-return">
               <ReturnLight />
             </div>
-        </div>
+        </section>
     );
 }

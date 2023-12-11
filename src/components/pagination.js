@@ -1,26 +1,9 @@
-import './styles/pagination.css'
-// import { useEffect, useState } from "react"
-// import { getRequest, serverAddress } from "../services/api";
+import "./styles/pagination.css"
 
 export default function Pagination(props) {
 
-  // let entriesPerPage = 2;
-
-  // let [ countPages, setCountPages ] = useState(0);
-
-  // const getNodeTotal = async() => {
-    // let url = serverAddress+props.urlOfNodeTotal;
-    // let data = await getRequest(url);
-    // console.log(url);
-  // }
-
-  // useEffect(() => {
-  //   getNodeTotal();
-  //   // eslint-disable-next-line
-  // }, []);
-
   return (
-    <nav id='pagination'>
+    <nav id="pagination">
       Pagination will be here.
     </nav>
   )

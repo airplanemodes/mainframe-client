@@ -1,7 +1,10 @@
-import React from 'react';
-import { userdataUpdate } from '../services/userdata';
+import { Fragment } from "react";
+import { userdataUpdate } from "../services/userdata";
 
-import './styles/header.css';
+import "./styles/header.css";
+
+// TODO: you have a new message!
+// TODO: update CSS
 
 export default function Header(props) {
 
@@ -9,9 +12,9 @@ export default function Header(props) {
 
     const userLogout = async() => {
         try {
-            localStorage.removeItem('localToken');
+            localStorage.removeItem("localToken");
             await userdataUpdate();
-            window.location = '/';
+            window.location = "/";
         } catch (error) {
             console.log(error);
         }
@@ -19,21 +22,21 @@ export default function Header(props) {
 
     return (
         <header>
-            <h1 id='welcome'>Welcome to Mainframe</h1>
-            <div id='userbar'>
+            <h1 id="welcome">Welcome to Mainframe</h1>
+            <div id="userbar">
             { !localStorage.localToken ?
-                <React.Fragment>
+                <Fragment>
                     <h4>you are logged as guest</h4>
-                    <a href='/'><button id='login-bar-button'>Login</button></a>
-                </React.Fragment>
+                    <a href="/"><button id="login-bar-button">Login</button></a>
+                </Fragment>
                 :
-                <React.Fragment>
+                <Fragment>
                     <h4>you are logged as {props.user.username}</h4>
-                    <a href='/write'><button className='bar-button'>Write</button></a>
-                    <a href='/mailbox'><button className='bar-button'>Mailbox</button></a>
-                    <a href='/profile'><button className='bar-button'>Profile</button></a>
-                    <button id='logout-bar-button' className='bar-button' onClick={userLogout}>Logout</button>
-                </React.Fragment>
+                    <a href="/write"><button className="bar-button">Write</button></a>
+                    <a href="/mailbox"><button className="bar-button">Mailbox</button></a>
+                    <a href="/profile"><button className="bar-button">Profile</button></a>
+                    <button id="logout-bar-button" className="bar-button" onClick={userLogout}>Logout</button>
+                </Fragment>
             }
             </div>
         </header>

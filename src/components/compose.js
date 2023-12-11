@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react';
-import { useForm } from 'react-hook-form';
-import { axiosRequest, serverAddress } from '../services/api';
-import ReturnLight from './buttons/return-light';
-import './styles/compose.css';
+import { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
+import { axiosRequest, serverAddress } from "../services/api";
+import ReturnLight from "./buttons/return-light";
+import "./styles/compose.css";
 
 export default function Compose(props) {
 
@@ -11,17 +11,16 @@ export default function Compose(props) {
     let [ receivers, setReceivers ] = useState([]);
     const { register, handleSubmit } = useForm();
 
-    let bodyRef = register('body', { required: true, maxLength: 1024 });
-    let subjectRef = register('subject', { required: false, maxLength: 16 });
-    let receiverRef = register('receiver', { required: true });
+    let bodyRef = register("body", { required: true, maxLength: 1024 });
+    let subjectRef = register("subject", { required: false, maxLength: 16 });
+    let receiverRef = register("receiver", { required: true });
 
     const sendPrivateMessage = async(formdata) => {
         try {
             formdata.sender = props.username;
             if (formdata.subject === "") delete formdata.subject;
-            const url = serverAddress+'/privates';
-            await axiosRequest(url, 'POST', formdata);
-            window.location = '/mailbox';
+            await axiosRequest(serverAddress+"/privates", "POST", formdata);
+            window.location = "/mailbox";
         } catch (error) {
             console.log(error);
         }
@@ -29,8 +28,7 @@ export default function Compose(props) {
 
     const getReceiversList = async() => {
         try {
-            const url = serverAddress+'/users/all';
-            const data = await axiosRequest(url, 'GET');
+            const data = await axiosRequest(serverAddress+"/users/all", "GET");
             setReceivers(data);
         } catch (error) {
             console.log(error);
@@ -42,8 +40,8 @@ export default function Compose(props) {
     }, []);
 
     return (
-        <div>
-            <form id='compose' onSubmit={handleSubmit(sendPrivateMessage)}>
+        <section>
+            <form id="compose" onSubmit={ handleSubmit(sendPrivateMessage) }>
                 <h3>Compose</h3>
                 <label>Receiver:</label>
                 <select {...receiverRef}>
@@ -55,13 +53,13 @@ export default function Compose(props) {
                 </select>
                 <br />
                 <label>Subject:</label>
-                <input type={'text'} maxLength={16} {...subjectRef}/>
-                <textarea id='compose-textarea' rows={10} maxLength={255} {...bodyRef} />
-                <button id='compose-button'>Send</button>
+                <input type={"text"} maxLength={16} {...subjectRef}/>
+                <textarea id="compose-textarea" rows={10} maxLength={255} {...bodyRef} />
+                <button id="compose-button">Send</button>
             </form>
-            <div id='mailbox-return'>
+            <div id="mailbox-return">
                 <ReturnLight />
             </div>
-        </div>
+        </section>
   );
 }

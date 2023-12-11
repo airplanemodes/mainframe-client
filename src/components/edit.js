@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { useForm } from 'react-hook-form';
-import { axiosRequest, serverAddress } from '../services/api';
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { axiosRequest, serverAddress } from "../services/api";
 import ReturnLight from "./buttons/return-light";
-import './styles/edit.css';
+import "./styles/edit.css";
 
 export default function Edit() {
 
@@ -12,8 +12,7 @@ export default function Edit() {
   
     const getEntryForEditing = async() => {
         try {
-            const url = serverAddress+'/edit/'+id;
-            const data = await axiosRequest(url);
+            const data = await axiosRequest(serverAddress+"/edit/"+id);
             setEntry(data);
         } catch (error) {
             console.log(error);
@@ -27,9 +26,9 @@ export default function Edit() {
   
     const { register, handleSubmit } = useForm();
 
-    let titleRef = register('title', { required: true, maxLength: 60 });
-    let nodeRef = register('node', { required: true, maxLength: 32 });
-    let contentRef = register('content', { required: true, maxLength: 65536 });
+    let titleRef = register("title", { required: true, maxLength: 60 });
+    let nodeRef = register("node", { required: true, maxLength: 32 });
+    let contentRef = register("content", { required: true, maxLength: 65536 });
 
     const submitEdit = async(formdata) => {        
         try {
@@ -37,20 +36,19 @@ export default function Edit() {
             formdata.created = entry.created;
             formdata.id = entry.id;
             formdata.points = entry.points;
-            const url = serverAddress+"/entries/"+formdata.id;
-            await axiosRequest(url, 'PUT', formdata);
-            window.location = '/main';
+            await axiosRequest(serverAddress+"/entries/"+formdata.id, "PUT", formdata);
+            window.location = "/main";
         } catch (error) {
             console.log(error);
         }
     }
 
     return (
-        <div id='edit'>
-            <h3 id='entry-header'>Entry editing</h3>
-            <form id='edit-form' onSubmit={handleSubmit(submitEdit)}>
+        <section id="edit">
+            <h3 id="entry-header">Entry editing</h3>
+            <form id="edit-form" onSubmit={handleSubmit(submitEdit)}>
                 <label>Title:</label>
-                <input type={'text'} {...titleRef} defaultValue={entry.title}/>
+                <input type={"text"} {...titleRef} defaultValue={entry.title}/>
                 <br />
                 <br />
                 <label>Node:</label>
@@ -68,9 +66,9 @@ export default function Edit() {
                 <br />
                 <button>Save</button>
             </form>
-            <div id='edit-return'>
+            <div id="edit-return">
                 <ReturnLight />
             </div>
-        </div>
+        </section>
     );
 }

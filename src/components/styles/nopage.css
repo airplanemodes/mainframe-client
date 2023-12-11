@@ -1,16 +1,17 @@
-#not-found-div {
-    margin: auto;
-    position: absolute;
-    top: 32%;
-    left: 33%;
+#not-found {
+    margin-top: 300px;
     text-align: center;
 }
 
 #not-found-error {
-    margin: auto;
     font-size: 100px;
 }
 
 #not-found-link {
+    color: var(--secondary-color); 
     font-size: 24px;
+}
+
+#not-found-link:hover {
+    color: var(--primary-color);
 }

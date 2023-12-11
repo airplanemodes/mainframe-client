@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { userdataUpdate } from '../services/userdata';
+import { useState, useEffect } from "react";
+import { userdataUpdate } from "../services/userdata";
 
-import Header from './header';
-import Feed from './feed';
-import Chat from './chat';
-import Footer from './footer';
-import './styles/main.css';
+import Header from "./header";
+import Feed from "./feed";
+import Chat from "./chat";
+import Footer from "./footer";
+import "./styles/main.css";
 
 
 export default function Main() {
@@ -17,7 +17,7 @@ export default function Main() {
         if (userobject.username) setUser(userobject);
         else {
             setUser("guest");
-            localStorage.removeItem('localToken');
+            localStorage.removeItem("localToken");
         }
     }
 
@@ -26,17 +26,17 @@ export default function Main() {
     }, []);
 
     return (
-        <div>
+        <main>
             <Header user={user || "guest"}/>
-                <table id='main-table'>
-                    <tbody>
-                        <tr>
-                            <td><Feed user={user || "guest"}/></td>
-                            <td>{user !== 'guest' && <Chat user={user}/>}</td>
-                        </tr>
-                    </tbody>
+                <table id="main-table">
+                <tbody>
+                    <tr>
+                        <td><Feed user={ user || "guest" }/></td>
+                        <td>{ user !== "guest" && <Chat user={ user }/> }</td>
+                    </tr>
+                </tbody>
                 </table>
             <Footer />
-        </div>
+        </main>
     );
 }

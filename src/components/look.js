@@ -1,13 +1,16 @@
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { getRequest, axiosRequest, serverAddress } from '../services/api';
-import { userdataUpdate } from '../services/userdata';
-import ReturnLight from './buttons/return-light';
-import './styles/look.css';
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { getRequest, axiosRequest, serverAddress } from "../services/api";
+import { userdataUpdate } from "../services/userdata";
+import ReturnLight from "./buttons/return-light";
+import "./styles/look.css";
+
+// TODO: message button
+// TODO: number of comments
 
 export default function Look() {
 
-    let lookOn = useParams();
+    let look = useParams();
     // eslint-disable-next-line
     let [ user, setUser ] = useState([]);
     let [ profileForLook, setProfileForLook ] = useState([]);
@@ -17,16 +20,15 @@ export default function Look() {
         let userobject = await userdataUpdate();
         if (userobject.username) setUser(userobject);
         else {
-            setUser('guest');
-            localStorage.removeItem('localToken');
-            window.location = '/main';
+            setUser("guest");
+            localStorage.removeItem("localToken");
+            window.location = "/main";
         }
     }
 
     const getProfileForLook = async() => {
         try {
-            const url = serverAddress+'/users/'+lookOn.username;
-            const data = await axiosRequest(url, 'GET');
+            const data = await axiosRequest(serverAddress+"/users/"+look.username, "GET");
             setProfileForLook(data);
         } catch (error) {
             console.log(error);
@@ -35,14 +37,11 @@ export default function Look() {
   
     const getAuthored = async() => {
         try {
-            const url = serverAddress+'/entries';
-            let entries = await getRequest(url); // all entries
+            let entries = await getRequest(serverAddress+"/entries"); // all entries
             let authoredArray = [];
-            for (let i = 0; i < entries.length; i++) {
-                if (entries[i].author === lookOn.username) {
+            for (let i = 0; i < entries.length; i++)
+                if (entries[i].author === look.username)
                     authoredArray.push(entries[i]);
-                }
-            }
             setAuthored(authoredArray);
         } catch (error) {
             console.log(error);
@@ -57,17 +56,17 @@ export default function Look() {
     }, []);
   
     return (
-        <div id='look'>
-            <h2 id='look-header'>Look</h2>
-            <div id='look-username'>User: {profileForLook.username}</div>
-            <div id='look-entered'>Entered Mainframe on {profileForLook.entered}</div>
-            { authored.length > 0 && <div id='look-authored'>
-                <h4 id='authored-entries-heading'>Authored entries:</h4>
+        <section id="look">
+            <h2 id="look-header">Look</h2>
+            <div id="look-username">User: {profileForLook.username}</div>
+            <div id="look-entered">Entered Mainframe on {profileForLook.entered}</div>
+            { authored.length > 0 && <div id="look-authored">
+                <h4 id="authored-entries-heading">Authored entries:</h4>
                 <ul>
                 {authored.map((element) => {
                     return (
                         <li key={element.id}>
-                            <a className='authored-link' href={'/entries/'+element.id}>
+                            <a className="authored-link" href={"/entries/"+element.id}>
                                 {element.title}
                             </a>
                         </li>
@@ -76,9 +75,9 @@ export default function Look() {
                 </ul>
             </div>
             }
-            <div id='look-return'>
+            <div id="look-return">
                 <ReturnLight />
             </div>
-        </div>
+        </section>
     );
 }
