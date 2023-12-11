@@ -61,8 +61,8 @@ export default function Read() {
             <h3 id="entry-header">{entry.title}</h3>
             <pre id="entry-content">{entry.content}</pre>
             <div id="entry-signature">
-                { user.username ? user.username == entry.author ? <a href={"/profile"}>{entry.author}</a>
-                                                                : <a href={"/users/"+entry.author}>{entry.author}</a> 
+                { user.username ? user.username === entry.author ? <a href={"/profile"}>{entry.author}</a>
+                                                                 : <a href={"/users/"+entry.author}>{entry.author}</a> 
                                 : <span>{entry.author} </span> }
                     @ {entry.node} {entry.created}
             </div>

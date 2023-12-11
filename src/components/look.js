@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { getRequest, axiosRequest, serverAddress } from "../services/api";
 import { userdataUpdate } from "../services/userdata";
 import ReturnLight from "./buttons/return-light";
 import "./styles/look.css";
 
-// TODO: message button
 // TODO: number of comments
 
 export default function Look() {
@@ -57,27 +56,45 @@ export default function Look() {
   
     return (
         <section id="look">
-            <h2 id="look-header">Look</h2>
-            <div id="look-username">User: {profileForLook.username}</div>
-            <div id="look-entered">Entered Mainframe on {profileForLook.entered}</div>
-            { authored.length > 0 && <div id="look-authored">
-                <h4 id="authored-entries-heading">Authored entries:</h4>
-                <ul>
-                {authored.map((element) => {
-                    return (
-                        <li key={element.id}>
-                            <a className="authored-link" href={"/entries/"+element.id}>
-                                {element.title}
-                            </a>
-                        </li>
-                    )
-                })}
-                </ul>
-            </div>
-            }
-            <div id="look-return">
-                <ReturnLight />
-            </div>
+            <h2>Look</h2>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>Username</td>
+                        <td>{ profileForLook.username }</td>
+                        <td>
+                            <Link to="/mailbox" state={ profileForLook.username }>
+                                <button id="msg-btn">Message</button>
+                            </Link>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Entered</td>
+                        <td>{ profileForLook.entered }</td>
+                        <td><ReturnLight /></td>
+                    </tr>
+                    <tr>
+                        <td>Replies</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Points</td>
+                        <td>0</td>
+                    </tr>
+                    { authored.length > 0 && <tr>
+                        <td id="authored">Authored</td>
+                        <td><ul>{ authored.map(entry => {
+                            return (
+                                <li key={ entry.id }>
+                                    <a href={"/entries/"+entry.id}>
+                                        { entry.title }
+                                    </a>
+                                </li>
+                            )
+                        }) }</ul></td>
+                    </tr>}
+                </tbody>
+            </table>
         </section>
     );
 }

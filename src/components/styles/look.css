@@ -8,42 +8,39 @@
     border-radius: 5px;
 }
 
-#look-header {
+#look h2 {
     margin: 5px;
     background-color: var(--primary-color);
     color: var(--bg-color);
     text-align: center;
 }
 
-#look-username {
-    margin-top: 20px;
-    margin-left: 30px;
-    font-size: 20px;
+#look table {
+    margin: 20px 0px 0px 50px;
+    width: 100%;
 }
 
-#look-entered {
-    margin-left: 30px;
+#msg-btn {
+    height: 30px;
+    width: 80px;
+    background-color: var(--secondary-color);
+    color: var(--light-color);
+    border: 1px solid var(--primary-color);
 }
 
-#look-authored {
-    margin-top: 20px;
-    margin-left: 30px;
-    font-size: 14px;
+#msg-btn:hover {
+    background-color: var(--primary-color);
 }
 
-#authored-entries-heading {
-    margin-bottom: 5px;
+#authored {
+    vertical-align: top;
 }
 
-.authored-link {
+#look a {
     text-decoration: none;
     color: var(--secondary-color);    
 }
 
-.authored-link:hover {
+#look a:hover {
     color: var(--primary-color);
-}
-
-#look-return {
-    margin-left: 30px;
 }

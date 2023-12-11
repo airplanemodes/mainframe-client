@@ -3,11 +3,13 @@ import { axiosRequest, serverAddress } from "../services/api";
 import { userdataUpdate } from "../services/userdata";
 import Compose from "./compose";
 import "./styles/mailbox.css";
+import { useLocation } from "react-router-dom";
 
 // TODO: reply button
 
 export default function Mailbox() {
 
+    let { state } = useLocation();
     let [ user, setUser ] = useState([]);
     let [ activeBox, setActiveBox ] = useState("inbox");
     let [ privateMessages, setPrivateMessages ] = useState([]);
@@ -179,7 +181,7 @@ export default function Mailbox() {
             </table>
           </div>
         </td>
-        <td className="pm-table-td"><Compose username={user.username}/></td>
+        <td className="pm-table-td"><Compose username={user.username} receiver={state}/></td>
       </tr>
       </tbody>
     </table>

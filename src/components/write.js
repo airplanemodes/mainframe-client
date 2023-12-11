@@ -5,6 +5,8 @@ import { userdataUpdate } from "../services/userdata";
 import ReturnLight from "./buttons/return-light";
 import "./styles/write.css";
 
+// TODO: toast instead of alert
+
 export default function Write() {
 
     let [ user, setUser ] = useState();
@@ -34,7 +36,7 @@ export default function Write() {
             formdata.points = 0;
             const url = serverAddress+"/entries";
             await axiosRequest(url, "POST", formdata);
-            alert("Entry was written to the database");
+            alert("Entry was written to the database!");
             window.location = "/main";
         } catch (error) {
             console.log(error);
