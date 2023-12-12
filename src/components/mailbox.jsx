@@ -44,8 +44,8 @@ export default function Mailbox() {
       <tr>
         <td className="pm-table-td">
           <div id="mailbox">
-            <h3 id="mailbox-header">Mailbox</h3>
-            <nav id="mailbox-switch">
+            <h3>Mailbox</h3>
+            <nav>
               <button 
                 className={activeBox === "inbox" ? "active-box" : "box-button"}
                 onClick={ async() => setActiveBox("inbox") }>Inbox</button>

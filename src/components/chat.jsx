@@ -33,30 +33,30 @@ export default function Chat(props) {
     }, []);
 
 	return (
-		<aside id="chat-box">
+		<aside id="chat">
             <h4>Message exchange</h4>
-            <table id="chat-messages">
+            <table>
             <tbody>
-            { messages.map((element, index) => {
+            { messages.map((msg, index) => {
                 return (
                     <tr key={index}>
-                        { element.name ?
+                        { msg.name ?
                         <Fragment>
                             <td className="user-message">
-                                <a className="user-link" href={"/users/"+element.name}>{element.name}</a>:
+                                <a className="user-link" href={"/users/"+msg.name}>{msg.name}</a>:
                             </td>
-                            <td>{element.msg}</td>
+                            <td>{msg.msg}</td>
                         </Fragment> 
                         :
-                        <td className="system-message">* {element}</td> }
+                        <td className="system-message">* {msg}</td> }
                     </tr>
                 )
             })}
             </tbody>
             </table>
             <form onSubmit={onSend} id="chat-form">
-                <input id="chat-input" ref={inputRef} type="text" />
-                <button id="chat-send" type="submit">Send</button>
+                <input ref={inputRef} type="text" />
+                <button type="submit">Send</button>
             </form>
         </aside>
 	);

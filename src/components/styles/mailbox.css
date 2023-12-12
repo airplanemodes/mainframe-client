@@ -21,7 +21,7 @@
     overflow-y: scroll;
 }
 
-#mailbox-header {
+#mailbox h3 {
     padding-top: 10px;
     padding-bottom: 10px;
     text-align: center;
@@ -29,11 +29,11 @@
     background-color: var(--secondary-color);
 }
 
-#mailbox-switch {
+#mailbox nav {
     text-align: center;
 }
 
-#mailbox-switch button {
+#mailbox nav button {
     margin-top: 10px;
     height: 30px;
     width: 80px;
@@ -42,7 +42,7 @@
     border: 1px solid var(--bg-color);
 }
 
-#mailbox-switch button:hover {
+#mailbox nav button:hover {
     background-color: var(--primary-color);
 }
 

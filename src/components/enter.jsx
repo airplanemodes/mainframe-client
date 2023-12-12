@@ -48,7 +48,7 @@ export default function Enter() {
                 { error && <div><br />{ error }</div> }
                 <button>Login</button>
             </form>
-            <div id="user-guest">
+            <div>
                 <p>continue as <a href="/main">guest</a></p>
                 <p>create new <a href="/register">user</a></p>
             </div>

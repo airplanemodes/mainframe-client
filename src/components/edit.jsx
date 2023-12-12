@@ -45,8 +45,8 @@ export default function Edit() {
 
     return (
         <section id="edit">
-            <h3 id="entry-header">Entry editing</h3>
-            <form id="edit-form" onSubmit={handleSubmit(submitEdit)}>
+            <h3>Entry editing</h3>
+            <form onSubmit={handleSubmit(submitEdit)}>
                 <label>Title:</label>
                 <input type={"text"} {...titleRef} defaultValue={entry.title}/>
                 <br />
@@ -66,9 +66,9 @@ export default function Edit() {
                 <br />
                 <button>Save</button>
             </form>
-            <div id="edit-return">
+            <span id="edit-return">
                 <ReturnLight />
-            </div>
+            </span>
         </section>
     );
 }

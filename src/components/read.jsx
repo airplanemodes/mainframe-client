@@ -58,15 +58,14 @@ export default function Read() {
     return (
         <section>
             <div id="read">
-            <h3 id="entry-header">{entry.title}</h3>
-            <pre id="entry-content">{entry.content}</pre>
-            <div id="entry-signature">
-                { user.username ? user.username === entry.author ? <a href={"/profile"}>{entry.author}</a>
-                                                                 : <a href={"/users/"+entry.author}>{entry.author}</a> 
-                                : <span>{entry.author} </span> }
-                    @ {entry.node} {entry.created}
-            </div>
-                <div id="read-return-div">
+            <h3>{ entry.title }</h3>
+            <pre>{ entry.content }</pre>
+            <p>by { user.username ? user.username === entry.author ? <a href={"/profile"}>{entry.author}</a>
+                                                                   : <a href={"/users/"+entry.author}>{entry.author}</a> 
+                                  : <span>{ entry.author } </span> }
+                @ { entry.node } on { entry.created }
+            </p>
+                <div id="read-return">
                     <ReturnDark />
                 </div>
             </div>

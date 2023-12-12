@@ -27,8 +27,8 @@ export default function Main() {
 
     return (
         <main>
-            <Header user={user || "guest"}/>
-                <table id="main-table">
+            <Header user={ user || "guest" }/>
+                <table>
                 <tbody>
                     <tr>
                         <td><Feed user={ user || "guest" }/></td>

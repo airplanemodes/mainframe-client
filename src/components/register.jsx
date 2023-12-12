@@ -40,32 +40,32 @@ export default function Register() {
     let emailRef = register("email", { required: true , maxLength: 60 } );
     let passwdRef = register("passwd", { required: true }); 
 
-  return (
-    <section id="register-form">
-      <form onSubmit={handleSubmit(submit)}>
-        <h2>Create new user</h2>
-        <table id="register-table">
-          <tbody>
-          <tr>
-            <td><label>Username: </label></td>
-            <td><input type={"text"} {...usernameRef} /></td>
-          </tr>
-          <tr>
-            <td><label>Email: </label></td>
-            <td><input type={"email"} {...emailRef} /></td>
-          </tr>
-          <tr>
-            <td><label>Password: </label></td>
-            <td><input type={"password"} {...passwdRef} /></td>
-          </tr>
-          </tbody>
-        </table>
-        { error && <div><br />{error}</div>}
-        <button>Create</button>
-      </form>
-      <br />
-      <p>continue as <a href="/main">guest</a></p>
-      <p>back to <a href="/">login</a></p>
-    </section>
-  );
+    return (
+        <section id="register">
+            <form onSubmit={ handleSubmit(submit) }>
+                <h2>Create new user</h2>
+                    <table>
+                    <tbody>
+                        <tr>
+                            <td><label>Username: </label></td>
+                            <td><input type={"text"} {...usernameRef} /></td>
+                        </tr>
+                        <tr>
+                            <td><label>Email: </label></td>
+                            <td><input type={"email"} {...emailRef} /></td>
+                        </tr>
+                        <tr>
+                            <td><label>Password: </label></td>
+                            <td><input type={"password"} {...passwdRef} /></td>
+                        </tr>
+                    </tbody>
+                    </table>
+                { error && <div><br />{error}</div> }
+                <button>Create</button>
+            </form>
+            <br />
+            <p>continue as <a href="/main">guest</a></p>
+            <p>back to <a href="/">login</a></p>
+        </section>
+    );
 }

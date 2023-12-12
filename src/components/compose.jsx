@@ -43,17 +43,17 @@ export default function Compose(props) {
                 <h3>Compose</h3>
                 <label>Receiver:</label>
                 <select value={props.receiver} {...receiverRef}>
-                    {receivers.filter((element) => element.username !== props.username).map((element) => {
+                    {receivers.filter(e => e.username !== props.username).map(e => {
                         return (
-                            <option key={element.id}>{element.username}</option>
+                            <option key={e.id}>{ e.username }</option>
                         )
                     })}
                 </select>
                 <br />
                 <label>Subject:</label>
                 <input type={"text"} maxLength={16} {...subjectRef}/>
-                <textarea id="compose-textarea" rows={10} maxLength={255} {...bodyRef} autoFocus={props.receiver}/>
-                <button id="compose-button">Send</button>
+                <textarea rows={10} maxLength={255} {...bodyRef} autoFocus={props.receiver}/>
+                <button>Send</button>
             </form>
             <div id="mailbox-return">
                 <ReturnLight />

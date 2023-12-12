@@ -1,9 +1,6 @@
 import "./styles/full-replies.css";
 
 export default function FullReplies(props) {
-
-    // console.log(props.repliesArray);
-
     return (
         <section id="full-replies">
         { props.repliesArray && props.repliesArray.map((element) => {

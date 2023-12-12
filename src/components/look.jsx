@@ -64,7 +64,7 @@ export default function Look() {
                         <td>{ profileForLook.username }</td>
                         <td>
                             <Link to="/mailbox" state={ profileForLook.username }>
-                                <button id="msg-btn">Message</button>
+                                <button>Message</button>
                             </Link>
                         </td>
                     </tr>

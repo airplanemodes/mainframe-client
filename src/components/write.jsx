@@ -45,12 +45,12 @@ export default function Write() {
 
     return (
         <section id="write">
-            <h3 id="write-header">Write a new entry</h3>
-            <form id="write-form" onSubmit={handleSubmit(writeEntry)}>
+            <h3>Write a new entry</h3>
+            <form onSubmit={handleSubmit(writeEntry)}>
                 <label>Title</label>
                 <input type={"text"} {...titleRef} />
                 <br />
-                <label id="node-label">Node</label>
+                <label>Node</label>
                 <select {...nodeRef}>
                     <option>code</option>
                     <option>network</option>
@@ -62,11 +62,11 @@ export default function Write() {
                 <br />
                 <textarea rows={12} {...contentRef}/>
                 <br />
-                <button id="send-write" className="bar-button">Write</button>
+                <button className="bar-button">Write</button>
             </form>
-            <div id="write-return">
+            <span>
                 <ReturnLight />
-            </div>
+            </span>
         </section>
     );
 }

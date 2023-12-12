@@ -4,9 +4,6 @@ import "./styles/reply.css";
 
 export default function Reply(props) {
 
-    // console.log(props.user);
-    // console.log(props.entryid);
-
     const { register, handleSubmit } = useForm();
 
     const writeReply = async(formdata) => {
@@ -25,9 +22,9 @@ export default function Reply(props) {
 
     return (
         <form id="reply" onSubmit={handleSubmit(writeReply)}>
-            <h3 id="reply-header">Reply</h3>
-            <textarea id="reply-textarea" rows={4} maxLength={255} {...bodyRef}/>
-            <button id="reply-button">Reply</button>
+            <h3>Reply</h3>
+            <textarea rows={4} maxLength={255} {...bodyRef}/>
+            <button>Reply</button>
         </form>
     );
 }

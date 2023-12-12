@@ -4,7 +4,7 @@ export default function Footer() {
     return (
         <footer>
             Developed by airplanemodes<br />
-            <p id="open-source">Open source under the MIT license</p>
+            <p>Open source under the MIT license</p>
         </footer>
     );
 }

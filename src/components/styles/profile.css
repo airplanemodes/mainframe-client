@@ -8,7 +8,7 @@
     border-radius: 10px;
 }
 
-#profile-header {
+#profile h3 {
     padding-top: 10px;
     padding-bottom: 10px;
     text-align: center;
@@ -16,29 +16,21 @@
     background-color: var(--secondary-color);
 }
 
-#profile-return {
-    margin-top: 200px;
-    text-align: center;
-}
-
-#userdata {
+#profile article {
     padding: 50px;
 }
 
-#profile-authored-heading {
-    margin-bottom: 10px;
-}
-
-.profile-authored-link {
-    font-size: 18px;
-    text-decoration: none;
+.authored-link {
     color: var(--secondary-color);    
+    font-size: 16px;
+    text-decoration: none;
 }
 
-.profile-authored-link:hover {
+.authored-link:hover {
     color: var(--primary-color);
 }
 
-.written-article {
-    font-size: smaller;
+#profile div {
+    margin-top: 200px;
+    text-align: center;
 }

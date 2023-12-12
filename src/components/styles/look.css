@@ -20,7 +20,7 @@
     width: 100%;
 }
 
-#msg-btn {
+#look button {
     height: 30px;
     width: 80px;
     background-color: var(--secondary-color);
@@ -28,7 +28,7 @@
     border: 1px solid var(--primary-color);
 }
 
-#msg-btn:hover {
+#look button:hover {
     background-color: var(--primary-color);
 }
 

@@ -9,7 +9,7 @@
     border-radius: 5px;
 }
 
-#entry-header {
+#read h3 {
     padding-top: 10px;
     padding-bottom: 10px;
     text-align: center;
@@ -17,7 +17,7 @@
     background-color: var(--secondary-color);
 }
 
-#entry-content {
+#read pre {
     padding-top: 40px;
     padding-right: 40px;
     padding-left: 40px;
@@ -26,22 +26,22 @@
     white-space: pre-wrap;
 }
 
-#entry-signature {
+#read p {
     padding: 40px;
     color: var(--primary-color);
     background-color: var(--bg-color);
 }
 
-#entry-signature a {
+#read p a {
     margin-right: 10px;
     color: var(--secondary-color);
 }
 
-#entry-signature a:hover {
+#read p a:hover {
     color: var(--primary-color);
 }
 
-#read-return-div {
+#read-return {
     margin-left: 40px;
     margin-bottom: 20px;
 }

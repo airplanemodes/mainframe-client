@@ -1,4 +1,4 @@
-import './styles/short-replies.css';
+import "./styles/short-replies.css";
 
 export default function ShortReplies(props) {
 

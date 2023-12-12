@@ -8,12 +8,12 @@
     border-radius: 10px;
 }
 
-#reply-header {
+#reply h3 {
     margin: 20px;
     color: var(--bg-color);
 }
 
-#reply-textarea {
+#reply textarea {
     display: flex;
     margin: 0 auto;
     padding: 8px;
@@ -27,7 +27,7 @@
     border: 2px solid var(--bg-color);
 }
 
-#reply-button {
+#reply button {
     margin: 20px;
     height: 30px;
     width: 80px;
@@ -37,6 +37,6 @@
     border-radius: 5px;
 }
 
-#reply-button:hover {
+#reply button:hover {
     background-color: var(--bg-color-light);
 }

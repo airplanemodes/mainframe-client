@@ -1,17 +1,47 @@
 #not-found {
     margin-top: 300px;
     text-align: center;
+    color: var(--light-color);
+    text-shadow:
+        0 0 7px var(--light-color),
+        0 0 42px var(--primary-color),
+        0 0 82px var(--primary-color),
+        0 0 92px var(--primary-color),
+        0 0 102px var(--primary-color),
+        0 0 151px var(--primary-color);
 }
 
-#not-found-error {
-    font-size: 100px;
+#not-found h1 {
+    font-size: 6rem;
+    animation: errorflicker 1.5s infinite alternate;
 }
 
-#not-found-link {
-    color: var(--secondary-color); 
+@keyframes errorflicker {
+    
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+  
+        text-shadow:
+            0 0 4px var(--light-color),
+            0 0 11px var(--light-color),
+            0 0 19px var(--light-color),
+            0 0 40px var(--primary-color),
+            0 0 80px var(--primary-color),
+            0 0 90px var(--primary-color),
+            0 0 100px var(--primary-color),
+            0 0 150px var(--primary-color),
+    }
+    
+    20%, 24%, 55% {        
+        text-shadow: none;
+    }    
+}
+
+#not-found a {
+    text-decoration: none;
+    color: var(--light-color); 
     font-size: 24px;
 }
 
-#not-found-link:hover {
+#not-found a:hover {
     color: var(--primary-color);
 }
