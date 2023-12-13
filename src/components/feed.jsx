@@ -172,7 +172,7 @@ export default function Feed(props) {
           { activeNode === "society" && <Pagination urlOfNodeTotal={"/entries/total/society"}/> }
       </nav>  
       { /* Entries feed */ }
-      { entries.length === 0 && <div id="node-empty">Node is empty.</div> }
+      { entries.length === 0 && <section id="node-empty">Node is empty.</section> }
       { entries.map(e => {
         return (
           <article className="element-article" key={e.id}>
@@ -208,10 +208,9 @@ export default function Feed(props) {
                       <button className="plus-button" elem={e.id} onClick={applyPlus}>+</button>
                   ) : <button className="plus-button" elem={e.id} onClick={applyPlus}>+</button>
                 ) : false }
-              { props.user.id ? (
-                  creditsMap[e.id] ? <div className="credits-counter">Credits: { creditsMap[e.id].length }</div>
-                                       : <div className="credits-counter">Credits: 0</div>
-                ) : false }
+              { props.user.id ? 
+                  (creditsMap[e.id] ? <div className="credits-counter">Credits: { creditsMap[e.id].length }</div>
+                                    : <div className="credits-counter">Credits: 0</div>) : false }
             </div>
           </article>
         )

@@ -5,7 +5,7 @@
     width: 40%;
     background-color: var(--bg-color);
     border: 0.3125rem solid var(--primary-color);
-    border-radius: 5px;
+    border-radius: 0.3125rem;
 }
 
 #look h2 {

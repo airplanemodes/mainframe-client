@@ -5,7 +5,7 @@
     width: 70vw;
     color: var(--primary-color);
     border: 0.5rem solid var(--primary-color);
-    border-radius: 10px;
+    border-radius: 0.625rem;
 }
 
 #write h3 {

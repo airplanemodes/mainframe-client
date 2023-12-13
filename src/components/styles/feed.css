@@ -1,18 +1,18 @@
 #switch {
-    margin-left: 100px;
+    margin-left: 5em;
 }
 
 .active-node {
-    height: 40px;
-    width: 100px;
+    height: 2.5rem;
+    width: 6.25rem;
     background-color: var(--primary-color);
     border: 0.0625rem solid var(--primary-color);
-    box-shadow: 2px 2px 40px var(--primary-color);
+    box-shadow: 2px 2px 2.5rem var(--primary-color);
 }
 
 .node-button {
-    height: 40px;
-    width: 100px;
+    height: 2.5rem;
+    width: 6.25rem;
     background-color: var(--secondary-color);
     color: var(--light-color);
     border: 0.0625rem solid var(--secondary-color);
@@ -24,20 +24,19 @@
 }
 
 #node-empty {
-    margin: 50px;
-    margin-left: 100px;
-    width: 810px;
+    margin: 2em 4.875em 0em 3em;
+    width: 24em;
     font-size: 1.875rem;
 }
 
 .element-article {
-    margin: 50px;
-    margin-left: 100px;
-    width: 800px;
+    margin: 3.125em;
+    margin-left: 6.25em;
+    width: 50em;
     background-color: var(--secondary-color);
     border: 0.1875rem solid var(--primary-color);
-    border-radius: 8px;
-    box-shadow: 5px 5px 10px var(--secondary-color);
+    border-radius: 0.5rem;
+    box-shadow: 0.3125rem 0.3125rem 0.625rem var(--secondary-color);
 }
 
 .element-title {
@@ -52,7 +51,7 @@
     color: var(--primary-color);
     background-color: var(--bg-color);
     border: 0.0625rem solid var(--bg-color);
-    border-radius: 5px;
+    border-radius: 0.3125rem;
 }
 
 .element-content {
@@ -83,7 +82,7 @@
     background-color: var(--bg-color);
     color: var(--light-color);
     border: 0.0625rem solid var(--bg-color);
-    border-radius: 5px;
+    border-radius: 0.3125rem;
 }
 
 .delete-button:hover {
@@ -107,7 +106,7 @@
     background-color: var(--bg-color);
     color: var(--light-color);
     border: 0.0625rem solid var(--bg-color);
-    border-radius: 5px;
+    border-radius: 0.3125rem;
 }
 
 .plus-button:hover {
@@ -124,7 +123,7 @@
     background-color: var(--bg-color);
     color: var(--light-color);
     border: 0.0625rem solid var(--bg-color);
-    border-radius: 5px;
+    border-radius: 0.3125rem;
 }
 
 .minus-button:hover {

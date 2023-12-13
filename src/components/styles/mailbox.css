@@ -1,45 +1,42 @@
-/* Both UIs */
+/* Both tables */
 #pm-table {
     margin: 0 auto;
-    margin-top: 30px;
+    margin-top: 2em;
 }
 
 .pm-table-td {
     vertical-align: top;
 }
 
-
-
-/* Mailbox UI */
+/* Mailbox */
 #mailbox {
-    margin: 0 auto;
-    height: 680px;
+    height: 42em;
     width: 50vw;
     color: var(--primary-color);
-    border: 0.3125rem solid var(--primary-color);
-    border-radius: 10px;
+    border: 0.4rem solid var(--primary-color);
+    border-radius: 0.5rem;
     overflow-y: scroll;
 }
 
 #mailbox h3 {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 0.75em;
+    padding-bottom: 0.5em;
     text-align: center;
     color: var(--bg-color);
     background-color: var(--secondary-color);
 }
 
 #mailbox nav {
+    background-color: var(--secondary-color);
     text-align: center;
 }
 
 #mailbox nav button {
-    margin-top: 10px;
-    height: 30px;
-    width: 80px;
+    height: 3em;
+    width: 10em;
     background-color: var(--secondary-color);
     color: var(--light-color);
-    border: 0.0625rem solid var(--bg-color);
+    border: 0.1rem solid var(--bg-color);
 }
 
 #mailbox nav button:hover {
@@ -50,18 +47,15 @@
     background-color: var(--primary-color);
 }
 
-
-
 /* Private messages table */
 #pm-data {
-    margin-top: 10px;
     width: 100%;
-    border: 0.0625rem solid var(--primary-color);
+    border: 0.05rem solid var(--primary-color);
     border-collapse: collapse;
 }
 
 .pm-data-heading {
-    padding: 5px;
+    padding: 0.3rem;
     color: var(--bg-color);
     background-color: var(--primary-color);
     border: 0.0625rem solid var(--primary-color);
@@ -73,14 +67,14 @@
 }
 
 .pm-data-msg {
-    padding: 5px;
+    padding: 0.3rem;
     font-size: 0.875rem;
     text-align: center;
     border: 0.0625rem solid var(--primary-color);
 }
 
 .pm-data-msg-subject {
-    padding: 5px;
+    padding: 0.3rem;
     width: 22%;
     font-size: 0.875rem;
     text-align: center;
@@ -88,9 +82,9 @@
 }
 
 .pm-data-msg-body {
-    padding: 5px;
+    padding: 0.3rem;
     width: 60%;
-    font-size: 0.875rem;
+    font-size: 0.8rem;
     border: 0.0625rem solid var(--primary-color);
 }
 
@@ -104,10 +98,10 @@
 
 .mail-btn {
     margin: 0;
-    height: 30px;
-    width: 30px;
+    height: 1.875rem;
+    width: 1.875rem;
     background-color: var(--secondary-color);
-    border: 0.0625rem solid var(--bg-color);
+    border: 0.05rem solid var(--bg-color);
 }
 
 .mail-btn:hover {

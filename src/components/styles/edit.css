@@ -6,7 +6,7 @@
     height: 640px;
     width: 80vw;
     border: 0.3125rem solid var(--primary-color);
-    border-radius: 5px;
+    border-radius: 0.3125rem;
 }
 
 #edit h3 {

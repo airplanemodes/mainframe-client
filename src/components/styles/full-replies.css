@@ -5,7 +5,7 @@
     color: var(--primary-color);
     width: 40vw;
     border: 0.3125rem solid var(--primary-color);
-    border-radius: 15px;
+    border-radius: 0.9375rem;
 }
 
 .single-full-reply {

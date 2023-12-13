@@ -6,7 +6,7 @@
     background-color: var(--secondary-color);
     color: var(--primary-color);
     border: 0.3125rem solid var(--primary-color);
-    border-radius: 5px;
+    border-radius: 0.3125rem;
 }
 
 #read h3 {
