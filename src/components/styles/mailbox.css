@@ -16,7 +16,7 @@
     height: 680px;
     width: 50vw;
     color: var(--primary-color);
-    border: 5px solid var(--primary-color);
+    border: 0.3125rem solid var(--primary-color);
     border-radius: 10px;
     overflow-y: scroll;
 }
@@ -39,7 +39,7 @@
     width: 80px;
     background-color: var(--secondary-color);
     color: var(--light-color);
-    border: 1px solid var(--bg-color);
+    border: 0.0625rem solid var(--bg-color);
 }
 
 #mailbox nav button:hover {
@@ -56,7 +56,7 @@
 #pm-data {
     margin-top: 10px;
     width: 100%;
-    border: 1px solid var(--primary-color);
+    border: 0.0625rem solid var(--primary-color);
     border-collapse: collapse;
 }
 
@@ -64,7 +64,7 @@
     padding: 5px;
     color: var(--bg-color);
     background-color: var(--primary-color);
-    border: 1px solid var(--primary-color);
+    border: 0.0625rem solid var(--primary-color);
 }
 
 .pm-data-row:hover {
@@ -74,24 +74,24 @@
 
 .pm-data-msg {
     padding: 5px;
-    font-size: 14px;
+    font-size: 0.875rem;
     text-align: center;
-    border: 1px solid var(--primary-color);
+    border: 0.0625rem solid var(--primary-color);
 }
 
 .pm-data-msg-subject {
     padding: 5px;
     width: 22%;
-    font-size: 14px;
+    font-size: 0.875rem;
     text-align: center;
-    border: 1px solid var(--primary-color);
+    border: 0.0625rem solid var(--primary-color);
 }
 
 .pm-data-msg-body {
     padding: 5px;
     width: 60%;
-    font-size: 14px;
-    border: 1px solid var(--primary-color);
+    font-size: 0.875rem;
+    border: 0.0625rem solid var(--primary-color);
 }
 
 .sender-link {
@@ -107,7 +107,7 @@
     height: 30px;
     width: 30px;
     background-color: var(--secondary-color);
-    border: 1px solid var(--bg-color);
+    border: 0.0625rem solid var(--bg-color);
 }
 
 .mail-btn:hover {

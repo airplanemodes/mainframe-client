@@ -4,7 +4,7 @@
     margin-bottom: 100px;
     color: var(--primary-color);
     width: 40vw;
-    border: 5px solid var(--primary-color);
+    border: 0.3125rem solid var(--primary-color);
     border-radius: 15px;
 }
 

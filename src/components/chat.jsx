@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef, Fragment } from "react";
 import { io } from "socket.io-client";
-import { serverAddress } from "../services/api";
+import { host } from "../services/api";
 import "./styles/chat.css";
 
-const socket = io(serverAddress);
+const socket = io(host);
 
 export default function Chat(props) {
 

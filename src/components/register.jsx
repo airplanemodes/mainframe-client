@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { axiosRequest, serverAddress } from "../services/api";
+import { axiosRequest, host } from "../services/api";
 import "./styles/register.css";
 
 // TODO: add toast instead of alert
@@ -16,11 +16,11 @@ export default function Register() {
             const date = new Date();
             formdata.entered = `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`;
             formdata.moderator = false;
-            await axiosRequest(serverAddress+"/users", "POST", formdata);
+            await axiosRequest(host+"/users", "POST", formdata);
             alert("User created successfully!");
             try {
-                let response = await axiosRequest(serverAddress+"/login", "POST", formdata);
-                localStorage.setItem("localToken", response.created);
+                let response = await axiosRequest(host+"/login", "POST", formdata);
+                localStorage.setItem("token", response.created);
                 window.location = "/main";
             } catch (error) {
                 error.code === "ERR_NETWORK" ? setError("server unavailable")
@@ -47,15 +47,15 @@ export default function Register() {
                     <table>
                     <tbody>
                         <tr>
-                            <td><label>Username: </label></td>
+                            <td><label>Username:</label></td>
                             <td><input type={"text"} {...usernameRef} /></td>
                         </tr>
                         <tr>
-                            <td><label>Email: </label></td>
+                            <td><label>Email:</label></td>
                             <td><input type={"email"} {...emailRef} /></td>
                         </tr>
                         <tr>
-                            <td><label>Password: </label></td>
+                            <td><label>Password:</label></td>
                             <td><input type={"password"} {...passwdRef} /></td>
                         </tr>
                     </tbody>

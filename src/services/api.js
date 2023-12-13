@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export let serverAddress = "http://localhost:4000";
+export const host = "http://localhost:4000";
 
 export const getRequest = async(url) => {
     try {
@@ -18,7 +18,7 @@ export const axiosRequest = async(url, method, data) => {
             method: method,
             data: data,
             headers: {
-                "x-auth-token": localStorage.localToken
+                "x-auth-token": localStorage.token
             }
         });
         return response.data;

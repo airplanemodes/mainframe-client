@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getRequest, serverAddress } from "../services/api";
+import { getRequest, host } from "../services/api";
 import { userdataUpdate } from "../services/userdata";
 import FullReplies from "./full-replies";
 import Reply from "./reply";
@@ -13,8 +13,11 @@ export default function Read() {
     const [ entry, setEntry ] = useState({});
     const getSingleEntry = async() => {
         try {
-            let data = getRequest(serverAddress+"/entries/"+id);
-            data.then(value => setEntry(value));
+            let data = getRequest(host+"/entries/"+id);
+            data.then(value => {
+                if (!value.id) window.location = "/nopage";
+                setEntry(value)
+            });
         } catch (error) {
             console.log(error);
         }
@@ -24,13 +27,13 @@ export default function Read() {
     const initializeUser = async() => {
         let userinit = await userdataUpdate();
         if (userinit.username) setUser(userinit);
-        else localStorage.removeItem("localToken");
+        else localStorage.removeItem("token");
     }
 
     let [ replies, setReplies ] = useState([]);
     const getReplies = async() => {
         try {
-            let data = await getRequest(serverAddress+"/replies");
+            let data = await getRequest(host+"/replies");
             setReplies(data);
         } catch (error) {
             console.log(error);

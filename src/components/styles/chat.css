@@ -7,7 +7,7 @@
     height: 490px;
     background-color: var(--secondary-color);
     color: var(--bg-color);
-    border: 3px solid var(--primary-color);
+    border: 0.1875rem solid var(--primary-color);
     border-radius: 5px;
     box-shadow: 0px 0px 30px var(--secondary-color);
 }
@@ -23,7 +23,7 @@
     padding: 5px;
     height: 380px;
     color: var(--primary-color);
-    font-size: 14px;
+    font-size: 0.875rem;
     background-color: var(--bg-color);
     overflow-y: scroll;
     overflow-wrap: break-word;
@@ -39,7 +39,7 @@
     padding: 5px;
     color: var(--primary-color);
     background-color: var(--bg-color);
-    border: 2px solid var(--bg-color);
+    border: 0.125rem solid var(--bg-color);
     border-radius: 3px;
     outline: none;
 }
@@ -51,7 +51,7 @@
     width: 80px;
     background-color: var(--bg-color);
     color: var(--light-color);
-    border: 1px solid var(--bg-color);
+    border: 0.0625rem solid var(--bg-color);
     border-radius: 5px;
 }
 

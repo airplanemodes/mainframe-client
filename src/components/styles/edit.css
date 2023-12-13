@@ -5,7 +5,7 @@
     color: var(--primary-color);
     height: 640px;
     width: 80vw;
-    border: 5px solid var(--primary-color);
+    border: 0.3125rem solid var(--primary-color);
     border-radius: 5px;
 }
 
@@ -42,7 +42,7 @@
 
 #edit form textarea {
     margin-top: 10px;
-    font-size: 14px;
+    font-size: 0.875rem;
     width: 98%;
     padding: 10px;
     color: var(--bg-color);
@@ -57,7 +57,7 @@
     width: 80px;
     background-color: var(--secondary-color);
     color: var(--light-color);
-    border: 1px solid var(--primary-color);
+    border: 0.0625rem solid var(--primary-color);
 }
 
 #edit form button:hover {

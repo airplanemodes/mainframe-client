@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { axiosRequest, serverAddress } from "../services/api";
+import { axiosRequest, host } from "../services/api";
 import "./styles/reply.css";
 
 export default function Reply(props) {
@@ -11,7 +11,7 @@ export default function Reply(props) {
             formdata.authorid = props.user.id;
             formdata.entryid = props.entryid;
             formdata.username = props.user.username;
-            await axiosRequest(serverAddress+"/replies", "POST", formdata);
+            await axiosRequest(host+"/replies", "POST", formdata);
             window.location = "/entries/"+props.entryid;
         } catch (error) {
             console.log(error);

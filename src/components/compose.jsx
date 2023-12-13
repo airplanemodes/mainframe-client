@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { axiosRequest, serverAddress } from "../services/api";
+import { axiosRequest, host } from "../services/api";
 import ReturnLight from "./buttons/return-light";
 import "./styles/compose.css";
 
@@ -17,7 +17,7 @@ export default function Compose(props) {
         try {
             formdata.sender = props.username;
             if (formdata.subject === "") delete formdata.subject;
-            await axiosRequest(serverAddress+"/privates", "POST", formdata);
+            await axiosRequest(host+"/privates", "POST", formdata);
             window.location = "/mailbox";
         } catch (error) {
             console.log(error);
@@ -26,7 +26,7 @@ export default function Compose(props) {
 
     const getReceiversList = async() => {
         try {
-            const data = await axiosRequest(serverAddress+"/users/all", "GET");
+            const data = await axiosRequest(host+"/users/all", "GET");
             setReceivers(data);
         } catch (error) {
             console.log(error);

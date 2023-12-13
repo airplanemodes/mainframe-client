@@ -4,13 +4,12 @@ import { userdataUpdate } from "../services/userdata";
 import "./styles/header.css";
 
 // TODO: you have a new message!
-// TODO: update CSS
 
 export default function Header(props) {
 
     const userLogout = async() => {
         try {
-            localStorage.removeItem("localToken");
+            localStorage.removeItem("token");
             await userdataUpdate();
             window.location = "/";
         } catch (error) {
@@ -22,7 +21,7 @@ export default function Header(props) {
         <header>
             <h1>Welcome to Mainframe</h1>
             <nav>
-            { !localStorage.localToken ?
+            { !localStorage.token ?
                 <Fragment>
                     <h4>you are logged as guest</h4>
                     <a href="/"><button id="login-bar-button">Login</button></a>

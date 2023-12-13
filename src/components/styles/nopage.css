@@ -13,10 +13,13 @@
 
 #not-found h1 {
     font-size: 6rem;
-    animation: errorflicker 1.5s infinite alternate;
+    animation-name: error;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
-@keyframes errorflicker {
+@keyframes error {
     
     0%, 18%, 22%, 25%, 53%, 57%, 100% {
   
@@ -39,7 +42,7 @@
 #not-found a {
     text-decoration: none;
     color: var(--light-color); 
-    font-size: 24px;
+    font-size: 1.5rem;
 }
 
 #not-found a:hover {

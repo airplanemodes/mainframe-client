@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { axiosRequest, serverAddress } from "../services/api";
+import { axiosRequest, host } from "../services/api";
 import ReturnLight from "./buttons/return-light";
 import "./styles/edit.css";
 
@@ -12,7 +12,7 @@ export default function Edit() {
   
     const getEntryForEditing = async() => {
         try {
-            const data = await axiosRequest(serverAddress+"/edit/"+id);
+            const data = await axiosRequest(host+"/edit/"+id);
             setEntry(data);
         } catch (error) {
             console.log(error);
@@ -36,7 +36,7 @@ export default function Edit() {
             formdata.created = entry.created;
             formdata.id = entry.id;
             formdata.points = entry.points;
-            await axiosRequest(serverAddress+"/entries/"+formdata.id, "PUT", formdata);
+            await axiosRequest(host+"/entries/"+formdata.id, "PUT", formdata);
             window.location = "/main";
         } catch (error) {
             console.log(error);

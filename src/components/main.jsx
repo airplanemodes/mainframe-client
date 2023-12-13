@@ -17,7 +17,7 @@ export default function Main() {
         if (userobject.username) setUser(userobject);
         else {
             setUser("guest");
-            localStorage.removeItem("localToken");
+            localStorage.removeItem("token");
         }
     }
 

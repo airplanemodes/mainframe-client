@@ -1,15 +1,15 @@
-import { axiosRequest, serverAddress } from "./api";
+import { axiosRequest, host } from "./api";
 
 let user = {};
 
 export const userdataUpdate = async() => {
-    if (localStorage.localToken) {
+    if (localStorage.token) {
         try {
-            const url = serverAddress+"/users";
+            const url = host+"/users";
             let data = await axiosRequest(url, "GET");
             if (data) user = data;
             else {
-                localStorage.removeItem("localToken");
+                localStorage.removeItem("token");
                 user = {};
             }
             return user;
@@ -18,7 +18,7 @@ export const userdataUpdate = async() => {
             return user;
         }
     } else {
-        localStorage.removeItem("localToken");
+        localStorage.removeItem("token");
         user = {};
         return user;
     }

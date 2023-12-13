@@ -5,7 +5,7 @@
     width: 80vw;
     background-color: var(--secondary-color);
     color: var(--primary-color);
-    border: 5px solid var(--primary-color);
+    border: 0.3125rem solid var(--primary-color);
     border-radius: 5px;
 }
 

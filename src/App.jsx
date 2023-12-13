@@ -13,21 +13,21 @@ import Look from "./components/look";
 import UserAgreement from "./components/terms";
 
 export default function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route exact path="/" element={<Enter />}/>
-        <Route path="/main" element={<Main />}/>
-        <Route path="/register" element={<Register />}/>
-        <Route path="/write" element={<Write />}/>
-        <Route path="/mailbox" element={<Mailbox />}/>
-        <Route path="/profile" element={<Profile />}/>
-        <Route path="/users/:username" element={<Look />}/>
-        <Route path="/entries/:id" element={<Read />}/>
-        <Route path="/edit/:id" element={<Edit />}/>
-        <Route path="/terms" element={<UserAgreement />}/>
-        <Route path="*" element={<NoPage />} />
-      </Routes>
-    </BrowserRouter>
-  );
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route exact path="/" element={ <Enter /> }/>
+                <Route path="/main" element={ <Main /> }/>
+                <Route path="/register" element={ <Register /> }/>
+                <Route path="/write" element={ <Write /> }/>
+                <Route path="/mailbox" element={ <Mailbox /> }/>
+                <Route path="/profile" element={ <Profile /> }/>
+                <Route path="/users/:username" element={ <Look /> }/>
+                <Route path="/entries/:id" element={ <Read /> }/>
+                <Route path="/edit/:id" element={ <Edit /> }/>
+                <Route path="/terms" element={ <UserAgreement /> }/>
+                <Route path="*" element={ <NoPage /> }/>
+            </Routes>
+        </BrowserRouter>
+    );
 }

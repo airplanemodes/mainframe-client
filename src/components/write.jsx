@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { axiosRequest, serverAddress } from "../services/api";
+import { axiosRequest, host } from "../services/api";
 import { userdataUpdate } from "../services/userdata";
 import ReturnLight from "./buttons/return-light";
 import "./styles/write.css";
@@ -34,7 +34,7 @@ export default function Write() {
             formdata.created = `${dateObj.getFullYear()}-${dateObj.getMonth()+1}-${dateObj.getDate()}`;
             formdata.author = user.username;
             formdata.points = 0;
-            const url = serverAddress+"/entries";
+            const url = host+"/entries";
             await axiosRequest(url, "POST", formdata);
             alert("Entry was written to the database!");
             window.location = "/main";

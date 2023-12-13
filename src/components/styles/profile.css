@@ -4,7 +4,7 @@
     height: 640px;
     width: 40vw;
     color: var(--primary-color);
-    border: 8px solid var(--primary-color);
+    border: 0.5rem solid var(--primary-color);
     border-radius: 10px;
 }
 
@@ -22,7 +22,7 @@
 
 .authored-link {
     color: var(--secondary-color);    
-    font-size: 16px;
+    font-size: 1rem;
     text-decoration: none;
 }
 

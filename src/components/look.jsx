@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { getRequest, axiosRequest, serverAddress } from "../services/api";
+import { getRequest, axiosRequest, host } from "../services/api";
 import { userdataUpdate } from "../services/userdata";
 import ReturnLight from "./buttons/return-light";
 import "./styles/look.css";
@@ -20,14 +20,14 @@ export default function Look() {
         if (userobject.username) setUser(userobject);
         else {
             setUser("guest");
-            localStorage.removeItem("localToken");
+            localStorage.removeItem("token");
             window.location = "/main";
         }
     }
 
     const getProfileForLook = async() => {
         try {
-            const data = await axiosRequest(serverAddress+"/users/"+look.username, "GET");
+            const data = await axiosRequest(host+"/users/"+look.username, "GET");
             setProfileForLook(data);
         } catch (error) {
             console.log(error);
@@ -36,7 +36,7 @@ export default function Look() {
   
     const getAuthored = async() => {
         try {
-            let entries = await getRequest(serverAddress+"/entries"); // all entries
+            let entries = await getRequest(host+"/entries"); // all entries
             let authoredArray = [];
             for (let i = 0; i < entries.length; i++)
                 if (entries[i].author === look.username)

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { axiosRequest, serverAddress } from "../services/api";
+import { axiosRequest, host } from "../services/api";
 import { userdataUpdate } from "../services/userdata";
 import Compose from "./compose";
 import "./styles/mailbox.css";
@@ -19,14 +19,14 @@ export default function Mailbox() {
         if (userobject.username) setUser(userobject);
         else {
             setUser("guest");
-            localStorage.removeItem("localToken");
+            localStorage.removeItem("token");
             window.location = "/main";
         }
     }
 
     const getPrivateMessages = async() => {
         try {
-            const data = await axiosRequest(serverAddress+"/privates");
+            const data = await axiosRequest(host+"/privates");
             setPrivateMessages(data);
         } catch (error) {
             console.log(error);
@@ -87,7 +87,7 @@ export default function Mailbox() {
                       <td className="pm-data-msg">
                         <button className="mail-btn" onClick={async() => {
                           try {
-                            await axiosRequest(serverAddress+"/privates/receiver-del/"+element.id, "PUT", element.id);
+                            await axiosRequest(host+"/privates/receiver-del/"+element.id, "PUT", element.id);
                             getPrivateMessages();
                           } catch (error) {
                             console.log(error);
@@ -113,7 +113,7 @@ export default function Mailbox() {
                         <button className="mail-btn"
                           onClick={async() => {
                             try {
-                              await axiosRequest(serverAddress+"/privates/sender-del/"+element.id, "PUT", element.id);
+                              await axiosRequest(host+"/privates/sender-del/"+element.id, "PUT", element.id);
                               getPrivateMessages();
                             } catch (error) {
                               console.log(error);
@@ -139,14 +139,14 @@ export default function Mailbox() {
                         <button className="mail-btn" onClick={async() => {
                           if (element.sender === user.username) {
                             try {
-                              await axiosRequest(serverAddress+"/privates/sender-rec/"+element.id, "PUT", element.id);
+                              await axiosRequest(host+"/privates/sender-rec/"+element.id, "PUT", element.id);
                               getPrivateMessages();
                             } catch (error) {
                               console.log(error);
                             }
                           } else {
                             try {
-                              await axiosRequest(serverAddress+"/privates/receiver-rec/"+element.id, "PUT", element.id);
+                              await axiosRequest(host+"/privates/receiver-rec/"+element.id, "PUT", element.id);
                               getPrivateMessages();
                             } catch (error) {
                               console.log(error);
@@ -158,14 +158,14 @@ export default function Mailbox() {
                         <button className="mail-btn" onClick={async() => {
                             if (element.sender === user.username) {
                               try {
-                                await axiosRequest(serverAddress+"/privates/sender-fulldel/"+element.id, "PUT", element.id);
+                                await axiosRequest(host+"/privates/sender-fulldel/"+element.id, "PUT", element.id);
                                 getPrivateMessages();
                               } catch (error) {
                                 console.log(error);
                               }
                             } else {
                               try {
-                                await axiosRequest(serverAddress+"/privates/receiver-fulldel/"+element.id, "PUT", element.id);
+                                await axiosRequest(host+"/privates/receiver-fulldel/"+element.id, "PUT", element.id);
                                 getPrivateMessages();
                               } catch (error) {
                                 console.log(error);

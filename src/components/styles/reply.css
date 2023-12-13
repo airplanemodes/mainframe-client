@@ -4,7 +4,7 @@
     width: 50vw;
     background-color: var(--secondary-color);
     color: var(--primary-color);
-    border: 5px solid var(--primary-color);
+    border: 0.3125rem solid var(--primary-color);
     border-radius: 10px;
 }
 
@@ -20,11 +20,11 @@
     width: 95%;
     background-color: var(--bg-color);
     color: var(--primary-color);
-    font-size: 16px;
+    font-size: 1rem;
     resize: none;
     outline: none;
     border-radius: 5px;
-    border: 2px solid var(--bg-color);
+    border: 0.125rem solid var(--bg-color);
 }
 
 #reply button {
@@ -33,7 +33,7 @@
     width: 80px;
     background-color: var(--bg-color);
     color: var(--light-color);
-    border: 1px solid var(--bg-color);
+    border: 0.0625rem solid var(--bg-color);
     border-radius: 5px;
 }
 

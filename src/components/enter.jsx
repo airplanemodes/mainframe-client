@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { axiosRequest, serverAddress } from "../services/api";
+import { axiosRequest, host } from "../services/api";
 import { userdataUpdate } from "../services/userdata";
 import "./styles/enter.css";
 
@@ -23,8 +23,8 @@ export default function Enter() {
     const { register, handleSubmit } = useForm();
     const submit = async(formdata) => {
         try {
-            let response = await axiosRequest(serverAddress+"/login", "POST", formdata);
-            localStorage.setItem("localToken", response.created);
+            let response = await axiosRequest(host+"/login", "POST", formdata);
+            localStorage.setItem("token", response.created);
             window.location = "/main";
         } catch (error) {
             error.code === "ERR_NETWORK" ? setError("server unavailable")

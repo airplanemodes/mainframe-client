@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getRequest, serverAddress } from "../services/api";
+import { getRequest, host } from "../services/api";
 import { userdataUpdate } from "../services/userdata";
 import ReturnLight from "./buttons/return-light";
 import "./styles/profile.css";
@@ -17,7 +17,7 @@ export default function Profile() {
         if (!userobject.username) window.location = "/main";
         else {
             try {
-                let entries = await getRequest(serverAddress+"/entries");
+                let entries = await getRequest(host+"/entries");
                 let authoredArray = [];
                 for (let i = 0; i < entries.length; i++)
                     if (entries[i].author === userobject.username)

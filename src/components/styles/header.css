@@ -51,7 +51,7 @@ header nav h4 {
     width: 80px;
     background-color: var(--secondary-color);
     color: var(--light-color);
-    border: 1px solid var(--primary-color);
+    border: 0.0625rem solid var(--primary-color);
 }
 
 #login-bar-button:hover {
@@ -68,7 +68,7 @@ header nav h4 {
     width: 80px;
     background-color: var(--secondary-color);
     color: var(--light-color);
-    border: 1px solid var(--primary-color);
+    border: 0.0625rem solid var(--primary-color);
 }
 
 .bar-button:hover {
