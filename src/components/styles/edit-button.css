@@ -1,11 +1,11 @@
 .edit-button {
-    margin-left: 10px;
-    height: 30px;
-    width: 80px;
+    margin-right: .5em;
+    height: 1.875rem;
+    width: 5rem;
     background-color: var(--bg-color);
     color: var(--light-color);
-    border: 0.0625rem solid var(--bg-color);
-    border-radius: 0.3125rem;
+    border: .05rem solid var(--bg-color);
+    border-radius: .3rem;
 }
 
 .edit-button:hover {

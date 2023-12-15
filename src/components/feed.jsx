@@ -175,15 +175,15 @@ export default function Feed(props) {
       { entries.length === 0 && <section id="node-empty">Node is empty.</section> }
       { entries.map(e => {
         return (
-          <article className="element-article" key={e.id}>
-            <h2 className="element-title">{ e.title }</h2>
-            <div className="element-node">@ { e.node }</div>
-            <pre className="element-content">{ e.content }</pre>
+          <article className="entry" key={e.id}>
+            <h2>{ e.title }</h2>
+            <label>@ { e.node }</label>
+            <pre>{ e.content }</pre>
             { props.user === "guest" ? 
-                <div className="element-guest-author">{ e.author }</div>
+                <div className="entry-guest-author">{ e.author }</div>
                 : props.user.username === e.author ? 
-                    <a className="element-author" href={"/profile"}>{ e.author }</a>
-                    : <a className="element-author" href={"/users/"+e.author}>
+                    <a className="entry-author" href={"/profile"}>{ e.author }</a>
+                    : <a className="entry-author" href={"/users/"+e.author}>
                           { e.author }
                       </a> }
             { /* Replies */ }
@@ -209,8 +209,8 @@ export default function Feed(props) {
                   ) : <button className="plus-button" elem={e.id} onClick={applyPlus}>+</button>
                 ) : false }
               { props.user.id ? 
-                  (creditsMap[e.id] ? <div className="credits-counter">Credits: { creditsMap[e.id].length }</div>
-                                    : <div className="credits-counter">Credits: 0</div>) : false }
+                  (creditsMap[e.id] ? <span className="credits-counter">{ creditsMap[e.id].length }</span>
+                                    : <span className="credits-counter">0</span>) : false }
             </div>
           </article>
         )

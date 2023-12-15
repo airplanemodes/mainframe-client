@@ -1,131 +1,773 @@
-#switch {
-    margin-left: 5em;
+@media (max-width: 600px) {
+    #switch {
+        margin: 0 0 0 2em;
+    }
+
+    .active-node {
+        height: 1.8rem;
+        width: 5rem;
+        background-color: var(--primary-color);
+        border: .05rem solid var(--primary-color);
+        box-shadow: .125rem .125rem 2.5rem var(--primary-color);
+    }
+
+    .node-button {
+        height: 1.8rem;
+        width: 5rem;
+        background-color: var(--secondary-color);
+        color: var(--light-color);
+        border: .05rem solid var(--secondary-color);
+        box-shadow: .125rem .125rem 1.25rem var(--primary-color);
+    }
+
+    .node-button:hover { background-color: var(--primary-color); }
+    
+    #node-empty {
+        margin: 1em;
+        width: 16em;
+        font-size: 1.875rem;
+    }
+    
+    .entry {
+        margin: 2em;
+        width: 90%;
+        background-color: var(--secondary-color);
+        border: .15rem solid var(--primary-color);
+        border-radius: .5rem;
+        box-shadow: .3rem .3rem .5rem var(--secondary-color);
+    }
+    
+    .entry h2 {
+        display: inline-block;
+        margin: 1.2em;
+        font-size: 1.2rem;
+        color: var(--bg-color);
+    }
+    
+    .entry label {
+        float: right;
+        margin: 1em;
+        padding: .5em;
+        color: var(--primary-color);
+        background-color: var(--bg-color);
+        border-radius: .5rem;
+    }
+    
+    .entry pre {
+        margin: .5em;
+        padding: 1em;
+        background-color: var(--bg-color);
+        color: var(--primary-color);
+        white-space: pre-wrap;
+        border-radius: .2em;
+    }
+    
+    .entry-author {
+        margin: 1em;
+        font-size: 1.2rem;
+        color: var(--bg-color);
+    }
+
+    .entry-author:hover { color: var(--primary-color); }
+    
+    .entry-guest-author {
+        margin: 1em;
+        font-size: 1.2rem;
+        color: var(--bg-color);
+    }
+    
+    .feed-buttons {
+        margin: 0 0 1.5em 1em;
+    }
+    
+    .delete-button {
+        height: 1.875rem;
+        width: 5rem;
+        background-color: var(--bg-color);
+        color: var(--light-color);
+        border: .05rem solid var(--bg-color);
+        border-radius: .3rem;
+    }
+    
+    .delete-button:hover { background-color: var(--bg-color-light); }
+    
+    .credits-counter {
+        margin: .3em 1em 0 0;
+        float: right;
+        color: var(--bg-color);
+    }
+    
+    .plus-button {
+        margin-right: 1em;
+        float: right;
+        height: 1.875rem;
+        width: 3rem;
+        font-size: 0.875rem;
+        background-color: var(--bg-color);
+        color: var(--light-color);
+        border: 0.0625rem solid var(--bg-color);
+        border-radius: 0.3125rem;
+    }
+    
+    .plus-button:hover { background-color: var(--bg-color-light); }
+    
+    .minus-button {
+        margin-right: 1em;
+        float: right;
+        height: 1.875rem;
+        width: 3rem;
+        font-size: 0.875rem;
+        background-color: var(--bg-color);
+        color: var(--light-color);
+        border: 0.0625rem solid var(--bg-color);
+        border-radius: 0.3125rem;
+    }
+    
+    .minus-button:hover { background-color: var(--bg-color-light); }
 }
 
-.active-node {
-    height: 2.5rem;
-    width: 6.25rem;
-    background-color: var(--primary-color);
-    border: 0.0625rem solid var(--primary-color);
-    box-shadow: 2px 2px 2.5rem var(--primary-color);
+
+
+@media (min-width: 600px) {
+    #switch {
+        margin: 0 0 0 2em;
+    }
+
+    .active-node {
+        height: 2rem;
+        width: 5rem;
+        background-color: var(--primary-color);
+        border: .05rem solid var(--primary-color);
+        box-shadow: .125rem .125rem 2.5rem var(--primary-color);
+    }
+
+    .node-button {
+        height: 2rem;
+        width: 5rem;
+        background-color: var(--secondary-color);
+        color: var(--light-color);
+        border: .05rem solid var(--secondary-color);
+        box-shadow: .125rem .125rem 1.25rem var(--primary-color);
+    }
+
+    .node-button:hover { background-color: var(--primary-color); }
+    
+    #node-empty {
+        margin: 1em;
+        width: 16em;
+        font-size: 1.875rem;
+    }
+    
+    .entry {
+        margin: 2em;
+        width: 90%;
+        background-color: var(--secondary-color);
+        border: .15rem solid var(--primary-color);
+        border-radius: .5rem;
+        box-shadow: .3rem .3rem .5rem var(--secondary-color);
+    }
+    
+    .entry h2 {
+        display: inline-block;
+        margin: 1.2em;
+        font-size: 1.2rem;
+        color: var(--bg-color);
+    }
+    
+    .entry label {
+        float: right;
+        margin: 1.2em;
+        padding: .5em;
+        color: var(--primary-color);
+        background-color: var(--bg-color);
+        border-radius: .5rem;
+    }
+    
+    .entry pre {
+        margin: .5em;
+        padding: 1em;
+        background-color: var(--bg-color);
+        color: var(--primary-color);
+        white-space: pre-wrap;
+        border-radius: .2em;
+    }
+    
+    .entry-author {
+        margin: 1em;
+        font-size: 1.2rem;
+        color: var(--bg-color);
+    }
+
+    .entry-author:hover { color: var(--primary-color); }
+    
+    .entry-guest-author {
+        margin: 1em;
+        font-size: 1.2rem;
+        color: var(--bg-color);
+    }
+    
+    .feed-buttons {
+        margin: 0 0 1.5em 1em;
+    }
+    
+    .delete-button {
+        height: 1.875rem;
+        width: 5rem;
+        background-color: var(--bg-color);
+        color: var(--light-color);
+        border: .05rem solid var(--bg-color);
+        border-radius: .3rem;
+    }
+    
+    .delete-button:hover { background-color: var(--bg-color-light); }
+    
+    .credits-counter {
+        margin: .3em 1em 0 0;
+        float: right;
+        color: var(--bg-color);
+    }
+    
+    .plus-button {
+        margin-right: 1em;
+        float: right;
+        height: 1.875rem;
+        width: 3rem;
+        font-size: 0.875rem;
+        background-color: var(--bg-color);
+        color: var(--light-color);
+        border: 0.0625rem solid var(--bg-color);
+        border-radius: 0.3125rem;
+    }
+    
+    .plus-button:hover { background-color: var(--bg-color-light); }
+    
+    .minus-button {
+        margin-right: 1em;
+        float: right;
+        height: 1.875rem;
+        width: 3rem;
+        font-size: 0.875rem;
+        background-color: var(--bg-color);
+        color: var(--light-color);
+        border: 0.0625rem solid var(--bg-color);
+        border-radius: 0.3125rem;
+    }
+    
+    .minus-button:hover { background-color: var(--bg-color-light); }
 }
 
-.node-button {
-    height: 2.5rem;
-    width: 6.25rem;
-    background-color: var(--secondary-color);
-    color: var(--light-color);
-    border: 0.0625rem solid var(--secondary-color);
-    box-shadow: 2px 2px 20px var(--primary-color);
+
+
+@media (min-width: 768px) {
+    #switch {
+        margin: 1.25em 0 0 2em;
+    }
+
+    .active-node {
+        height: 2.25rem;
+        width: 5rem;
+        background-color: var(--primary-color);
+        border: .05rem solid var(--primary-color);
+        box-shadow: .125rem .125rem 2.5rem var(--primary-color);
+    }
+
+    .node-button {
+        height: 2.25rem;
+        width: 5rem;
+        background-color: var(--secondary-color);
+        color: var(--light-color);
+        border: .05rem solid var(--secondary-color);
+        box-shadow: .125rem .125rem 1.25rem var(--primary-color);
+    }
+
+    .node-button:hover { background-color: var(--primary-color); }
+    
+    #node-empty {
+        margin: 1em;
+        width: 16em;
+        font-size: 1.875rem;
+    }
+    
+    .entry {
+        margin: 2em;
+        width: 90%;
+        background-color: var(--secondary-color);
+        border: .15rem solid var(--primary-color);
+        border-radius: .5rem;
+        box-shadow: .3rem .3rem .5rem var(--secondary-color);
+    }
+    
+    .entry h2 {
+        display: inline-block;
+        margin: 1.2em;
+        font-size: 1.2rem;
+        color: var(--bg-color);
+    }
+    
+    .entry label {
+        float: right;
+        margin: 1.2em;
+        padding: .5em;
+        color: var(--primary-color);
+        background-color: var(--bg-color);
+        border-radius: .5rem;
+    }
+    
+    .entry pre {
+        margin: .5em;
+        padding: 1em;
+        background-color: var(--bg-color);
+        color: var(--primary-color);
+        white-space: pre-wrap;
+        border-radius: .2em;
+    }
+    
+    .entry-author {
+        margin: 1em;
+        font-size: 1rem;
+        color: var(--bg-color);
+    }
+
+    .entry-author:hover { color: var(--primary-color); }
+    
+    .entry-guest-author {
+        margin: 1em;
+        font-size: 1rem;
+        color: var(--bg-color);
+    }
+    
+    .feed-buttons {
+        margin: 0 0 1.5em 1em;
+    }
+    
+    .delete-button {
+        height: 1.875rem;
+        width: 5rem;
+        background-color: var(--bg-color);
+        color: var(--light-color);
+        border: .05rem solid var(--bg-color);
+        border-radius: .3rem;
+    }
+    
+    .delete-button:hover { background-color: var(--bg-color-light); }
+    
+    .credits-counter {
+        margin: .3em 1em 0 0;
+        float: right;
+        color: var(--bg-color);
+    }
+    
+    .plus-button {
+        margin-right: 1em;
+        float: right;
+        height: 1.875rem;
+        width: 3rem;
+        font-size: 0.875rem;
+        background-color: var(--bg-color);
+        color: var(--light-color);
+        border: 0.0625rem solid var(--bg-color);
+        border-radius: 0.3125rem;
+    }
+    
+    .plus-button:hover { background-color: var(--bg-color-light); }
+    
+    .minus-button {
+        margin-right: 1em;
+        float: right;
+        height: 1.875rem;
+        width: 3rem;
+        font-size: 0.875rem;
+        background-color: var(--bg-color);
+        color: var(--light-color);
+        border: 0.0625rem solid var(--bg-color);
+        border-radius: 0.3125rem;
+    }
+    
+    .minus-button:hover { background-color: var(--bg-color-light); }
 }
 
-.node-button:hover {
-    background-color: var(--primary-color);
+
+
+@media (min-width: 992px) {
+    #switch {
+        margin: 0 0 0 2em;
+    }
+
+    .active-node {
+        height: 2.4rem;
+        width: 5.2rem;
+        background-color: var(--primary-color);
+        border: .05rem solid var(--primary-color);
+        box-shadow: .125rem .125rem 2.5rem var(--primary-color);
+    }
+
+    .node-button {
+        height: 2.4rem;
+        width: 5.2rem;
+        background-color: var(--secondary-color);
+        color: var(--light-color);
+        border: .05rem solid var(--secondary-color);
+        box-shadow: .125rem .125rem 1.25rem var(--primary-color);
+    }
+
+    .node-button:hover { background-color: var(--primary-color); }
+    
+    #node-empty {
+        margin: 1em;
+        width: 16em;
+        font-size: 1.875rem;
+    }
+    
+    .entry {
+        margin: 2em;
+        width: 35em;
+        background-color: var(--secondary-color);
+        border: .15rem solid var(--primary-color);
+        border-radius: .5rem;
+        box-shadow: .3rem .3rem .5rem var(--secondary-color);
+    }
+    
+    .entry h2 {
+        display: inline-block;
+        margin: 1.2em;
+        font-size: 1.2rem;
+        color: var(--bg-color);
+    }
+    
+    .entry label {
+        float: right;
+        margin: 1.2em;
+        padding: .5em;
+        color: var(--primary-color);
+        background-color: var(--bg-color);
+        border-radius: .5rem;
+    }
+    
+    .entry pre {
+        margin: .5em;
+        padding: 1em;
+        background-color: var(--bg-color);
+        color: var(--primary-color);
+        white-space: pre-wrap;
+        border-radius: .2em;
+    }
+    
+    .entry-author {
+        margin: 1em;
+        font-size: 1rem;
+        color: var(--bg-color);
+    }
+
+    .entry-author:hover { color: var(--primary-color); }
+    
+    .entry-guest-author {
+        margin: 1em;
+        font-size: 1rem;
+        color: var(--bg-color);
+    }
+    
+    .feed-buttons {
+        margin: 0 0 1.5em 1em;
+    }
+    
+    .delete-button {
+        height: 1.875rem;
+        width: 5rem;
+        background-color: var(--bg-color);
+        color: var(--light-color);
+        border: .05rem solid var(--bg-color);
+        border-radius: .3rem;
+    }
+    
+    .delete-button:hover { background-color: var(--bg-color-light); }
+    
+    .credits-counter {
+        margin: .3em 1em 0 0;
+        float: right;
+        color: var(--bg-color);
+    }
+    
+    .plus-button {
+        margin-right: 1em;
+        float: right;
+        height: 1.875rem;
+        width: 3rem;
+        font-size: 0.875rem;
+        background-color: var(--bg-color);
+        color: var(--light-color);
+        border: 0.0625rem solid var(--bg-color);
+        border-radius: 0.3125rem;
+    }
+    
+    .plus-button:hover { background-color: var(--bg-color-light); }
+    
+    .minus-button {
+        margin-right: 1em;
+        float: right;
+        height: 1.875rem;
+        width: 3rem;
+        font-size: 0.875rem;
+        background-color: var(--bg-color);
+        color: var(--light-color);
+        border: 0.0625rem solid var(--bg-color);
+        border-radius: 0.3125rem;
+    }
+    
+    .minus-button:hover { background-color: var(--bg-color-light); }
 }
 
-#node-empty {
-    margin: 2em 4.875em 0em 3em;
-    width: 24em;
-    font-size: 1.875rem;
+@media (min-width: 1200px) {
+    #switch {
+        margin: 0 0 0 2em;
+    }
+
+    .active-node {
+        height: 2.4rem;
+        width: 5.2rem;
+        background-color: var(--primary-color);
+        border: .05rem solid var(--primary-color);
+        box-shadow: .125rem .125rem 2.5rem var(--primary-color);
+    }
+
+    .node-button {
+        height: 2.4rem;
+        width: 5.2rem;
+        background-color: var(--secondary-color);
+        color: var(--light-color);
+        border: .05rem solid var(--secondary-color);
+        box-shadow: .125rem .125rem 1.25rem var(--primary-color);
+    }
+
+    .node-button:hover { background-color: var(--primary-color); }
+    
+    #node-empty {
+        margin: 1em;
+        width: 26em;
+        font-size: 1.875rem;
+    }
+    
+    .entry {
+        margin: 2em;
+        width: 48em;
+        background-color: var(--secondary-color);
+        border: .15rem solid var(--primary-color);
+        border-radius: .5rem;
+        box-shadow: .3rem .3rem .5rem var(--secondary-color);
+    }
+    
+    .entry h2 {
+        display: inline-block;
+        margin: 1.2em;
+        font-size: 1.2rem;
+        color: var(--bg-color);
+    }
+    
+    .entry label {
+        float: right;
+        margin: 1.2em;
+        padding: .5em;
+        color: var(--primary-color);
+        background-color: var(--bg-color);
+        border-radius: .5rem;
+    }
+    
+    .entry pre {
+        margin: 1em;
+        padding: 1em;
+        background-color: var(--bg-color);
+        color: var(--primary-color);
+        white-space: pre-wrap;
+        border-radius: .2em;
+    }
+    
+    .entry-author {
+        margin: 1em;
+        font-size: 1rem;
+        color: var(--bg-color);
+    }
+
+    .entry-author:hover { color: var(--primary-color); }
+    
+    .entry-guest-author {
+        margin: 1em;
+        font-size: 1rem;
+        color: var(--bg-color);
+    }
+    
+    .feed-buttons {
+        margin: 0 0 1.5em 1em;
+    }
+    
+    .delete-button {
+        height: 1.875rem;
+        width: 5rem;
+        background-color: var(--bg-color);
+        color: var(--light-color);
+        border: .05rem solid var(--bg-color);
+        border-radius: .3rem;
+    }
+    
+    .delete-button:hover { background-color: var(--bg-color-light); }
+    
+    .credits-counter {
+        margin: .3em 1em 0 0;
+        float: right;
+        color: var(--bg-color);
+    }
+    
+    .plus-button {
+        margin-right: 1em;
+        float: right;
+        height: 1.875rem;
+        width: 3rem;
+        font-size: 0.875rem;
+        background-color: var(--bg-color);
+        color: var(--light-color);
+        border: 0.0625rem solid var(--bg-color);
+        border-radius: 0.3125rem;
+    }
+    
+    .plus-button:hover { background-color: var(--bg-color-light); }
+    
+    .minus-button {
+        margin-right: 1em;
+        float: right;
+        height: 1.875rem;
+        width: 3rem;
+        font-size: 0.875rem;
+        background-color: var(--bg-color);
+        color: var(--light-color);
+        border: 0.0625rem solid var(--bg-color);
+        border-radius: 0.3125rem;
+    }
+    
+    .minus-button:hover { background-color: var(--bg-color-light); }
 }
 
-.element-article {
-    margin: 3.125em;
-    margin-left: 6.25em;
-    width: 50em;
-    background-color: var(--secondary-color);
-    border: 0.1875rem solid var(--primary-color);
-    border-radius: 0.5rem;
-    box-shadow: 0.3125rem 0.3125rem 0.625rem var(--secondary-color);
-}
+@media (min-width: 1440px) {
+    #switch {
+        margin: 0 0 0 4em;
+    }
 
-.element-title {
-    margin: 30px;
-    font-size: 1.5rem;
-    color: var(--bg-color);
-}
+    .active-node {
+        height: 2.4rem;
+        width: 5.2rem;
+        background-color: var(--primary-color);
+        border: .05rem solid var(--primary-color);
+        box-shadow: .125rem .125rem 2.5rem var(--primary-color);
+    }
 
-.element-node {
-    margin: 30px;
-    padding: 10px;
-    color: var(--primary-color);
-    background-color: var(--bg-color);
-    border: 0.0625rem solid var(--bg-color);
-    border-radius: 0.3125rem;
-}
+    .node-button {
+        height: 2.4rem;
+        width: 5.2rem;
+        background-color: var(--secondary-color);
+        color: var(--light-color);
+        border: .05rem solid var(--secondary-color);
+        box-shadow: .125rem .125rem 1.25rem var(--primary-color);
+    }
 
-.element-content {
-    margin: 30px;
-    width: 700px;
-    color: var(--bg-color);
-    white-space: pre-wrap;
-}
+    .node-button:hover { background-color: var(--primary-color); }
+    
+    #node-empty {
+        margin: 2em 1em 1em 2em;
+        width: 32em;
+        font-size: 1.875rem;
+    }
+    
+    .entry {
+        margin: 4em;
+        width: 56em;
+        background-color: var(--secondary-color);
+        border: .15rem solid var(--primary-color);
+        border-radius: .5rem;
+        box-shadow: .3rem .3rem .5rem var(--secondary-color);
+    }
+    
+    .entry h2 {
+        display: inline-block;
+        margin: 1.2em;
+        font-size: 1.5rem;
+        color: var(--bg-color);
+    }
+    
+    .entry label {
+        float: right;
+        margin: 1.2em;
+        padding: .5em;
+        color: var(--primary-color);
+        background-color: var(--bg-color);
+        border-radius: .5rem;
+    }
+    
+    .entry pre {
+        margin: 1em;
+        padding: 1em;
+        background-color: var(--bg-color);
+        color: var(--primary-color);
+        white-space: pre-wrap;
+        border-radius: .2em;
+    }
+    
+    .entry-author {
+        margin: 1.2em;
+        font-size: 1rem;
+        color: var(--bg-color);
+    }
 
-.element-author {
-    margin: 30px;
-    color: var(--bg-color);
-}
-
-.element-guest-author {
-    margin-left: 30px;
-    color: var(--bg-color);
-}
-
-.feed-buttons {
-    margin-bottom: 40px;
-}
-
-.delete-button {
-    margin-left: 10px;
-    height: 30px;
-    width: 80px;
-    background-color: var(--bg-color);
-    color: var(--light-color);
-    border: 0.0625rem solid var(--bg-color);
-    border-radius: 0.3125rem;
-}
-
-.delete-button:hover {
-    background-color: var(--bg-color-light);
-}
-
-.credits-counter {
-    margin-top: 25px;
-    margin-right: 20px;
-    float: right;
-    color: var(--bg-color);
-}
-
-.plus-button {
-    margin-top: 20px;
-    margin-right: 30px;
-    height: 30px;
-    width: 80px;
-    float: right;
-    font-size: 0.875rem;
-    background-color: var(--bg-color);
-    color: var(--light-color);
-    border: 0.0625rem solid var(--bg-color);
-    border-radius: 0.3125rem;
-}
-
-.plus-button:hover {
-    background-color: var(--bg-color-light);
-}
-
-.minus-button {
-    margin-top: 20px;
-    margin-right: 30px;
-    height: 30px;
-    width: 80px;
-    float: right;
-    font-size: 0.875rem;
-    background-color: var(--bg-color);
-    color: var(--light-color);
-    border: 0.0625rem solid var(--bg-color);
-    border-radius: 0.3125rem;
-}
-
-.minus-button:hover {
-    background-color: var(--bg-color-light);
+    .entry-author:hover { color: var(--primary-color); }
+    
+    .entry-guest-author {
+        margin: 1em;
+        font-size: 1rem;
+        color: var(--bg-color);
+    }
+    
+    .feed-buttons {
+        margin: 0 0 1.5em 1em;
+    }
+    
+    .delete-button {
+        height: 1.875rem;
+        width: 5rem;
+        background-color: var(--bg-color);
+        color: var(--light-color);
+        border: .05rem solid var(--bg-color);
+        border-radius: .3rem;
+    }
+    
+    .delete-button:hover { background-color: var(--bg-color-light); }
+    
+    .credits-counter {
+        margin: .3em 1em 0 0;
+        float: right;
+        color: var(--bg-color);
+    }
+    
+    .plus-button {
+        margin-right: 1em;
+        float: right;
+        height: 1.875rem;
+        width: 3rem;
+        font-size: 0.875rem;
+        background-color: var(--bg-color);
+        color: var(--light-color);
+        border: 0.0625rem solid var(--bg-color);
+        border-radius: 0.3125rem;
+    }
+    
+    .plus-button:hover { background-color: var(--bg-color-light); }
+    
+    .minus-button {
+        margin-right: 1em;
+        float: right;
+        height: 1.875rem;
+        width: 3rem;
+        font-size: 0.875rem;
+        background-color: var(--bg-color);
+        color: var(--light-color);
+        border: 0.0625rem solid var(--bg-color);
+        border-radius: 0.3125rem;
+    }
+    
+    .minus-button:hover { background-color: var(--bg-color-light); }
 }

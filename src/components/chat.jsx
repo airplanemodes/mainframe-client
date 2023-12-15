@@ -13,8 +13,8 @@ export default function Chat(props) {
     const socketListener = () => {
         socket.on("msgFromServer", (dataFromServer) => {
             setMessages(messages => [...messages, dataFromServer]);
-            document.getElementById("chat-messages").scrollTop = 
-            document.getElementById("chat-messages").scrollHeight;
+            document.getElementById("messages").scrollTop = 
+            document.getElementById("messages").scrollHeight;
         });
     }
 
@@ -35,7 +35,7 @@ export default function Chat(props) {
 	return (
 		<aside id="chat">
             <h4>Message exchange</h4>
-            <table>
+            <table id="messages">
             <tbody>
             { messages.map((msg, index) => {
                 return (

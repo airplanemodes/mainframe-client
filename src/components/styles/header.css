@@ -1,20 +1,320 @@
-header {
-    margin-top: 10px;
-    height: 80px;
-    background-color: var(--bg-color);
-    color: var(--primary-color);
-    text-align: center;
+@media (max-width: 600px) {
+    header {
+        margin-top: 1em;
+        height: 10em;
+        background-color: var(--bg-color);
+        color: var(--primary-color);
+        text-align: center;
+    }
+    
+    header h1 {
+        margin-top: .5em;
+        color: var(--light-color);
+        animation-name: welcome;
+        animation-duration: 1.5s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+    
+    header nav {
+        text-align: center;
+    }
+    
+    header nav h4 {
+        margin-top: 1em;
+    }
+    
+    #login-bar-button {
+        margin-top: 1.5em;
+        height: 1.875rem;
+        width: 5rem;
+        background-color: var(--secondary-color);
+        color: var(--light-color);
+        border: .0625rem solid var(--primary-color);
+    }
+    
+    #login-bar-button:hover {
+        background-color: var(--primary-color);
+    }
+    
+    .bar-button {
+        margin-top: 2em;
+        height: 1.875rem;
+        width: 5rem;
+        background-color: var(--secondary-color);
+        color: var(--light-color);
+        border: .05rem solid var(--primary-color);
+    }
+    
+    .bar-button:hover {
+        background-color: var(--primary-color);
+    }
 }
 
-header h1 {
-    margin-top: 20px;
-    margin-right: 120px;
-    color: var(--light-color);
-    text-align: right;
-    animation-name: welcome;
-    animation-duration: 1.5s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+@media (min-width: 600px) {
+    header {
+        margin-top: 1em;
+        height: 10em;
+        background-color: var(--bg-color);
+        color: var(--primary-color);
+        text-align: center;
+    }
+    
+    header h1 {
+        margin-top: .6em;
+        color: var(--light-color);
+        animation-name: welcome;
+        animation-duration: 1.5s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+    
+    header nav {
+        text-align: center;
+    }
+    
+    header nav h4 {
+        margin-top: 1em;
+    }
+    
+    #login-bar-button {
+        margin-top: 1.5em;
+        height: 1.875rem;
+        width: 5rem;
+        background-color: var(--secondary-color);
+        color: var(--light-color);
+        border: .0625rem solid var(--primary-color);
+    }
+    
+    #login-bar-button:hover {
+        background-color: var(--primary-color);
+    }
+    
+    .bar-button {
+        margin-top: 2em;
+        height: 1.875rem;
+        width: 5rem;
+        background-color: var(--secondary-color);
+        color: var(--light-color);
+        border: .05rem solid var(--primary-color);
+    }
+    
+    .bar-button:hover {
+        background-color: var(--primary-color);
+    }
+}
+
+@media (min-width: 768px) {
+    header {
+        margin-top: 1em;
+        height: 10em;
+        background-color: var(--bg-color);
+        color: var(--primary-color);
+        text-align: center;
+    }
+    
+    header h1 {
+        margin-top: .7em;
+        color: var(--light-color);
+        animation-name: welcome;
+        animation-duration: 1.5s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+    
+    header nav {
+        text-align: center;
+    }
+    
+    header nav h4 {
+        margin-top: 1em;
+    }
+    
+    #login-bar-button {
+        margin-top: 1.5em;
+        height: 1.875rem;
+        width: 5rem;
+        background-color: var(--secondary-color);
+        color: var(--light-color);
+        border: .0625rem solid var(--primary-color);
+    }
+    
+    #login-bar-button:hover {
+        background-color: var(--primary-color);
+    }
+    
+    .bar-button {
+        margin-top: 2em;
+        height: 1.875rem;
+        width: 5rem;
+        background-color: var(--secondary-color);
+        color: var(--light-color);
+        border: .05rem solid var(--primary-color);
+    }
+    
+    .bar-button:hover {
+        background-color: var(--primary-color);
+    }
+}
+
+@media (min-width: 992px) {
+    header {
+        float: right;
+        margin: 1em 4em 0 0;
+        height: 10em;
+        background-color: var(--bg-color);
+        color: var(--primary-color);
+        text-align: center;
+    }
+    
+    header h1 {
+        margin-top: 1em;
+        color: var(--light-color);
+        animation-name: welcome;
+        animation-duration: 1.5s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+    
+    header nav {
+        text-align: center;
+    }
+    
+    header nav h4 {
+        margin-top: 1em;
+    }
+    
+    #login-bar-button {
+        margin-top: 1.5em;
+        height: 1.875rem;
+        width: 5rem;
+        background-color: var(--secondary-color);
+        color: var(--light-color);
+        border: .0625rem solid var(--primary-color);
+    }
+    
+    #login-bar-button:hover {
+        background-color: var(--primary-color);
+    }
+    
+    .bar-button {
+        margin-top: 2em;
+        height: 1.875rem;
+        width: 5rem;
+        background-color: var(--secondary-color);
+        color: var(--light-color);
+        border: .05rem solid var(--primary-color);
+    }
+    
+    .bar-button:hover {
+        background-color: var(--primary-color);
+    }
+}
+
+@media (min-width: 1200px) {
+    header {
+        margin: 1.5em 5em 0 0;
+        height: 10em;
+        background-color: var(--bg-color);
+        color: var(--primary-color);
+        text-align: center;
+    }
+    
+    header h1 {
+        margin-top: .5em;
+        color: var(--light-color);
+        animation-name: welcome;
+        animation-duration: 1.5s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+    
+    header nav {
+        text-align: center;
+    }
+    
+    header nav h4 {
+        margin-top: 1em;
+    }
+    
+    #login-bar-button {
+        margin-top: 1.5em;
+        height: 1.875rem;
+        width: 5rem;
+        background-color: var(--secondary-color);
+        color: var(--light-color);
+        border: 0.0625rem solid var(--primary-color);
+    }
+    
+    #login-bar-button:hover {
+        background-color: var(--primary-color);
+    }
+    
+    .bar-button {
+        margin-top: 2em;
+        height: 1.875rem;
+        width: 5rem;
+        background-color: var(--secondary-color);
+        color: var(--light-color);
+        border: 0.05rem solid var(--primary-color);
+    }
+    
+    .bar-button:hover {
+        background-color: var(--primary-color);
+    }
+}
+
+@media (min-width: 1440px) {
+    header {
+        margin: 1.5em 8em 0 0;
+        height: 10em;
+        background-color: var(--bg-color);
+        color: var(--primary-color);
+        text-align: center;
+    }
+    
+    header h1 {
+        margin-top: .5em;
+        color: var(--light-color);
+        animation-name: welcome;
+        animation-duration: 1.5s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+    
+    header nav {
+        text-align: center;
+    }
+    
+    header nav h4 {
+        margin-top: 1em;
+    }
+    
+    #login-bar-button {
+        margin-top: 1.5em;
+        height: 1.875rem;
+        width: 5rem;
+        background-color: var(--secondary-color);
+        color: var(--light-color);
+        border: 0.0625rem solid var(--primary-color);
+    }
+    
+    #login-bar-button:hover {
+        background-color: var(--primary-color);
+    }
+    
+    .bar-button {
+        margin-top: 2em;
+        height: 1.875rem;
+        width: 5rem;
+        background-color: var(--secondary-color);
+        color: var(--light-color);
+        border: 0.05rem solid var(--primary-color);
+    }
+    
+    .bar-button:hover {
+        background-color: var(--primary-color);
+    }
 }
 
 @keyframes welcome {
@@ -32,45 +332,4 @@ header h1 {
     20%, 24%, 55% {       
         text-shadow: none;
     }
-}
-
-header nav {
-    margin-right: 140px;
-    text-align: right;
-}
-
-header nav h4 {
-    margin-top: 10px;
-    margin-right: 70px;
-}
-
-#login-bar-button {
-    margin-top: 20px;
-    margin-right: 150px;
-    height: 30px;
-    width: 80px;
-    background-color: var(--secondary-color);
-    color: var(--light-color);
-    border: 0.0625rem solid var(--primary-color);
-}
-
-#login-bar-button:hover {
-    background-color: var(--primary-color);
-}
-
-#logout-bar-button {
-    margin-right: 30px;
-}
-
-.bar-button {
-    margin-top: 20px;
-    height: 30px;
-    width: 80px;
-    background-color: var(--secondary-color);
-    color: var(--light-color);
-    border: 0.0625rem solid var(--primary-color);
-}
-
-.bar-button:hover {
-    background-color: var(--primary-color);
 }

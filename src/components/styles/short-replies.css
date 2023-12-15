@@ -1,13 +1,12 @@
-#replies {
-    margin-top: 10px;
-    margin-right: 30px;
-    margin-left: 30px;
+#short-replies {
+    margin: 1em 1em 0 1em;
     background-color: var(--bg-color);
+    border-radius: .5em;
 }
 
-.single-reply {
-    padding: 10px;
-    font-size: 0.75rem;
+.short-reply {
+    padding: .8em;
+    font-size: .7rem;
 }
 
 .short-reply-username {
