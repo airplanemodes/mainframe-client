@@ -73,7 +73,7 @@ export default function Read() {
                 </div>
             </div>
             { user.username && repliesMap[entry.id] && 
-                <FullReplies repliesArray={repliesMap[entry.id]} /> }
+                <FullReplies replies={repliesMap[entry.id]} /> }
             { user.username && <Reply user={user} entryid={id}/> }
         </section>
     );

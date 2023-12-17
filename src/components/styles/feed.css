@@ -19,8 +19,6 @@
         border: .05rem solid var(--secondary-color);
         box-shadow: .125rem .125rem 1.25rem var(--primary-color);
     }
-
-    .node-button:hover { background-color: var(--primary-color); }
     
     #node-empty {
         margin: 1em;
@@ -67,8 +65,6 @@
         font-size: 1.2rem;
         color: var(--bg-color);
     }
-
-    .entry-author:hover { color: var(--primary-color); }
     
     .entry-guest-author {
         margin: 1em;
@@ -89,15 +85,13 @@
         border-radius: .3rem;
     }
     
-    .delete-button:hover { background-color: var(--bg-color-light); }
-    
-    .credits-counter {
+    .credits {
         margin: .3em 1em 0 0;
         float: right;
         color: var(--bg-color);
     }
     
-    .plus-button {
+    .plus-btn {
         margin-right: 1em;
         float: right;
         height: 1.875rem;
@@ -108,10 +102,8 @@
         border: 0.0625rem solid var(--bg-color);
         border-radius: 0.3125rem;
     }
-    
-    .plus-button:hover { background-color: var(--bg-color-light); }
-    
-    .minus-button {
+        
+    .minus-btn {
         margin-right: 1em;
         float: right;
         height: 1.875rem;
@@ -122,8 +114,6 @@
         border: 0.0625rem solid var(--bg-color);
         border-radius: 0.3125rem;
     }
-    
-    .minus-button:hover { background-color: var(--bg-color-light); }
 }
 
 
@@ -149,8 +139,6 @@
         border: .05rem solid var(--secondary-color);
         box-shadow: .125rem .125rem 1.25rem var(--primary-color);
     }
-
-    .node-button:hover { background-color: var(--primary-color); }
     
     #node-empty {
         margin: 1em;
@@ -197,8 +185,6 @@
         font-size: 1.2rem;
         color: var(--bg-color);
     }
-
-    .entry-author:hover { color: var(--primary-color); }
     
     .entry-guest-author {
         margin: 1em;
@@ -218,16 +204,14 @@
         border: .05rem solid var(--bg-color);
         border-radius: .3rem;
     }
-    
-    .delete-button:hover { background-color: var(--bg-color-light); }
-    
-    .credits-counter {
+        
+    .credits {
         margin: .3em 1em 0 0;
         float: right;
         color: var(--bg-color);
     }
     
-    .plus-button {
+    .plus-btn {
         margin-right: 1em;
         float: right;
         height: 1.875rem;
@@ -238,10 +222,8 @@
         border: 0.0625rem solid var(--bg-color);
         border-radius: 0.3125rem;
     }
-    
-    .plus-button:hover { background-color: var(--bg-color-light); }
-    
-    .minus-button {
+        
+    .minus-btn {
         margin-right: 1em;
         float: right;
         height: 1.875rem;
@@ -252,8 +234,6 @@
         border: 0.0625rem solid var(--bg-color);
         border-radius: 0.3125rem;
     }
-    
-    .minus-button:hover { background-color: var(--bg-color-light); }
 }
 
 
@@ -280,8 +260,6 @@
         box-shadow: .125rem .125rem 1.25rem var(--primary-color);
     }
 
-    .node-button:hover { background-color: var(--primary-color); }
-    
     #node-empty {
         margin: 1em;
         width: 16em;
@@ -327,8 +305,6 @@
         font-size: 1rem;
         color: var(--bg-color);
     }
-
-    .entry-author:hover { color: var(--primary-color); }
     
     .entry-guest-author {
         margin: 1em;
@@ -348,16 +324,14 @@
         border: .05rem solid var(--bg-color);
         border-radius: .3rem;
     }
-    
-    .delete-button:hover { background-color: var(--bg-color-light); }
-    
-    .credits-counter {
+        
+    .credits {
         margin: .3em 1em 0 0;
         float: right;
         color: var(--bg-color);
     }
     
-    .plus-button {
+    .plus-btn {
         margin-right: 1em;
         float: right;
         height: 1.875rem;
@@ -368,10 +342,8 @@
         border: 0.0625rem solid var(--bg-color);
         border-radius: 0.3125rem;
     }
-    
-    .plus-button:hover { background-color: var(--bg-color-light); }
-    
-    .minus-button {
+        
+    .minus-btn {
         margin-right: 1em;
         float: right;
         height: 1.875rem;
@@ -382,8 +354,6 @@
         border: 0.0625rem solid var(--bg-color);
         border-radius: 0.3125rem;
     }
-    
-    .minus-button:hover { background-color: var(--bg-color-light); }
 }
 
 
@@ -409,8 +379,6 @@
         border: .05rem solid var(--secondary-color);
         box-shadow: .125rem .125rem 1.25rem var(--primary-color);
     }
-
-    .node-button:hover { background-color: var(--primary-color); }
     
     #node-empty {
         margin: 1em;
@@ -457,8 +425,6 @@
         font-size: 1rem;
         color: var(--bg-color);
     }
-
-    .entry-author:hover { color: var(--primary-color); }
     
     .entry-guest-author {
         margin: 1em;
@@ -467,7 +433,7 @@
     }
     
     .feed-buttons {
-        margin: 0 0 1.5em 1em;
+        margin: 0 0 1.5em 1.5em;
     }
     
     .delete-button {
@@ -478,17 +444,15 @@
         border: .05rem solid var(--bg-color);
         border-radius: .3rem;
     }
-    
-    .delete-button:hover { background-color: var(--bg-color-light); }
-    
-    .credits-counter {
+        
+    .credits {
         margin: .3em 1em 0 0;
         float: right;
         color: var(--bg-color);
     }
     
-    .plus-button {
-        margin-right: 1em;
+    .plus-btn {
+        margin-right: 1.5em;
         float: right;
         height: 1.875rem;
         width: 3rem;
@@ -498,11 +462,9 @@
         border: 0.0625rem solid var(--bg-color);
         border-radius: 0.3125rem;
     }
-    
-    .plus-button:hover { background-color: var(--bg-color-light); }
-    
-    .minus-button {
-        margin-right: 1em;
+        
+    .minus-btn {
+        margin-right: 1.5em;
         float: right;
         height: 1.875rem;
         width: 3rem;
@@ -512,8 +474,6 @@
         border: 0.0625rem solid var(--bg-color);
         border-radius: 0.3125rem;
     }
-    
-    .minus-button:hover { background-color: var(--bg-color-light); }
 }
 
 @media (min-width: 1200px) {
@@ -537,8 +497,6 @@
         border: .05rem solid var(--secondary-color);
         box-shadow: .125rem .125rem 1.25rem var(--primary-color);
     }
-
-    .node-button:hover { background-color: var(--primary-color); }
     
     #node-empty {
         margin: 1em;
@@ -581,21 +539,19 @@
     }
     
     .entry-author {
-        margin: 1em;
+        margin: 1em 0 0 1.5em;
         font-size: 1rem;
         color: var(--bg-color);
     }
-
-    .entry-author:hover { color: var(--primary-color); }
     
     .entry-guest-author {
-        margin: 1em;
+        margin: 1em 0 0 1.5em;
         font-size: 1rem;
         color: var(--bg-color);
     }
     
     .feed-buttons {
-        margin: 0 0 1.5em 1em;
+        margin: 0 0 1.5em 1.5em;
     }
     
     .delete-button {
@@ -607,16 +563,14 @@
         border-radius: .3rem;
     }
     
-    .delete-button:hover { background-color: var(--bg-color-light); }
-    
-    .credits-counter {
+    .credits {
         margin: .3em 1em 0 0;
         float: right;
         color: var(--bg-color);
     }
     
-    .plus-button {
-        margin-right: 1em;
+    .plus-btn {
+        margin-right: 1.5em;
         float: right;
         height: 1.875rem;
         width: 3rem;
@@ -627,10 +581,8 @@
         border-radius: 0.3125rem;
     }
     
-    .plus-button:hover { background-color: var(--bg-color-light); }
-    
-    .minus-button {
-        margin-right: 1em;
+    .minus-btn {
+        margin-right: 1.5em;
         float: right;
         height: 1.875rem;
         width: 3rem;
@@ -640,8 +592,6 @@
         border: 0.0625rem solid var(--bg-color);
         border-radius: 0.3125rem;
     }
-    
-    .minus-button:hover { background-color: var(--bg-color-light); }
 }
 
 @media (min-width: 1440px) {
@@ -665,8 +615,6 @@
         border: .05rem solid var(--secondary-color);
         box-shadow: .125rem .125rem 1.25rem var(--primary-color);
     }
-
-    .node-button:hover { background-color: var(--primary-color); }
     
     #node-empty {
         margin: 2em 1em 1em 2em;
@@ -709,21 +657,19 @@
     }
     
     .entry-author {
-        margin: 1.2em;
+        margin: 1em 0 0 1.5em;
         font-size: 1rem;
         color: var(--bg-color);
     }
-
-    .entry-author:hover { color: var(--primary-color); }
     
     .entry-guest-author {
-        margin: 1em;
+        margin: 1em 0 0 1.5em;
         font-size: 1rem;
         color: var(--bg-color);
     }
     
     .feed-buttons {
-        margin: 0 0 1.5em 1em;
+        margin: 0 0 1.5em 1.5em;
     }
     
     .delete-button {
@@ -735,16 +681,14 @@
         border-radius: .3rem;
     }
     
-    .delete-button:hover { background-color: var(--bg-color-light); }
-    
-    .credits-counter {
+    .credits {
         margin: .3em 1em 0 0;
         float: right;
         color: var(--bg-color);
     }
     
-    .plus-button {
-        margin-right: 1em;
+    .plus-btn {
+        margin-right: 2em;
         float: right;
         height: 1.875rem;
         width: 3rem;
@@ -755,10 +699,8 @@
         border-radius: 0.3125rem;
     }
     
-    .plus-button:hover { background-color: var(--bg-color-light); }
-    
-    .minus-button {
-        margin-right: 1em;
+    .minus-btn {
+        margin-right: 2em;
         float: right;
         height: 1.875rem;
         width: 3rem;
@@ -768,6 +710,10 @@
         border: 0.0625rem solid var(--bg-color);
         border-radius: 0.3125rem;
     }
-    
-    .minus-button:hover { background-color: var(--bg-color-light); }
 }
+
+.node-button:hover { background-color: var(--primary-color); }
+.entry-author:hover { color: var(--primary-color); }
+.delete-button:hover { background-color: var(--bg-color-light); }
+.plus-btn:hover { background-color: var(--bg-color-light); }
+.minus-btn:hover { background-color: var(--bg-color-light); }

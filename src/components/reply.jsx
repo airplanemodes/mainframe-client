@@ -2,17 +2,17 @@ import { useForm } from "react-hook-form";
 import { axiosRequest, host } from "../services/api";
 import "./styles/reply.css";
 
-export default function Reply(props) {
+export default function Reply({ user, entryid }) {
 
     const { register, handleSubmit } = useForm();
 
     const writeReply = async(formdata) => {
         try {
-            formdata.authorid = props.user.id;
-            formdata.entryid = props.entryid;
-            formdata.username = props.user.username;
+            formdata.authorid = user.id;
+            formdata.entryid = entryid;
+            formdata.username = user.username;
             await axiosRequest(host+"/replies", "POST", formdata);
-            window.location = "/entries/"+props.entryid;
+            window.location = "/entries/"+entryid;
         } catch (error) {
             console.log(error);
         }

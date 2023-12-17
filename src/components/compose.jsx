@@ -4,7 +4,7 @@ import { axiosRequest, host } from "../services/api";
 import ReturnLight from "./buttons/return-light";
 import "./styles/compose.css";
 
-export default function Compose(props) {
+export default function Compose({ username, receiver }) {
 
     let [ receivers, setReceivers ] = useState([]);
     const { register, handleSubmit } = useForm();
@@ -15,7 +15,7 @@ export default function Compose(props) {
 
     const sendPrivateMessage = async(formdata) => {
         try {
-            formdata.sender = props.username;
+            formdata.sender = username;
             if (formdata.subject === "") delete formdata.subject;
             await axiosRequest(host+"/privates", "POST", formdata);
             window.location = "/mailbox";
@@ -42,8 +42,8 @@ export default function Compose(props) {
             <form id="compose" onSubmit={ handleSubmit(sendPrivateMessage) }>
                 <h3>Compose</h3>
                 <label>Receiver:</label>
-                <select value={props.receiver} {...receiverRef}>
-                    {receivers.filter(e => e.username !== props.username).map(e => {
+                <select value={receiver} {...receiverRef}>
+                    {receivers.filter(e => e.username !== username).map(e => {
                         return (
                             <option key={e.id}>{ e.username }</option>
                         )
@@ -52,10 +52,10 @@ export default function Compose(props) {
                 <br />
                 <label>Subject:</label>
                 <input type={"text"} maxLength={16} {...subjectRef}/>
-                <textarea rows={10} maxLength={255} {...bodyRef} autoFocus={props.receiver}/>
+                <textarea rows={8} maxLength={255} {...bodyRef} autoFocus={receiver}/>
                 <button>Send</button>
             </form>
-            <div id="mailbox-return">
+            <div id="compose-return">
                 <ReturnLight />
             </div>
         </section>

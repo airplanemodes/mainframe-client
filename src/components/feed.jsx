@@ -6,9 +6,7 @@ import ReadButton from "./buttons/read-button";
 import EditButton from "./buttons/edit-button";
 import Pagination from "./pagination";
 
-export default function Feed(props) {
-
-    // console.log(props);
+export default function Feed({ user }) {
 
     let [ entries, setEntries ] = useState([]);
     let [ replies, setReplies ] = useState([]);
@@ -66,7 +64,6 @@ export default function Feed(props) {
         if (creditsMap[credits[i].entryid])
             creditsMap[credits[i].entryid].push(credits[i].userid);
   
-    // set node buttons
     const setAllNode = async() => {
         try {
             getEntries();
@@ -116,12 +113,11 @@ export default function Feed(props) {
         }
     }
 
-    // credit buttons
-    const applyPlus = async(event) => {
+    const plus = async(event) => {
         try {
             const creditData = {};
             creditData.entryid = event.currentTarget.getAttribute("elem");
-            creditData.userid = props.user.id;
+            creditData.userid = user.id;
             await axiosRequest(host+"/credits", "POST", creditData);
             getCredits();
         } catch (error) {
@@ -129,11 +125,11 @@ export default function Feed(props) {
         }
     }
 
-    const applyMinus = async(event) => {
+    const minus = async(event) => {
         try {
             const creditData = {};
             creditData.entryid = event.currentTarget.getAttribute("elem");
-            creditData.userid = props.user.id;
+            creditData.userid = user.id;
             await axiosRequest(host+"/credits", "DELETE", creditData);
             getCredits();
         } catch (error) {
@@ -141,7 +137,6 @@ export default function Feed(props) {
         }
     }
 
-  
   return (
     <section>
       <nav id="switch">
@@ -165,11 +160,11 @@ export default function Feed(props) {
             className={activeNode === "society" ? "active-node" : "node-button"}
             onClick={setSocietyNode}>society
         </button>
-          { activeNode === "all" && <Pagination urlOfNodeTotal={"/entries/total/all"} /> }
-          { activeNode === "code" && <Pagination urlOfNodeTotal={"/entries/total/code"}/> }
-          { activeNode === "network" && <Pagination urlOfNodeTotal={"/entries/total/network"}/> }
-          { activeNode === "hack" && <Pagination urlOfNodeTotal={"/entries/total/hack"}/> }
-          { activeNode === "society" && <Pagination urlOfNodeTotal={"/entries/total/society"}/> }
+          { activeNode === "all" && <Pagination total={"/entries/total/all"} /> }
+          { activeNode === "code" && <Pagination total={"/entries/total/code"}/> }
+          { activeNode === "network" && <Pagination total={"/entries/total/network"}/> }
+          { activeNode === "hack" && <Pagination total={"/entries/total/hack"}/> }
+          { activeNode === "society" && <Pagination total={"/entries/total/society"}/> }
       </nav>  
       { /* Entries feed */ }
       { entries.length === 0 && <section id="node-empty">Node is empty.</section> }
@@ -179,38 +174,38 @@ export default function Feed(props) {
             <h2>{ e.title }</h2>
             <label>@ { e.node }</label>
             <pre>{ e.content }</pre>
-            { props.user === "guest" ? 
+            { user === "guest" ? 
                 <div className="entry-guest-author">{ e.author }</div>
-                : props.user.username === e.author ? 
+                : user.username === e.author ? 
                     <a className="entry-author" href={"/profile"}>{ e.author }</a>
                     : <a className="entry-author" href={"/users/"+e.author}>
                           { e.author }
                       </a> }
             { /* Replies */ }
-            { props.user !== "guest" && 
-                <ShortReplies repliesArray={repliesMap[e.id]} />
+            { user !== "guest" && 
+                <ShortReplies replies={repliesMap[e.id]} />
             }
             { /* e buttons */ }
             <br />
             <div className="feed-buttons">
               <ReadButton id={e.id} />
-              { props.user.username === e.author &&
+              { user.username === e.author &&
               <EditButton id={e.id} /> }
-              { props.user.moderator &&
+              { user.moderator &&
               <button onClick={async() => {
                   await axiosRequest(host+"/entries/"+e.id, "DELETE");
                   getEntries();
                 }} className="delete-button">Delete</button> }
-              { props.user.id ? (
+              { user.id ? (
                   creditsMap[e.id] ? (
-                    creditsMap[e.id].includes(props.user.id) ?
-                      <button className="minus-button" elem={e.id} onClick={applyMinus}>-</button> : 
-                      <button className="plus-button" elem={e.id} onClick={applyPlus}>+</button>
-                  ) : <button className="plus-button" elem={e.id} onClick={applyPlus}>+</button>
+                    creditsMap[e.id].includes(user.id) ?
+                      <button className="minus-btn" elem={e.id} onClick={minus}>-</button> : 
+                      <button className="plus-btn" elem={e.id} onClick={plus}>+</button>
+                  ) : <button className="plus-btn" elem={e.id} onClick={plus}>+</button>
                 ) : false }
-              { props.user.id ? 
-                  (creditsMap[e.id] ? <span className="credits-counter">{ creditsMap[e.id].length }</span>
-                                    : <span className="credits-counter">0</span>) : false }
+              { user.id ? 
+                  (creditsMap[e.id] ? <span className="credits">{ creditsMap[e.id].length }</span>
+                                    : <span className="credits">0</span>) : false }
             </div>
           </article>
         )

@@ -1,14 +1,14 @@
 import "./styles/short-replies.css";
 
-export default function ShortReplies(props) {
+export default function ShortReplies({ replies }) {
 
     return (
         <div id="short-replies">
-            { props.repliesArray && props.repliesArray.map((element) => {
+            { replies && replies.map(r => {
                 return (
-                    <article key={element.id} className="short-reply">
-                        <div>#{props.repliesArray.indexOf(element) + 1} @ <a className="short-reply-username" href={"/users/"+element.username}>{element.username}</a></div>
-                        <div>{element.body}</div>
+                    <article key={r.id} className="short-reply">
+                        <div>#{replies.indexOf(r) + 1} @ <a className="short-reply-username" href={"/users/"+r.username}>{r.username}</a></div>
+                        <div>{r.body}</div>
                     </article>
                 );
             })}

@@ -5,7 +5,7 @@ import "./styles/chat.css";
 
 const socket = io(host);
 
-export default function Chat(props) {
+export default function Chat({ user }) {
 
     let [ messages, setMessages ] = useState([]);
     let inputRef = useRef();
@@ -21,11 +21,11 @@ export default function Chat(props) {
     const onSend = (event) => {
         event.preventDefault();
         socket.emit("msgFromClient", { 
-            msg: inputRef.current.value, 
-            name: props.user.username 
+            body: inputRef.current.value, 
+            name: user.username 
         });
         inputRef.current.value = "";
-        // console.log(`${props.user.username}: ${inputRef.current.value}`);
+        // console.log(`${user.username}: ${inputRef.current.value}`);
     }
 
     useEffect(() => {
@@ -37,18 +37,18 @@ export default function Chat(props) {
             <h4>Message exchange</h4>
             <table id="messages">
             <tbody>
-            { messages.map((msg, index) => {
+            { messages.map((m, index) => {
                 return (
                     <tr key={index}>
-                        { msg.name ?
+                        { m.name ?
                         <Fragment>
                             <td className="user-message">
-                                <a className="user-link" href={"/users/"+msg.name}>{msg.name}</a>:
+                                <a className="user-link" href={"/users/"+m.name}>{m.name}</a>:
                             </td>
-                            <td>{msg.msg}</td>
+                            <td>{m.body}</td>
                         </Fragment> 
                         :
-                        <td className="system-message">* {msg}</td> }
+                        <td className="system-message">* {m}</td> }
                     </tr>
                 )
             })}

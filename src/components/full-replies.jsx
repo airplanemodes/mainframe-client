@@ -1,13 +1,13 @@
 import "./styles/full-replies.css";
 
-export default function FullReplies(props) {
+export default function FullReplies({ replies }) {
     return (
         <section id="full-replies">
-        { props.repliesArray && props.repliesArray.map((element) => {
+        { replies && replies.map(r => {
             return (
-                <article key={element.id} className="single-full-reply">
-                    <div>#{props.repliesArray.indexOf(element) + 1} @ <a href={"/users/"+element.username}>{element.username}</a></div>
-                    <div>{element.body}</div>
+                <article key={r.id} className="single-full-reply">
+                    <div>#{replies.indexOf(r) + 1} @ <a href={"/users/"+r.username}>{r.username}</a></div>
+                    <div>{r.body}</div>
                 </article>
             );
         })}

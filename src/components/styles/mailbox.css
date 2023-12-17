@@ -1,109 +1,85 @@
-/* Both tables */
-#pm-table {
-    margin: 0 auto;
-    margin-top: 2em;
+@media (max-width: 600px) {
+    #mailbox {
+        margin: 2em;
+        color: var(--primary-color);
+        border: .4rem solid var(--primary-color);
+        border-radius: .5rem;
+        overflow-y: scroll;
+    }
+    
+    #mailbox h3 {
+        padding: .5em;
+        text-align: center;
+        color: var(--bg-color);
+        background-color: var(--secondary-color);
+    }
+    
+    #mailbox nav {
+        display: flex;
+    }
+    
+    #mailbox nav button {
+        flex-grow: 1;
+        height: 3em;
+        background-color: var(--secondary-color);
+        color: var(--light-color);
+        border: .1rem solid var(--bg-color);
+    }
+    
+    #mail {
+        width: 100%;
+        border: .05rem solid var(--primary-color);
+        border-collapse: collapse;
+    }
+    
+    .mail-heading {
+        padding: .3rem;
+        font-size: .8rem;
+        color: var(--bg-color);
+        background-color: var(--primary-color);
+    }
+    
+    .mail-row:hover {
+        background-color: var(--secondary-color);
+        color: var(--bg-color);
+    }
+    
+    .msg {
+        padding: .3rem;
+        font-size: .875rem;
+        text-align: center;
+        border: .0625rem solid var(--primary-color);
+    }
+    
+    .msg-subject {
+        padding: .3rem;
+        font-size: .875rem;
+        text-align: center;
+        border: .0625rem solid var(--primary-color);
+    }
+    
+    .msg-body {
+        padding: .3rem;
+        font-size: .8rem;
+        border: .0625rem solid var(--primary-color);
+    }
+    
+    .mail-btn {
+        height: 1.875rem;
+        width: 1.875rem;
+        background-color: var(--secondary-color);
+        border: .05rem solid var(--bg-color);
+    }
 }
 
-.pm-table-td {
-    vertical-align: top;
-}
+@media (min-width: 600px) {}
+@media (min-width: 768px) {}
+@media (min-width: 992px) {}
+@media (min-width: 1200px) {}
+@media (min-width: 1440px) {}
 
-/* Mailbox */
-#mailbox {
-    height: 42em;
-    width: 50vw;
-    color: var(--primary-color);
-    border: 0.4rem solid var(--primary-color);
-    border-radius: 0.5rem;
-    overflow-y: scroll;
-}
-
-#mailbox h3 {
-    padding-top: 0.75em;
-    padding-bottom: 0.5em;
-    text-align: center;
-    color: var(--bg-color);
-    background-color: var(--secondary-color);
-}
-
-#mailbox nav {
-    background-color: var(--secondary-color);
-    text-align: center;
-}
-
-#mailbox nav button {
-    height: 3em;
-    width: 10em;
-    background-color: var(--secondary-color);
-    color: var(--light-color);
-    border: 0.1rem solid var(--bg-color);
-}
-
-#mailbox nav button:hover {
-    background-color: var(--primary-color);
-}
-
-.active-box {
-    background-color: var(--primary-color);
-}
-
-/* Private messages table */
-#pm-data {
-    width: 100%;
-    border: 0.05rem solid var(--primary-color);
-    border-collapse: collapse;
-}
-
-.pm-data-heading {
-    padding: 0.3rem;
-    color: var(--bg-color);
-    background-color: var(--primary-color);
-    border: 0.0625rem solid var(--primary-color);
-}
-
-.pm-data-row:hover {
-    background-color: var(--secondary-color);
-    color: var(--bg-color);
-}
-
-.pm-data-msg {
-    padding: 0.3rem;
-    font-size: 0.875rem;
-    text-align: center;
-    border: 0.0625rem solid var(--primary-color);
-}
-
-.pm-data-msg-subject {
-    padding: 0.3rem;
-    width: 22%;
-    font-size: 0.875rem;
-    text-align: center;
-    border: 0.0625rem solid var(--primary-color);
-}
-
-.pm-data-msg-body {
-    padding: 0.3rem;
-    width: 60%;
-    font-size: 0.8rem;
-    border: 0.0625rem solid var(--primary-color);
-}
-
-.sender-link {
-    color: var(--primary-color);
-}
-
-.sender-link:hover {
-    color: var(--bg-color);
-}
-
-.mail-btn {
-    margin: 0;
-    height: 1.875rem;
-    width: 1.875rem;
-    background-color: var(--secondary-color);
-    border: 0.05rem solid var(--bg-color);
-}
-
-.mail-btn:hover {
-    background-color: var(--primary-color);
-}
+#mailbox nav button:hover { background-color: var(--primary-color); }
+.active-box { background-color: var(--primary-color) !important; }
+.sender-link { color: var(--primary-color); }
+.sender-link:hover { color: var(--bg-color); }
+.mail-btn:hover { background-color: var(--primary-color); }

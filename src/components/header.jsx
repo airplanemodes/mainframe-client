@@ -5,7 +5,7 @@ import "./styles/header.css";
 
 // TODO: you have a new message!
 
-export default function Header(props) {
+export default function Header({ user }) {
 
     const userLogout = async() => {
         try {
@@ -28,7 +28,7 @@ export default function Header(props) {
                 </Fragment>
                 :
                 <Fragment>
-                    <h4>you are logged as {props.user.username}</h4>
+                    <h4>you are logged as { user.username }</h4>
                     <a href="/write"><button className="bar-button">Write</button></a>
                     <a href="/mailbox"><button className="bar-button">Mailbox</button></a>
                     <a href="/profile"><button className="bar-button">Profile</button></a>
