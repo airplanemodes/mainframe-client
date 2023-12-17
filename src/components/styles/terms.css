@@ -1,3 +1,11 @@
 #terms {
     padding: 200px;
 }
+
+#terms a {
+    color: var(--secondary-color);
+}
+
+#terms a:hover {
+    color: var(--primary-color);
+}

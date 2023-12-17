@@ -1,77 +1,162 @@
-#enter {
-    margin: 0 auto;
-    margin-top: 6em;
-    padding-top: 2.5em;
-    text-align: center;
-    color: var(--primary-color);
-    height: 24em;
-    width: 42.5em;
-    border: 0.5rem solid var(--primary-color);
-    border-radius: 1rem;
-    box-shadow:
-        0 0 0.2rem var(--light-color),
-        0 0 0.2rem var(--light-color),
-        0 0 0.8rem var(--primary-color),
-        0 0 2rem var(--primary-color),
-        0 0 2.8rem var(--primary-color),
-        inset 0 0 1.5rem var(--primary-color);
+@media (max-width: 600px) {
+    #enter {
+        margin: 0 auto;
+        margin-top: 5em;
+        padding-top: 2.5em;
+        text-align: center;
+        color: var(--primary-color);
+        height: 25em;
+        width: 30em;
+        border: .4rem solid var(--primary-color);
+        border-radius: 1rem;
+        box-shadow:
+            0 0 .2rem var(--light-color),
+            0 0 .2rem var(--light-color),
+            0 0 .8rem var(--primary-color),
+            0 0 2rem var(--primary-color),
+            0 0 2.8rem var(--primary-color),
+            inset 0 0 1.5rem var(--primary-color);
+    }
+    
+    #enter h2 {
+        text-shadow:
+            0 0 .08rem var(--light-color),
+            0 0 .1rem var(--primary-color),
+            0 0 .1rem var(--primary-color),
+            0 0 1.5rem var(--primary-color);
+        font-size: 2rem;
+        margin-bottom: 1em;
+    }
+    
+    #enter label {
+        font-size: 1.25rem;
+    }
+    
+    #enter input {
+        margin-top: .3em;
+        padding-left: .3em;
+        height: 1.875rem;
+        border-radius: .125rem;
+        border: var(--bg-color);
+        background-color: var(--primary-color);
+        color: var(--bg-color);
+        font-size: 1rem;
+        outline: none;
+    }
+    
+    #enter button {
+        margin-top: 3em;
+        height: 2rem;
+        width: 5rem;
+        background-color: var(--secondary-color);
+        color: var(--light-color);
+        border: .05rem solid var(--secondary-color);
+        border-radius: .125rem;
+    }
+    
+    #enter a {
+        text-decoration: none;
+        color: var(--secondary-color);
+    }
+    
+    #enter div {
+        margin-top: 1.875em;
+        margin-bottom: 1.875em;
+    }
+    
+    #terms-notice {
+        padding: 0 10em 0 10em;
+        font-size: .5rem;
+    }
 }
 
-#enter h2 {
-    text-shadow:
-        0 0 0.08rem var(--light-color),
-        0 0 0.1rem var(--primary-color),
-        0 0 0.1rem var(--primary-color),
-        0 0 1.5rem var(--primary-color);
-    font-size: 2rem;
-    margin-bottom: 1em;
+@media (min-width: 600px) {
+    #enter {
+        margin: 0 auto;
+        margin-top: 5em;
+        padding-top: 2.5em;
+        text-align: center;
+        color: var(--primary-color);
+        height: 25em;
+        width: 32em;
+        border: .4rem solid var(--primary-color);
+        border-radius: 1rem;
+        box-shadow:
+            0 0 .2rem var(--light-color),
+            0 0 .2rem var(--light-color),
+            0 0 .8rem var(--primary-color),
+            0 0 2rem var(--primary-color),
+            0 0 2.8rem var(--primary-color),
+            inset 0 0 1.5rem var(--primary-color);
+    }
+    
+    #enter h2 {
+        text-shadow:
+            0 0 .08rem var(--light-color),
+            0 0 .1rem var(--primary-color),
+            0 0 .1rem var(--primary-color),
+            0 0 1.5rem var(--primary-color);
+        font-size: 2rem;
+        margin-bottom: 1em;
+    }
+    
+    #enter label {
+        font-size: 1.25rem;
+    }
+    
+    #enter input {
+        margin-top: .3em;
+        padding-left: .3em;
+        height: 1.875rem;
+        border-radius: .125rem;
+        border: var(--bg-color);
+        background-color: var(--primary-color);
+        color: var(--bg-color);
+        font-size: 1rem;
+        outline: none;
+    }
+    
+    #enter button {
+        margin-top: 3em;
+        height: 2rem;
+        width: 5rem;
+        background-color: var(--secondary-color);
+        color: var(--light-color);
+        border: .05rem solid var(--secondary-color);
+        border-radius: .125rem;
+    }
+    
+    #enter a {
+        text-decoration: none;
+        color: var(--secondary-color);
+    }
+    
+    #enter div {
+        margin-top: 1.875em;
+        margin-bottom: 1.875em;
+    }
+    
+    #terms-notice {
+        padding: 1em 10em 0 10em;
+        font-size: .625rem;
+    }
 }
 
-#enter label {
-    font-size: 1.25rem;
+@media (min-width: 768px) {
+    #enter {
+        margin-top: 7em;
+        width: 36em;
+    }
 }
 
-#enter input {
-    margin-top: 0.3em;
-    padding-left: 0.3em;
-    height: 1.875rem;
-    border-radius: 0.125rem;
-    border: var(--bg-color);
-    background-color: var(--primary-color);
-    color: var(--bg-color);
-    font-size: 1rem;
-    outline: none;
+@media (min-width: 992px) {
+    #enter {
+        margin-top: 8em;
+        width: 40em;
+    }
 }
+@media (min-width: 1200px) {}
+@media (min-width: 1440px) {}
 
-#enter button {
-    margin-top: 3em;
-    height: 2rem;
-    width: 5rem;
-    background-color: var(--secondary-color);
-    color: var(--light-color);
-    border: 0.0625rem solid var(--secondary-color);
-    border-radius: 0.125rem;
-}
-
-#enter button:hover {
-    background-color: var(--primary-color);
-}
-
-#enter a {
-    text-decoration: none;
-    color: var(--secondary-color);
-}
-
-#enter a:hover {
-    color: var(--primary-color);
-}
-
-#enter div {
-    margin-top: 1.875em;
-    margin-bottom: 1.875em;
-}
-
-#terms-notice {
-    padding: 0 10em 0 10em;
-    font-size: 0.625rem;
-}
+#enter button:hover { background-color: var(--primary-color); }
+#enter a:hover { color: var(--primary-color); }

@@ -1,36 +1,79 @@
-#profile {
-    margin: 0 auto;
-    margin-top: 100px;
-    height: 640px;
-    width: 40vw;
-    color: var(--primary-color);
-    border: 0.5rem solid var(--primary-color);
-    border-radius: 0.625rem;
+@media (max-width: 600px) {
+    #profile {
+        margin: 4em;
+        color: var(--primary-color);
+        border: 0.5rem solid var(--primary-color);
+        border-radius: 0.625rem;
+    }
+    
+    #profile h3 {
+        padding: .8em;
+        text-align: center;
+        color: var(--bg-color);
+        background-color: var(--secondary-color);
+    }
+    
+    #profile article {
+        padding: 2em;
+    }
+    
+    .authored-link {
+        font-size: 1rem;
+        color: var(--secondary-color);    
+        text-decoration: none;
+    }
+    
+    .authored-link:hover {
+        color: var(--primary-color);
+    }
+    
+    #profile div {
+        margin: 2em;
+        text-align: center;
+    }
 }
 
-#profile h3 {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    text-align: center;
-    color: var(--bg-color);
-    background-color: var(--secondary-color);
+@media (min-width: 600px) {
+    #profile {
+        margin: 4em;
+        color: var(--primary-color);
+        border: 0.5rem solid var(--primary-color);
+        border-radius: 0.625rem;
+    }
+    
+    #profile h3 {
+        padding: .8em;
+        text-align: center;
+        color: var(--bg-color);
+        background-color: var(--secondary-color);
+    }
+    
+    #profile article {
+        padding: 2em;
+    }
+    
+    .authored-link {
+        font-size: 1rem;
+        color: var(--secondary-color);    
+        text-decoration: none;
+    }
+    
+    .authored-link:hover {
+        color: var(--primary-color);
+    }
+    
+    #profile div {
+        margin: 2em;
+        text-align: center;
+    }
 }
 
-#profile article {
-    padding: 50px;
-}
+@media (min-width: 768px) {
+    #profile article {
+        padding: 4em;
+    }
 
-.authored-link {
-    color: var(--secondary-color);    
-    font-size: 1rem;
-    text-decoration: none;
-}
-
-.authored-link:hover {
-    color: var(--primary-color);
-}
-
-#profile div {
-    margin-top: 200px;
-    text-align: center;
+    #profile div {
+        margin: 3em;
+    }
 }

@@ -69,10 +69,100 @@
     }
 }
 
-@media (min-width: 600px) {}
-@media (min-width: 768px) {}
-@media (min-width: 992px) {}
-@media (min-width: 1200px) {}
-@media (min-width: 1440px) {}
+@media (min-width: 600px) {
+    #compose {
+        margin: 2em;
+        background-color: var(--secondary-color);
+        color: var(--primary-color);
+        border: .2rem solid var(--primary-color);
+        border-radius: .75rem;
+    }
+    
+    #compose h3 {
+        padding: .5em;
+        text-align: center;
+        color: var(--bg-color);
+    }
+    
+    #compose label {
+        margin-left: .8em;
+        font-size: 1rem;
+        color: var(--bg-color);
+    }
+    
+    #compose select {
+        margin-left: .625em;
+        width: 31%;
+        font-size: .875rem;
+        color: var(--bg-color);
+        background-color: var(--primary-color);
+        resize: none;
+        outline: none;
+    }
+    
+    #compose input {
+        margin: .5em 0 .625em 1.425em;
+        padding: .125em 0 .125em .5em;
+        height: 1.5em;
+        width: 30%;
+        background-color: var(--primary-color);
+        font-size: .875rem;
+        border: var(--bg-color);
+        border-radius: .3125rem;
+        outline: none;
+    }
+    
+    #compose textarea {
+        padding: .3em;
+        width: 97.5%;
+        background-color: var(--bg-color);
+        color: var(--primary-color);
+        font-size: 1.125rem;
+        border: .0625rem solid var(--bg-color);
+        border-radius: .3125rem;
+        resize: none;
+        outline: none;
+    }
+    
+    #compose button {
+        margin: 1em;
+        height: 1.875rem;
+        width: 5rem;
+        background-color: var(--secondary-color);
+        color: var(--light-color);
+        border: .0625rem solid var(--bg-color);
+        border-radius: .3125rem;
+    }
+    
+    #compose-return {
+        margin-top: 2em;
+        text-align: center;
+    }
+}
+
+@media (min-width: 768px) {
+    #compose {
+        margin: 0 auto;
+        width: 75%;
+    }
+}
+
+@media (min-width: 992px) {
+    #compose {
+        width: 60%;
+    }
+}
+
+@media (min-width: 1200px) {
+    #compose {
+        width: 50%;
+    }
+}
+
+@media (min-width: 1440px) {
+    #compose {
+        width: 40%;
+    }
+}
 
 #compose button:hover { background-color: var(--primary-color); }
