@@ -1,60 +1,136 @@
-#register {
-    margin: 0 auto;
-    margin-top: 6rem;
-    padding-top: 2.5em;
-    height: 22.5em;
-    width: 600px;
-    text-align: center;
-    color: var(--primary-color);
-    border: 0.5rem solid var(--primary-color);
-    border-radius: 1rem;
-    box-shadow:
-        0 0 0.2rem var(--light-color),
-        0 0 0.2rem var(--light-color),
-        0 0 0.8rem var(--primary-color),
-        0 0 2rem var(--primary-color),
-        0 0 2.4rem var(--primary-color),
-        inset 0 0 1.5rem var(--primary-color);
+@media (max-width: 600px) {
+    #register {
+        margin: 0 auto;
+        margin-top: 6rem;
+        padding-top: 2.5em;
+        height: 22.5em;
+        width: 28em;
+        text-align: center;
+        color: var(--primary-color);
+        border: .5rem solid var(--primary-color);
+        border-radius: 1rem;
+        box-shadow:
+            0 0 .2rem var(--light-color),
+            0 0 .2rem var(--light-color),
+            0 0 .8rem var(--primary-color),
+            0 0 2rem var(--primary-color),
+            0 0 2.4rem var(--primary-color),
+            inset 0 0 1.5rem var(--primary-color);
+    }
+    
+    #register h2 {
+        margin-bottom: 1em;
+        text-shadow:
+            0 0 .08rem var(--light-color),
+            0 0 .1rem var(--primary-color),
+            0 0 .1rem var(--primary-color),
+            0 0 1.5rem var(--primary-color);
+        font-size: 1.8rem;
+    }
+    
+    #register button {
+        margin-top: 3em;
+        height: 2rem;
+        width: 5rem;
+        background-color: var(--secondary-color);
+        color: var(--light-color);
+        border: .05rem solid var(--secondary-color);
+        border-radius: .125rem;
+    }
 }
 
-#register table {
-    margin: auto;
+@media (min-width: 600px) {
+    #register {
+        margin: 0 auto;
+        margin-top: 6rem;
+        padding-top: 2.5em;
+        height: 22.5em;
+        width: 30em;
+        text-align: center;
+        color: var(--primary-color);
+        border: .5rem solid var(--primary-color);
+        border-radius: 1rem;
+        box-shadow:
+            0 0 .2rem var(--light-color),
+            0 0 .2rem var(--light-color),
+            0 0 .8rem var(--primary-color),
+            0 0 2rem var(--primary-color),
+            0 0 2.4rem var(--primary-color),
+            inset 0 0 1.5rem var(--primary-color);
+    }
+    
+    #register h2 {
+        margin-bottom: 1em;
+        text-shadow:
+            0 0 .08rem var(--light-color),
+            0 0 .1rem var(--primary-color),
+            0 0 .1rem var(--primary-color),
+            0 0 1.5rem var(--primary-color);
+        font-size: 1.8rem;
+    }
+    
+    #register button {
+        margin-top: 3em;
+        height: 2rem;
+        width: 5rem;
+        background-color: var(--secondary-color);
+        color: var(--light-color);
+        border: .05rem solid var(--secondary-color);
+        border-radius: .125rem;
+    }
 }
 
-#register h2 {
-    margin-bottom: 1em;
-    text-shadow:
-        0 0 0.08rem var(--light-color),
-        0 0 0.1rem var(--primary-color),
-        0 0 0.1rem var(--primary-color),
-        0 0 1.5rem var(--primary-color);
-    font-size: 1.8rem;
+@media (min-width: 768px) {
+    #register {
+        margin-top: 7rem;
+        width: 35em;
+    }
 }
 
-#register label {
-    font-size: 1.25rem;
+@media (min-width: 992px) {
+    #register {
+        margin-top: 8rem;
+        padding-top: 3.5em;
+        width: 40em;
+        height: 24em;
+    }
+}
+
+@media (min-width: 1200px) {
+    #register {
+        margin-top: 10rem;
+        padding-top: 3.5em;
+        width: 42em;
+        height: 24em;
+    }
+
+    #register h2 {
+        margin-bottom: 1.2em;
+    }
+
+    #register button {
+        margin: 3.5em 0 .5em 0;
+    }
 }
 
 #register input {
-    margin-top: 0.3em;
-    padding-left: 0.3em;
+    margin-top: .3em;
+    padding-left: .3em;
     height: 1.875rem;
     font-size: 1rem;
-    border-radius: 0.125rem;
+    border-radius: .125rem;
     border: var(--bg-color);
     background-color: var(--primary-color);
     color: var(--bg-color);
     outline: none;
 }
 
-#register button {
-    margin-top: 3em;
-    height: 2rem;
-    width: 5rem;
-    background-color: var(--secondary-color);
-    color: var(--light-color);
-    border: 0.0625rem solid var(--secondary-color);
-    border-radius: 0.125rem;
+#register table {
+    margin: auto;
+}
+
+#register label {
+    font-size: 1.25rem;
 }
 
 #register button:hover {
