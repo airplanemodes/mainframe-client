@@ -45,10 +45,10 @@ export default function Enter() {
                 <label>Password: </label>
                 <input type={"password"} {...passwdRef} />
                 <br />
-                { error && <div><br />{ error }</div> }
+                { error && <div id="login-error"><br />{ error }</div> }
                 <button>Login</button>
             </form>
-            <div>
+            <div id="login-options">
                 <p>continue as <a href="/main">guest</a></p>
                 <p>create new <a href="/register">user</a></p>
             </div>

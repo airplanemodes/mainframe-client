@@ -146,10 +146,31 @@
     }
 }
 
-@media (min-width: 768px) {}
-@media (min-width: 992px) {}
-@media (min-width: 1200px) {}
-@media (min-width: 1440px) {}
+@media (min-width: 768px) {
+    #mailbox {
+        margin: 2em auto;
+        width: 80%;
+    }
+}
+
+@media (min-width: 992px) {
+    #mailbox {
+        width: 75%;
+    }
+}
+
+@media (min-width: 1200px) {
+    #mailbox {
+        width: 70%;
+    }
+}
+
+@media (min-width: 1440px) {
+    #mailbox {
+        margin: 3em auto;
+        width: 70%;
+    }
+}
 
 #mailbox nav button:hover { background-color: var(--primary-color); }
 .active-box { background-color: var(--primary-color) !important; }

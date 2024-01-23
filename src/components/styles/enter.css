@@ -59,7 +59,7 @@
         color: var(--secondary-color);
     }
     
-    #enter div {
+    #login-options {
         margin-top: 1.875em;
         margin-bottom: 1.875em;
     }
@@ -131,9 +131,9 @@
         color: var(--secondary-color);
     }
     
-    #enter div {
-        margin-top: 1.875em;
-        margin-bottom: 1.875em;
+    #login-options {
+        margin-top: 1.6em;
+        margin-bottom: 1.6em;
     }
     
     #terms-notice {

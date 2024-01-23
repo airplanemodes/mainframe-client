@@ -6,6 +6,7 @@ import "./styles/mailbox.css";
 import { useLocation } from "react-router-dom";
 
 // TODO: reply button
+// TODO: mailbox is empty
 
 export default function Mailbox() {
 
