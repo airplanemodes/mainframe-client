@@ -1,6 +1,6 @@
 # Mainframe
 
-Main page:
+Inside:
 
 ![Mainframe](/main.png "Main page")
 
